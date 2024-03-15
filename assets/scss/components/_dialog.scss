@@ -1,0 +1,439 @@
+@import '../foundations/variables.scss';
+@import '../foundations/mixin.scss';
+
+//Dialog
+.dialog_wrap {
+  @include font_body1;
+  padding: 5rem;
+  border: 1px solid $black;
+  background: #fff;
+  width: 75rem;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 1.2rem;
+  line-height: 4rem;
+  box-shadow: 0rem 0rem 1.6rem rgba(0, 0, 0, 0.75);
+
+  &.student_area {
+    .ico {
+      &.print_fail {
+        &::before {
+          background: url('@/assets/images/student/ico_print.svg') no-repeat;
+        }
+      }
+      &.class_ready {
+        &::before {
+          background: url('@/assets/images/student/ico_ready.svg') no-repeat;
+        }
+      }
+      &.class_finish {
+        &::before {
+          background: url('@/assets/images/student/ico_finish.svg') no-repeat;
+        }
+      }
+    }
+
+    .txt_point_wrap {
+      span {
+        @include font_body5($font-weight-medium, $point_red);
+        &::before {
+          content: '';
+          display: inline-flex;
+          align-items: center;
+          width: 2.5rem;
+          height: 2.5rem;
+          margin-right: 0.8rem;
+        }
+        &.book {
+          background: url('@/assets/images/student/ico_book_r.svg') no-repeat;
+        }
+      }
+    }
+
+    //stepper_wrap
+    .stepper_wrap {
+      background: $white;
+      display: flex;
+      align-items: center;
+      height: 7.4rem;
+      border-radius: 7.4rem;
+      padding: 0 1rem;
+      border: 0.1rem solid var(--border-gray);
+      margin: 4rem 0 1rem 0;
+      .txt_wrap {
+        font-size: 2.4rem;
+        margin: 0 2rem;
+        white-space: nowrap;
+        color: $black;
+        flex: 1;
+        display: block;
+      }
+      button {
+        position: relative;
+        width: 5.4rem !important;
+        height: 5.4rem !important;
+        padding: 0 !important;
+        min-width: 0 !important;
+        background-color: $gray;
+        &::before {
+          content: '';
+          display: inline-flex;
+          width: 5.4rem !important;
+          height: 5.4rem !important;
+          border-radius: 5.4rem;
+          background: url('@/assets/images/common/ico_arrow_p.svg') center center no-repeat;
+          filter: var(--color-white);
+        }
+        &.btn_next {
+          rotate: -180deg;
+        }
+      }
+    }
+
+    .btn_class_finish {
+      display: flex;
+      .btn_block {
+        button {
+          width: 32.6rem;
+          & + button {
+            margin-top: 1rem;
+          }
+        }
+      }
+      .btn_bee_wrap {
+        margin-left: 2rem;
+        .btn_bee {
+          width: 32.6rem;
+          height: 13rem !important;
+          border-radius: 2.8rem !important;
+          .ico_bee {
+            transform: rotate(7deg);
+            margin: -1rem 0 0 4.5rem;
+            width: 10.7rem;
+            height: 10rem;
+            background: url('@/assets/images/student/btn_bee.svg') no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7rem;
+    font-size: 3.5rem;
+    font-weight: var(--weight-bold);
+    border-bottom: 0.1rem solid $black;
+    &.no_line {
+      border-bottom: 0;
+    }
+    &.no_txt {
+      border-bottom: 0;
+      height: 0rem;
+      .btn_close {
+        margin-top: -0rem;
+      }
+    }
+
+    .btn_close {
+      position: absolute;
+      right: 2rem;
+      top: 3rem;
+      margin-top: -7rem;
+      width: 4rem !important;
+      height: 4rem !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      background: url('@/assets/images/common/ico_pop_close.svg') center center no-repeat;
+    }
+  }
+  .sub_tit {
+    @include font_body2;
+    display: flex;
+    align-items: center;
+    height: 7rem;
+    text-align: left;
+  }
+  &.small {
+    width: 55rem;
+  }
+
+  &.large {
+    width: 82rem;
+    .dialog_message {
+      margin: 2rem 0;
+      font-size: $font-medium;
+      .txt_gray {
+        text-align: left;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &.w_100 {
+    width: 100rem;
+  }
+  &.x_large {
+    width: 110rem;
+  }
+  &.full {
+    width: 160rem;
+  }
+
+  .txt {
+    .sub {
+      @include font_body3(#666666);
+    }
+  }
+  .attach_box {
+    display: flex;
+    padding: 2rem 7rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 0.6rem;
+    border: 1px solid $point;
+    background: #ecf3f6;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    @include font_body3($point);
+
+    line-height: 4rem; /* 160% */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    flex: 1 0 0;
+    word-break: keep-all;
+
+    span {
+      width: 45.4rem;
+    }
+  }
+  .dialog_btn_wrap {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 4rem;
+    &.full {
+      button {
+        flex: 1;
+      }
+    }
+    &_2line_full {
+      width: 62rem;
+      button {
+        flex: 1;
+      }
+    }
+    button {
+      padding: 0 7rem !important;
+
+      .check_wh {
+        width: 5rem;
+        height: 5rem !important;
+        background: url('@/assets/images/common/ico_check_wh.svg') center center no-repeat;
+      }
+    }
+  }
+
+  .ico {
+    &::before {
+      content: '';
+      display: block;
+      width: 10rem;
+      height: 10rem;
+      margin: 0 auto 1rem;
+    }
+    &.print {
+      &::before {
+        background: url('@/assets/images/common/ico_print.svg') no-repeat;
+      }
+    }
+    &.book_search {
+      &::before {
+        background: url('@/assets/images/common/ico_book_search.svg') no-repeat;
+      }
+    }
+    &.book {
+      &::before {
+        background: url('@/assets/images/common/ico_book.svg') no-repeat;
+      }
+    }
+    &.search {
+      &::before {
+        background: url('@/assets/images/common/ico_search.svg') no-repeat;
+      }
+    }
+  }
+
+  .arrow_next {
+    display: inline-flex;
+    width: 2.3rem;
+    height: 1.6rem;
+    margin-left: 1.5rem;
+    background: url('@/assets/images/common/btn_next_arrow.svg') no-repeat center center/contain;
+  }
+  &.white_board {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    .white_board_wrap {
+      justify-content: flex-end;
+    }
+  }
+
+  .pop_top_img01 {
+    position: absolute;
+    z-index: 1;
+    top: -27rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    width: 48rem;
+    height: 27rem;
+    background: url('@/assets/images/student/pop_top_img01.svg') no-repeat center center/cover;
+  }
+
+  .box_list_wrap {
+    .txt_tit {
+      margin-bottom: 4rem;
+    }
+    .v-btn-group {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      button {
+        position: relative;
+        width: 15%;
+        margin: 0.5%;
+        height: 30rem !important;
+        border: 0.1rem solid var(--border-gray);
+        border-radius: var(--border-radius-medium);
+        .txt_area {
+          position: relative;
+          margin: -3rem 0 0 0;
+          &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6.1rem;
+            height: 6rem;
+            margin: 2rem 0 0 0;
+            background: url('@/assets/images/student/ico_box_check.svg') center center/contain;
+          }
+          .txt_num {
+            font-size: 3.6rem;
+          }
+          .txt_name {
+            font-size: 4rem;
+            font-weight: 700;
+          }
+        }
+        &.v-btn--active,
+        &.active {
+          background: $point !important;
+          color: $white !important;
+          .txt_area {
+            &::after {
+              filter: var(--color-white);
+            }
+          }
+          .badge {
+            display: block;
+          }
+        }
+        .v-btn__overlay {
+          display: none;
+        }
+        .badge {
+          display: none;
+          position: absolute;
+          top: -1.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      &.change {
+        button {
+          &.v-btn--active {
+            background: $primary !important;
+          }
+          &.active {
+            background: $point !important;
+          }
+        }
+      }
+    }
+    &.type1 {
+      .v-btn-group {
+        button {
+          width: 24%;
+          margin: 0.5%;
+          .txt_area {
+            margin: -9rem 0 0 0;
+            .txt_num {
+              font-size: 8rem;
+              font-weight: 700;
+            }
+            .txt_name {
+              font-size: 3.6rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+    &.type2 {
+      .v-btn-group {
+        button {
+          width: 45%;
+          margin: 0.5%;
+        }
+      }
+    }
+  }
+}
+
+.v-overlay,
+.v-dialog{
+   padding-top: $header-height !important;
+   padding-right: $aside-width !important;
+   height: 100vh !important;
+   max-height: 100rem !important;
+   .v-overlay__scrim {
+     opacity: 0.7 !important;
+     //margin-top: $header-height !important;
+     top: 8rem;
+     height: calc(100% - 8rem);
+     width: calc(192rem - $aside-width) !important;
+   }
+ }
+
+
+//전역 팝업
+.dialog_message {
+  .carousel_tit {
+    .study_thumb_list {
+      justify-content: flex-start;
+      margin-left: 10rem;
+    }
+  }
+  .study_thumb_list {
+    li {
+      margin: 0 !important;
+      .st_info_area {
+        padding: 1rem 1.5rem;
+      }
+    }
+  }
+}

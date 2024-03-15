@@ -1,0 +1,58 @@
+@import 'variables.scss';
+
+// sementic color
+$primary: $DB900;
+$secondary-success: $Y500;
+$secondary-info: $B500;
+$secondary-error: $Y900;
+
+//font-color
+$font-white: $white;
+$font-light: $G400;
+$font-basic: $G400;
+$font-darken: $G900;
+$font-blue: $B900;
+$font-orange: $Y900;
+$font-black: #000;
+
+//bg-color
+$bg-light: $G50;
+$bg-basic: $G50;
+$bg-darken: $G50;
+$bg-blue: $B50;
+$bg-white: $white;
+
+//line-color
+$line-basic: $G300;
+$line-darken: $G800;
+
+//point-color
+$point-color-gray: $G500;
+$point-color-blue: $B500;
+$point-color-orange: $Y900;
+$point-color-green: #81b01b;
+$point-color-red: #f04c42;
+$point-color-yellow: $Y600;
+$point-color-white: $white;
+$point-color-black: $G900;
+
+//Shemes-color ( 수업정보 )
+$shchme-color-learner1: #42c5b1;
+$shchme-color-learner2: #8dbb2c;
+$shchme-color-learner3: $Y500;
+$shchme-color-learner4: $Y800;
+$shchme-color-learner5: #fd6e7f;
+$shchme-color-learner6: #d5d5d5;
+
+//icon-color
+$icon-default-color: $G900;
+$icon-default-hover: $G700;
+$icon-default-disabled: $G200;
+
+$icon-point1: $Y500;
+$icon-point2: $Y900;
+$icon-point3: $B500;
+
+$icon-bg-color: $G300;
+$icon-bg-color1: $G100;
+$icon-bg-color2: $white;

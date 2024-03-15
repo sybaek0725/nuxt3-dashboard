@@ -1,0 +1,60 @@
+@import '../foundations/variables.scss';
+@import '../foundations/mixin.scss';
+.pho_view_wrap {
+  margin-top: 1rem;
+  .img_wrap {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.fixed_ai_wrap {
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
+  width: 38rem;
+  height: 15rem;
+  overflow: hidden;
+  button {
+    min-width: 0 !important;
+    padding: 0 !important;
+  }
+  .btn_fixed_close {
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
+    z-index: 1;
+    width: 4rem;
+    height: 4rem !important;
+    border-radius: 4rem;
+    background: url('@/assets/images/student/ico_fixed_close.svg');
+  }
+  .ico_fixed_arrow {
+    width: 3.6rem;
+    height: 2.2rem !important;
+    margin-right: 2rem;
+    background: url('@/assets/images/student/ico_fixed_arrow.svg');
+  }
+  .ico_fixed_ai {
+    width: 9.9rem;
+    height: 15rem;
+    margin-top: -7rem;
+    background: url('@/assets/images/student/ico_fixed_ai.svg');
+  }
+  .btn_fixed_ai {
+    width: 35.7rem;
+    height: 8rem !important;
+    margin-top: 7rem;
+    background: #343c46;
+  }
+  .btn_fixed_ai {
+    width: 35.7rem;
+    height: 8rem;
+    border-radius: 1.2rem;
+    @include font_body2($white);
+  }
+}

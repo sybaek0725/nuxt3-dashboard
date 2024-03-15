@@ -1,0 +1,205 @@
+//gray
+$G50: #f8f8f8;
+$G100: #f0f0f0;
+$G200: #e6e6e6;
+$G300: #d5d5d5;
+$G400: #b0b0b0;
+$G500: #909090;
+$G600: #686868;
+$G700: #555555;
+$G800: #373737;
+$G900: #171717;
+
+//dark blue
+$DB50: #e8ebf1;
+$DB100: #c3cedd;
+$DB200: #9daec6;
+$DB300: #788eaf;
+$DB400: #5a759f;
+$DB500: #3b5e91;
+$DB600: #345688;
+$DB700: #2c4c7d;
+$DB800: #264370;
+$DB900: #1e3257;
+
+//yello
+$Y50: #fff8e1;
+$Y100: #ffebb2;
+$Y200: #ffdf81;
+$Y300: #ffd44d;
+$Y400: #ffc825;
+$Y500: #ffbf00;
+$Y600: #ffb100;
+$Y700: #ff9e00;
+$Y800: #ff8d00;
+$Y900: #ff6d00;
+
+//blue
+$B50: #e3f5fc;
+$B100: #b7e4f8;
+$B200: #8bd2f3;
+$B300: #66c1ed;
+$B400: #51b3e9;
+$B500: #46a7e5;
+$B600: #4199d6;
+$B700: #3b86c2;
+$B800: #3675ae;
+$B900: #28568c;
+
+// 기존 사용
+$secondary: #ffd748;
+$darkgray: #555;
+$gray: #666;
+$lightgray: #999;
+$point: #169bd4;
+$point1: #65b6d8;
+$orange: #ff6600;
+$green: #81b01b;
+$outline_gray: #aaa;
+$point_red: #f04c42;
+$black: #000;
+$white: #fff;
+
+//font-size
+$font-xlarge: 3.2rem;
+$font-large: 3rem;
+$font-medium: 2.5rem;
+$font-small: 2.3rem;
+$font-xsmall: 2.2rem;
+
+/* Font weight */
+$font-weight-bold: 700;
+$font-weight-semi-bold: 600;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+
+/** spacing **/
+$spacing-root: 0.5rem;
+
+$header-height: 8rem;
+$navigator-height: 7rem;
+$aside-width: 20.5rem;
+
+.text-black {
+  color: $black !important;
+}
+.text-gray {
+  color: $gray !important;
+}
+.text-orange {
+  color: $orange !important;
+}
+.text-success {
+  color: $point !important;
+}
+.text-point {
+  color: $point !important;
+}
+.text-point1 {
+  color: $point1 !important;
+}
+.text-point_red {
+  color: $point_red !important;
+}
+
+:root {
+  /* filter color*/
+  --color-white: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(457%)
+    hue-rotate(358deg) brightness(118%) contrast(100%);
+  --color-darkgray: invert(0%) sepia(4%) saturate(0%) hue-rotate(309deg) brightness(93%)
+    contrast(107%);
+  --color-black: brightness(0) saturate(100%) invert(0%) sepia(83%) saturate(7430%)
+    hue-rotate(58deg) brightness(85%) contrast(114%);
+  --color-orange: brightness(0) saturate(100%) invert(42%) sepia(42%) saturate(3321%)
+    hue-rotate(1deg) brightness(103%) contrast(105%);
+  --color-point: brightness(0) saturate(100%) invert(52%) sepia(68%) saturate(643%)
+    hue-rotate(152deg) brightness(87%) contrast(89%);
+  --color-secondary: brightness(0) saturate(100%) invert(90%) sepia(53%) saturate(856%)
+    hue-rotate(320deg) brightness(106%) contrast(100%);
+
+  /* border radius */
+  --border-radius-medium: 0.6rem;
+
+  /* Font size */
+  --font-xlarge: #{$font-xlarge};
+  --font-large: #{$font-large};
+  --font-medium: #{$font-medium};
+  --font-small: #{$font-small};
+  --font-xsmall: #{$font-xsmall};
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-medium: 500;
+  --weight-regular: 400;
+
+  /* border */
+  --border-gray: #aaaaaa;
+  --border-black: #000000;
+
+  /* margin */
+  --margin-medium: 3rem;
+
+  /* padding */
+  --padding-medium: 3rem;
+
+  /* Sementic color */
+  --primary: #{$DB900};
+  --secondary-success: #{$Y500};
+  --secondary-info: #{$B500};
+  --secondary-error: #{$Y900};
+
+  /* font color */
+  --font-white: #{$white};
+  --font-light: #{$G400};
+  --font-basic: #{$G400};
+  --font-darken: #{$G900};
+  --font-blue: #{$B900};
+  --font-orange: #{$Y900};
+  --font-black: #000;
+
+  /* bg color */
+  --bg-light: #{$G50};
+  --bg-basic: #{$G50};
+  --bg-darken: #{$G50};
+  --bg-blue: #{$B50};
+
+  /* line color */
+  --line-basic: #{$G300};
+  --line-darken: #{$G800};
+
+  /* point color */
+  --point-color-gray: #{$G500};
+  --point-color-blue: #{$B500};
+  --point-color-orange: #{$Y900};
+  --point-color-green: #81b01b;
+  --point-color-red: #f04c42;
+  --point-color-yellow: #{$Y600};
+  --point-color-white: #{$white};
+  --point-color-black: #{$G900};
+
+  /* scheme color */
+  --shchme-color-learner1: #42c5b1;
+  --shchme-color-learner2: #8dbb2c;
+  --shchme-color-learner3: #{$Y500};
+  --shchme-color-learner4: #{$Y800};
+  --shchme-color-learner5: #fd6e7f;
+  --shchme-color-learner6: #d5d5d5;
+
+  /* icon color */
+  --icon-default-color: #{$G900};
+  --icon-default-hover: #{$G700};
+  --icon-default-disabled: #{$G200};
+
+  --icon-point1: #{$Y500};
+  --icon-point2: #{$Y900};
+  --icon-point3: #{$B500};
+
+  --icon-bg-color: #{$G300};
+  --icon-bg-color1: #{$G100};
+  --icon-bg-color2: #{$white};
+
+  /** layout **/
+  --header-height: #{$header-height};
+  --navigator-height: #{$navigator-height};
+}

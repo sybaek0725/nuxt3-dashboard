@@ -1,0 +1,79 @@
+// app global css in Scss form
+
+// color
+$primary: #1e3257;
+$secondary: #ffd748;
+$white: #fff;
+$black: #000;
+$darkgray: #555;
+$gray: #666;
+$lightgray: #999;
+$point: #169bd4;
+$point1: #65b6d8;
+$orange: #ff6600;
+$green: #81b01b;
+$outline_gray: #aaa;
+$point_red: #f04c42;
+
+.text-black {
+  color: $black !important;
+}
+.text-gray {
+  color: $gray !important;
+}
+.text-orange {
+  color: $orange !important;
+}
+.text-success {
+  color: $point !important;
+}
+.text-point {
+  color: $point !important;
+}
+.text-point1 {
+  color: $point1 !important;
+}
+.text-point_red {
+  color: $point_red !important;
+}
+
+:root {
+  /* filter color*/
+  --color-white: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(457%)
+    hue-rotate(358deg) brightness(118%) contrast(100%);
+  --color-darkgray: invert(0%) sepia(4%) saturate(0%) hue-rotate(309deg) brightness(93%)
+    contrast(107%);
+  --color-black: brightness(0) saturate(100%) invert(0%) sepia(83%) saturate(7430%)
+    hue-rotate(58deg) brightness(85%) contrast(114%);
+  --color-orange: brightness(0) saturate(100%) invert(42%) sepia(42%) saturate(3321%)
+    hue-rotate(1deg) brightness(103%) contrast(105%);
+  --color-point: brightness(0) saturate(100%) invert(52%) sepia(68%) saturate(643%)
+    hue-rotate(152deg) brightness(87%) contrast(89%);
+  --color-secondary: brightness(0) saturate(100%) invert(90%) sepia(53%) saturate(856%)
+    hue-rotate(320deg) brightness(106%) contrast(100%);
+
+  /* Font size */
+  --font-large: 3rem;
+  --font-medium: 2.5rem;
+  --font-regular: 2.2rem;
+  //--font-small: 1.6rem;
+
+  /* border radius */
+  --border-radius-medium: 0.6rem;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-medium: 500;
+  --weight-regular: 400;
+
+  /* border */
+  --border-gray: #aaaaaa;
+  --border-black: #000000;
+
+  /* margin */
+  --margin-medium: 3rem;
+
+  /* padding */
+  --padding-medium: 3rem;
+}

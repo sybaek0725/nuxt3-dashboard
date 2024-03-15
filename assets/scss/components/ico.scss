@@ -1,0 +1,28 @@
+@import '../foundations/variables.scss';
+
+.ico_list_plus {
+  display: inline-flex;
+  align-items: center;
+  &::before {
+    content: '';
+    display: inline-flex;
+    width: 3.3rem;
+    height: 3.3rem;
+    margin-right: 1rem;
+    background: url('@/assets/images/common/ico_list_plus.svg') no-repeat center center/contain;
+  }
+}
+
+.ico_all_hide {
+  display: inline-flex;
+  align-items: center;
+  &::before {
+    content: '';
+    display: inline-flex;
+    margin-left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    filter: var(--color-white);
+    background: url('@/assets/images/common/ico_hide_b.svg');
+  }
+}

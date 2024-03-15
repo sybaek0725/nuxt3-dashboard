@@ -1,0 +1,96 @@
+@import '../foundations/variables.scss';
+
+.board_tab_wrap {
+  .sub_tit_wrap {
+    @include font_body1($font-weight-bold);
+    display: flex;
+    align-items: center;
+    margin: 0rem 0 4.2rem;
+
+    &::before {
+      content: '';
+      display: inline-flex;
+      width: 4rem;
+      height: 4rem;
+      margin-right: 0.8rem;
+      background: url('@/assets/images/common/ico_tit_book.svg') no-repeat center center/contain;
+    }
+  }
+  //no_data_wrap
+  .no_data_wrap {
+    background: #eeeeee;
+    border: 1px solid var(--border-gray);
+    padding: 1.4rem 1.6rem;
+    text-align: center;
+    color: #999999;
+    margin: 1rem 0;
+  }
+
+  .nuri_list_box {
+    max-height: 20rem;
+    background: #ecf3f6;
+    border: 1px solid $point;
+    padding: 1.4rem 1.6rem;
+    margin: 1rem 0;
+    overflow-y: auto;
+    a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      &::after {
+        content: '';
+        top: 1rem;
+        margin-left: 1.2rem;
+        border: solid $white;
+        border-width: 0 0.2rem 0.2rem 0;
+        display: inline-block;
+        padding: 0.3rem;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0.5remrem;
+        right: -1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 2.5rem;
+        background: $black;
+      }
+    }
+  }
+
+  .tit_wrap {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+    em {
+      @include font_body1($font-weight-bold);
+      margin: 0 6rem 0 2rem;
+    }
+  }
+  .tab_body {
+    border-radius: var(--border-radius-medium);
+    border: 1px solid $primary;
+    padding: 3rem;
+    background: $white;
+    .input_btn_wrap {
+      &.register {
+        .input_area {
+          display: flex;
+          width: calc(100% - 13rem);
+          .v-input {
+            & + .v-input {
+              margin-left: 1rem;
+            }
+          }
+        }
+        .btn_area {
+          width: 12rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}

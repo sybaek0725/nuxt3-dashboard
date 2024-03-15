@@ -1,0 +1,159 @@
+@import '../foundations/variables.scss';
+.profile_wrap {
+  margin-top: 2rem;
+  .col2 {
+    display: flex;
+    > div {
+      flex: 1;
+    }
+  }
+  .col3 {
+    .v-selection-control {
+      width: 33.3%;
+    }
+  }
+
+  .col4 {
+    .v-selection-control {
+      width: 25%;
+    }
+  }
+
+  .switch_table {
+    display: flex;
+    > div {
+      width: 50%;
+      padding: 2rem 2.5rem 5rem;
+    }
+    .radio_flex_wrap {
+      .v-radio {
+        padding: 0 3rem;
+      }
+    }
+    .table_type1 {
+      .dp_flex {
+        width: 100%;
+        justify-content: space-between;
+        min-height: 6rem;
+
+        .label {
+          margin-top: 0rem;
+        }
+      }
+      .type1 {
+        padding: 0 3rem 0 0;
+      }
+      .type2 {
+        padding: 0 3rem;
+        margin-bottom: 1rem;
+        height: 6rem;
+        border: 0.1rem solid var(--border-gray);
+        border-radius: var(--border-radius-medium);
+        .label {
+          font-weight: var(--weight-medium);
+          color: $darkgray;
+        }
+      }
+      .type3 {
+        padding: 0 3rem 0 0;
+        align-items: center;
+        .label {
+          margin-top: 2.5rem;
+        }
+      }
+    }
+  }
+
+  .com_mg {
+    margin: 4.5rem 3rem 6rem;
+  }
+  .profile_main {
+    display: flex;
+    .profile_table {
+      flex: 1;
+    }
+    .profile_info {
+      width: 46rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .txt_name {
+        @include font_body1($font-weight-bold);
+        margin: 1rem 0 2.5rem;
+      }
+      .pho_wrap {
+        position: relative;
+        width: 20rem;
+        height: 20rem;
+        button {
+          position: absolute;
+          z-index: 1;
+          right: 0;
+          bottom: 0;
+          width: 6rem;
+          height: 6rem;
+          padding: 0 !important;
+          border: 1px solid var(--border-gray);
+          background: url('@/assets/images/common/btn_photo.svg') #fff center center no-repeat;
+        }
+        .img_wrap {
+          width: 20rem;
+          height: 20rem;
+          border-radius: 20rem;
+          border: 0.1rem solid $point;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  .table_type1 {
+    &.top {
+      .label {
+        margin-right: 4rem;
+      }
+      .dp_flex {
+        align-items: flex-start;
+      }
+    }
+    &.center {
+      .label {
+        margin-top: 0;
+        margin-right: 4rem;
+      }
+      .dp_flex {
+        align-items: center;
+      }
+    }
+    .v-switch {
+      display: inline-flex;
+    }
+    .txt_gray {
+      margin: 1rem;
+      display: inline-flex;
+    }
+    th,
+    td {
+      padding: 0;
+      &.center {
+        vertical-align: middle;
+      }
+    }
+    th {
+      .label {
+        white-space: nowrap;
+        .v-col-md-3 {
+          margin-top: -3rem;
+        }
+      }
+    }
+    td {
+      vertical-align: top;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '../foundations/variables.scss';
+.book_view_wrap {
+  padding: 3rem 2rem;
+  .tit_area {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: $font-large;
+    em {
+      display: flex;
+      align-items: center;
+      font-weight: var(--weight-bold);
+      &::after {
+        content: '';
+        display: inline-flex;
+        background: #555;
+        width: 0.1rem;
+        height: 2.4rem;
+        margin: 0 2rem;
+      }
+    }
+  }
+}

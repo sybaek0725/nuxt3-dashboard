@@ -1,0 +1,98 @@
+@import 'variables.scss';
+
+$header-weight: $font-weight-bold;
+$header1-size: 2.6rem;
+$header2-size: $font-xlarge;
+$header3-size: $font-large;
+
+$body1-size: $font-xlarge;
+$body2-size: $font-large;
+$body3-size: $font-medium;
+$body4-size: $font-small;
+$body5-size: $font-xsmall;
+$detail-size: $font-medium;
+
+$temp-line-height : 1.3em;
+
+@mixin font_header1($font-color: $black) {
+  font-size: $header1-size;
+  font-weight: $font-weight-bold;
+  //line-height: 3.2rem;
+  line-height: $temp-line-height;
+  color: $font-color;
+  letter-spacing: 0;
+}
+
+@mixin font_header2($font-color: $black) {
+  font-size: $header2-size;
+  font-weight: $font-weight-bold;
+  //line-height: 2.8rem;
+  line-height: $temp-line-height;
+  color: $font-color;
+  letter-spacing: 0;
+}
+
+@mixin font_header3($font-color: $black) {
+  font-size: $header3-size;
+  font-weight: $font-weight-bold;
+  //line-height: 2.6rem;
+  line-height: $temp-line-height;
+  color: $font-color;
+  letter-spacing: 0;
+}
+
+@mixin font_body5($font-weight: var(--weight-medium), $font-color: $black) {
+  font-size: $body5-size;
+  font-weight: $font-weight;
+  //line-height: 2.4rem;
+  line-height: $temp-line-height;
+  color: $font-color;
+  letter-spacing: 0;
+}
+
+@mixin font_body4($font-weight: var(--weight-medium), $font-color: $black) {
+  font-size: $body4-size;
+  font-weight: $font-weight;
+  //line-height: 2.6rem;
+  line-height: $temp-line-height;
+  color: $font-color;
+  letter-spacing: 0;
+}
+
+@mixin font_body3($font-weight: var(--weight-medium), $font-color: $black) {
+  font-size: $body3-size;
+  font-weight: $font-weight;
+  //line-height: 2.8rem;
+  line-height: $temp-line-height;
+  color: $font-color;
+  letter-spacing: 0;
+}
+
+@mixin font_body2($font-weight: var(--weight-medium), $font-color: $black) {
+  font-size: $body2-size;
+  font-weight: $font-weight;
+  //line-height: 2.6rem;
+  line-height: $temp-line-height;
+  color: $font-color;
+  letter-spacing: 0;
+}
+
+@mixin font_body1($font-weight: var(--weight-medium), $font-color: $black) {
+  font-size: $body1-size;
+  font-weight: $font-weight;
+  //line-height: 2.8rem;
+  line-height: $temp-line-height;
+  color: $font-color;
+}
+
+@mixin spacing-x($padding-x) {
+  padding: 0 $padding-x;
+}
+
+@mixin spacing-y($padding-y) {
+  padding: $padding-y 0;
+}
+
+@mixin spacing($position, $padding) {
+  padding-#{$position}: $padding;
+}

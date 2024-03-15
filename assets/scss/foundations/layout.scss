@@ -1,0 +1,138 @@
+@import 'variables.scss';
+
+// 컨텐츠 영역 패딩
+$contents-area-padding: calc($spacing-root * 6) calc($spacing-root * 6);
+$contents-bg-teacher: #f5f6fa;
+
+.wrap {
+    position: relative;
+
+    //teacher,student common
+    .container {
+        display: flex;
+        overflow: hidden;
+
+        .contents_wrap {
+            height: calc(100vh - 8rem);
+            position: relative;
+            flex: 1;
+            font-size: $font-medium;
+            display: flex;
+            flex-direction: column;
+            background: #f5f6fa;
+
+            .section_scroll {
+                overflow-y: auto;
+                flex: 1;
+
+                &::-webkit-scrollbar {
+                    border-radius: 5rem;
+                    width: 2rem;
+                }
+
+                /* 스크롤바 막대 꾸미기 */
+                &::-webkit-scrollbar-thumb {
+                    background-color: $primary;
+                    background-clip: padding-box;
+                    border: 0.7rem solid #f5f6fa;
+                    width: 0.1rem;
+                    border-radius: 5rem 5rem 0 0;
+                }
+                /* 스크롤바 트랙 꾸미기 */
+                &::-webkit-scrollbar-track {
+                    background-clip: padding-box;
+                    border: 0.7rem solid transparent;
+                    background-color: #f8f8f8;
+                    border-radius: 5rem;
+                    width: 0.5rem;
+                }
+
+                .contents_area {
+                    padding: $contents-area-padding;
+                    position: relative;
+                }
+
+                // todo : check 필요
+                //& + .col {
+                //  border-left: 1px solid var(--border-gray);
+                //}
+            }
+
+            &.setting_wrap {
+                flex-direction: row;
+            }
+        }
+
+        // 학생 메뉴에서 사용하는 layout
+        &.student_area {
+            background: $white;
+        }
+
+        // 설정 메뉴에서 사용하는 layout
+        &.setting_wrap {
+            .contents_area {
+                width: auto !important;
+            }
+
+            .profile_wrap {
+                margin-top: 2rem;
+                position: relative;
+
+                .profile_main {
+                    display: flex;
+                }
+
+                .section_content {
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+    }
+    &.student {
+        //스킨컬러 적용 부분
+        background: #cfe6e6;
+        .container {
+            .contents_wrap {
+                position: relative;
+                flex: 1;
+                font-size: $font-medium;
+                display: flex;
+                flex-direction: column;
+                background: #fff;
+
+                // 학생 메뉴에서 사용하는 layout
+                &.student_area {
+                    border-top-left-radius: 1rem;
+                    border-top-right-radius: 1rem;
+                    background: $white;
+                }
+
+                // 설정 메뉴에서 사용하는 layout
+                &.setting_wrap {
+                    .contents_area {
+                        width: auto !important;
+                    }
+
+                    .profile_wrap {
+                        margin-top: 2rem;
+                        position: relative;
+
+                        .profile_main {
+                            display: flex;
+                        }
+
+                        .section_content {
+                            margin-bottom: 5rem;
+                        }
+                    }
+                }
+                .section_scroll {
+                    /* 스크롤바 막대 꾸미기 */
+                    &::-webkit-scrollbar-thumb {
+                        border: 0.7rem solid transparent;
+                    }
+                }
+            }
+        }
+    }
+}

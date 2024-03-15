@@ -1,0 +1,51 @@
+@import 'foundations/variables.scss';
+@import 'foundations/color.scss';
+@import 'foundations/font.scss';
+@import 'foundations/reset.scss';
+@import 'foundations/layout.scss';
+@import 'foundations/vuetify.scss';
+@import 'foundations/common.scss';
+// @import 'foundations/ico.scss';
+
+// components
+@import 'components/_header.scss';
+@import 'components/_navigator.scss';
+@import 'components/_aside.scss';
+@import 'components/select_area.scss';
+@import 'components/ai.scss';
+@import 'components/st_info_area.scss';
+@import 'components/ico.scss';
+//@import 'components/_btn.scss';
+@import 'components/study_thumb_list.scss';
+@import 'components/acting_history_wrap.scss';
+@import 'components/board_tab_wrap.scss';
+@import 'components/profile_wrap.scss';
+@import 'components/book_view_wrap.scss';
+@import 'components/instruction_detail.scss';
+@import 'components/instruction_homework.scss';
+@import 'components/instruction_homework_pop.scss';
+@import 'components/linkage.scss';
+@import 'components/question_wrap.scss';
+@import 'components/study_item_box.scss';
+@import 'components/submin_acc.scss';
+@import 'components/viewing_box_wrap.scss';
+@import 'components/viewing_item_wrap.scss';
+@import 'components/photo_homework_area.scss';
+@import 'components/instruction_homework_wrap.scss';
+@import 'components/img_upload.scss';
+@import 'components/thumb.scss';
+@import 'components/photo_list_wrap.scss';
+@import 'components/reference_area.scss';
+@import 'components/section_mission.scss';
+@import 'components/tab_actions.scss';
+@import 'components/white_board_list.scss';
+@import 'components/white_board_wrap.scss';
+@import 'components/event_wrap.scss';
+@import 'components/progress_study_wrap.scss';
+@import 'components/linked_section.scss';
+@import 'components/chat_bot_window.scss';
+
+@import 'components/_dialog.scss';
+
+@import 'components/_homework.scss';
+@import 'components/_setting.scss';

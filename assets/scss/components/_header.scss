@@ -1,0 +1,257 @@
+@import '@/assets/scss/foundations/variables.scss';
+@import '@/assets/scss/foundations/mixin.scss';
+
+$header-spacing: calc($spacing-root * 4) calc($spacing-root * 6);
+
+//font-size
+$font-xlarge: 2.6rem;
+$font-large: 2rem;
+$font-medium: 1.8rem;
+$font-small: 1.6rem;
+$font-xsmall: 1.4rem;
+
+$header1-size: 2.6rem;
+$header2-size: $font-xlarge;
+$header3-size: $font-large;
+
+/* header 공통 */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: $header-spacing;
+  height: $header-height;
+
+  background: $white;
+  transition: all ease 0.2s 0s;
+  .header_myinfo {
+    display: flex;
+    gap: 1.5rem;
+
+    .btn_back {
+      width: 4rem;
+      height: 4rem;
+      background: url('@/assets/images/common/ico_back_b.svg') no-repeat center center/contain;
+    }
+    .txt_info {
+      padding: 0.6rem 0;
+      // @include font_header1($white);
+      font-size: $header1-size;
+      font-weight: $font-weight-bold;
+      line-height: 3.2rem;
+      letter-spacing: 0;
+      color: $white;
+    }
+    .ico_member {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 3rem;
+      }
+      .txt_member {
+        // @include font_header3($white);
+        font-size: $header3-size;
+        font-weight: $font-weight-bold;
+        line-height: 2.6rem;
+        letter-spacing: 0;
+        color: $white;
+        .txt_sub {
+          font-weight: 400;
+        }
+      }
+    }
+    /**
+    전체 리사이즈 전 임시 소스
+     */
+    .v-btn--size-small {
+      font-size: 1.6rem !important;
+    }
+  }
+  .mydata_list {
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+
+    li,
+    span {
+      // @include font_header2($white);
+
+      font-size: $font-large;
+      font-weight: $font-weight-bold;
+      line-height: 2.8rem;
+      letter-spacing: 0;
+      color: $white;
+
+      padding: 0.8rem 2rem;
+    }
+
+    li {
+      position: relative;
+    }
+    button {
+      em {
+        font-weight: var(--weight-bold);
+      }
+
+      .ico {
+        display: inline-block;
+        width: 3.2rem;
+        height: 3.2rem;
+
+        &.bookmark {
+          background: url('@/assets/images/common/ico_bookmark.svg') no-repeat center center/contain;
+          background-position: 0 -0.3rem;
+        }
+      }
+    }
+  }
+}
+
+//teacher
+.teacher {
+  .header {
+    z-index: 3000;
+    //white
+    &.white {
+      .btn_log {
+        opacity: 0.7;
+      }
+      .ico_arrow {
+        border-top: 0.2rem solid $black;
+        border-right: 0.2rem solid $black;
+      }
+      .header_mydata {
+        button {
+          padding: 0 1.5rem;
+          &.ico {
+            &::before {
+              width: 6rem;
+              height: 6rem;
+              border-radius: 6rem;
+              border: 1px solid $black;
+              padding: 0 2rem;
+              margin-right: 0rem;
+              background-size: auto;
+            }
+          }
+          &.active {
+            em {
+              display: inline-flex;
+              margin-left: 1.2rem;
+            }
+
+            &.bookmark {
+              background: url('@/assets/images/common/ico_bookmark.svg') no-repeat center
+                center/contain;
+              background-position: 0 -0.3rem;
+              filter: $point-color-yellow;
+            }
+          }
+          em {
+            display: none;
+          }
+        }
+      }
+    }
+    //primary
+    &.primary {
+      background: $primary;
+      .btn_log {
+        opacity: 0.7;
+        background: transparent;
+        border: 1px solid $white;
+        color: $white !important;
+      }
+      .ico_arrow {
+        border-top: 0.2rem solid $white;
+        border-right: 0.2rem solid $white;
+      }
+      .header_myinfo {
+        .btn_back {
+          background: url('@/assets/images/common/ico_back_w.svg') no-repeat center center/contain;
+        }
+        .txt_info {
+          color: $white;
+          &::after {
+            display: none;
+          }
+        }
+      }
+      .mydata_list {
+        color: $white;
+        button {
+          &.active {
+            color: $point-color-yellow;
+
+            &::after {
+              content: '';
+              background: $point-color-yellow;
+              width: 0.8rem;
+              height: 0.8rem;
+              border-radius: 1rem;
+              position: absolute;
+              top: 0rem;
+              right: 0rem;
+            }
+            &.ico {
+              &::before {
+                filter: $point-color-yellow;
+              }
+            }
+          }
+          &.ico {
+            &::before {
+              filter: var(--color-white);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.student {
+  .header {
+    z-index: 3000;
+    background: transparent;
+
+    .header_myinfo {
+      .txt_info,
+      .txt_member {
+        color: $black;
+      }
+
+      .btn_log {
+        background: transparent;
+        color: #555 !important;
+      }
+    }
+
+    .header_mydata {
+      .mydata_list {
+        span,
+        button {
+          color: $point-color-black;
+          opacity: 0.4;
+          &.active {
+            opacity: 1;
+            color: $point-color-black;
+            &::after {
+              background: $point-color-black;
+              content: '';
+              width: 0.8rem;
+              height: 0.8rem;
+              border-radius: 1rem;
+              position: absolute;
+              top: 0rem;
+              right: 0rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

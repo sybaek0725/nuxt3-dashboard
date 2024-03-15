@@ -1,0 +1,70 @@
+@import '../foundations/variables.scss';
+
+.viewing_box_wrap {
+  padding: 0 3rem;
+  display: flex;
+  justify-content: center;
+  min-height: 57rem;
+  gap: 3.5rem;
+
+  &.close {
+    .tit_wrap {
+      .badge {
+        display: none;
+      }
+    }
+    .viewing_con_wrap {
+      .st_info_area {
+        .st_pho {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.type1 {
+    .viewing_list_wrap {
+      min-height: 57rem;
+      margin: 0;
+      padding: 3.2rem 3rem;
+      display: flex;
+      justify-content: center;
+      min-height: 57rem;
+      gap: 3.5rem;
+    }
+  }
+  &.type2 {
+    .viewing_list_wrap {
+      margin: 2rem 0 0 0 !important;
+      min-height: 48rem;
+    }
+  }
+  &.type3 {
+    .viewing_list_wrap {
+      min-height: 57rem;
+    }
+  }
+}
+
+.student_area {
+  .viewing_box_wrap {
+    width: 20%;
+    margin: 3.2rem 0rem;
+    .viewing_item_wrap {
+      width: 25%;
+      & + .viewing_item_wrap {
+        margin-left: 3.5rem;
+      }
+      .viewing_con_wrap {
+        .viewing_con_area {
+          .img_wrap {
+            height: 21rem;
+          }
+        }
+      }
+
+      .viewing_list_wrap {
+      }
+    }
+  }
+}

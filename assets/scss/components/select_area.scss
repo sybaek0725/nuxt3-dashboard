@@ -1,0 +1,52 @@
+@import '../foundations/variables.scss';
+@import '../foundations/mixin.scss';
+.select-area {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  .box {
+    flex: 1;
+    height: 26.8rem;
+    border: 0.1rem solid var(--black_555, #555);
+    border-radius: 0.6rem;
+    background: $white;
+    .head {
+      border-radius: 0.6rem 0.6rem 0 0;
+      height: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #d8d8d8;
+      @include font_body3($font-weight-bold);
+    }
+    .contents {
+      margin: 1rem 1rem 0 0;
+      padding: 0 1.4rem;
+      overflow-y: auto;
+      height: 18rem;
+
+      &::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #1e3257;
+        border-radius: 1rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 0 1.6rem 1.6rem 0;
+        background: #eee;
+      }
+    }
+
+    .no-contents {
+      height: 18.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include font_body3(#999);
+    }
+  }
+}

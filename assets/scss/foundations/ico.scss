@@ -1,0 +1,574 @@
+@import 'variables.scss';
+
+@mixin setIcon($icon_name) {
+  background: url('@/assets/images/common/ico/ico_#{$icon_name}.svg') no-repeat center
+    center/contain;
+}
+
+$icon-size: 0.4rem;
+$color-state-hover: var(--color-icon-hover);
+$color-state-disabled: var(--color-icon-disabled);
+$color-state-point1: var(--color-point1);
+$color-state-point2: var(--color-point2);
+
+.ico {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+
+  /**
+  * size 20X20
+  */
+  &.size_sm {
+    width: $icon-size * 5;
+    height: $icon-size * 5;
+  }
+
+  /**
+  * size 24X24
+  */
+  &.size_md {
+    width: $icon-size * 6;
+    height: $icon-size * 6;
+  }
+
+  /**
+  * size 30 * 30
+  */
+  &.size_lg {
+    width: $icon-size * 7.5;
+    height: $icon-size * 7.5;
+  }
+  /**
+  * size 40 * 40
+  */
+  &.size_10 {
+    width: $icon-size * 10;
+    height: $icon-size * 10;
+  }
+
+  /**
+  * size 60X60
+  */
+  &.size_15 {
+    width: $icon-size * 15;
+    height: $icon-size * 15;
+  }
+
+  /**
+  * size 80X80
+  */
+  &.size_20 {
+    width: $icon-size * 20;
+    height: $icon-size * 20;
+  }
+
+  /**
+  * size 100X100
+  */
+  &.size_25 {
+    width: $icon-size * 25;
+    height: $icon-size * 25;
+  }
+
+  /**
+  * filter
+  **/
+  &.ico_color_yellow {
+    filter: $color-state-point1;
+  }
+  &.ico_color_orange {
+    filter: $color-state-point2;
+  }
+
+  /**
+  * hover, disabled
+  **/
+  &.interaction {
+    &:hover {
+      filter: $color-state-hover;
+    }
+
+    &:disabled {
+      filter: $color-state-disabled;
+    }
+  }
+
+  /**
+  * icon name
+  **/
+  &.arrow_20 {
+    @include setIcon('arrow_20');
+  }
+
+  &.bullet_20 {
+    @include setIcon('bullet_20');
+  }
+
+  &.close_20 {
+    @include setIcon('close_20');
+  }
+
+  &.info_20 {
+    @include setIcon('info_20');
+  }
+
+  &.tool_text_24 {
+    @include setIcon('tool_text_24');
+  }
+
+  &.undo_24 {
+    @include setIcon('undo_24');
+  }
+
+  &.redo_24 {
+    @include setIcon('redo_24');
+  }
+
+  &.color_24 {
+    @include setIcon('color_24');
+  }
+
+  &.stroke_24 {
+    @include setIcon('stroke_24');
+  }
+
+  &.eraser_24 {
+    @include setIcon('eraser_24');
+  }
+
+  &.delete_24 {
+    @include setIcon('delete_24');
+  }
+
+  &.close_24 {
+    @include setIcon('close_24');
+  }
+
+  &.minus_24 {
+    @include setIcon('minus_24');
+  }
+
+  &.plus_24 {
+    @include setIcon('plus_24');
+  }
+
+  &.close2_24 {
+    @include setIcon('close2_24');
+  }
+
+  &.double_left_24 {
+    @include setIcon('double_left_24');
+  }
+
+  &.left_24 {
+    @include setIcon('left_24');
+  }
+
+  &.double_right_24 {
+    @include setIcon('double_right_24');
+  }
+
+  &.right_24 {
+    @include setIcon('right_24');
+  }
+
+  &.search_24 {
+    @include setIcon('search_24');
+  }
+
+  &.write_24 {
+    @include setIcon('write_24');
+  }
+
+  &.language_24 {
+    @include setIcon('language_24');
+  }
+
+  &.upload_24 {
+    @include setIcon('upload_24');
+  }
+
+  &.check_24 {
+    @include setIcon('check_24');
+  }
+
+  &.book_24 {
+    @include setIcon('book_24');
+  }
+
+  &.video_24 {
+    @include setIcon('video_24');
+  }
+  &.delete_30 {
+    @include setIcon('delete_30');
+  }
+  &.plus_30 {
+    @include setIcon('plus_30');
+  }
+  &.check3_30 {
+    @include setIcon('check3_30');
+  }
+  &.check2_30 {
+    @include setIcon('check2_30');
+  }
+  &.check4_30 {
+    @include setIcon('check4_30');
+  }
+  &.fullscreen_30 {
+    @include setIcon('fullscreen_30');
+  }
+  &.link_30 {
+    @include setIcon('link_30');
+  }
+  &.search2_30 {
+    @include setIcon('search2_30');
+  }
+  &.book2_30 {
+    @include setIcon('book2_30');
+  }
+  &.document_30 {
+    @include setIcon('document_30');
+  }
+  &.graph_30 {
+    @include setIcon('graph_30');
+  }
+  &.calandar_30 {
+    @include setIcon('calandar_30');
+  }
+  &.gauge_30 {
+    @include setIcon('gauge_30');
+  }
+  &.language_30 {
+    @include setIcon('language_30');
+  }
+  &.link2_30 {
+    @include setIcon('link2_30');
+  }
+  &.write2_30 {
+    @include setIcon('write2_30');
+  }
+  &.hide_30 {
+    @include setIcon('hide_30');
+  }
+  &.signout_30 {
+    @include setIcon('signout_30');
+  }
+  &.volume_30 {
+    @include setIcon('volume_30');
+  }
+  &.mute_30 {
+    @include setIcon('mute_30');
+  }
+  &.sound_30 {
+    @include setIcon('sound_30');
+  }
+  &.sound2_30 {
+    @include setIcon('sound2_30');
+  }
+  &.mic_30 {
+    @include setIcon('mic_30');
+  }
+  &.mic_off_30 {
+    @include setIcon('mic_off_30');
+  }
+  &.sound_off_30 {
+    @include setIcon('sound_off_30');
+  }
+  &.check_30 {
+    @include setIcon('check_30');
+  }
+  &.arrow_up_30 {
+    @include setIcon('arrow_up_30');
+  }
+  &.arrow_down_30 {
+    @include setIcon('arrow_down_30');
+  }
+  &.arrow_up2_30 {
+    @include setIcon('arrow_up2_30');
+  }
+  &.arrow_down2_30 {
+    @include setIcon('arrow_down2_30');
+  }
+  &.right_30 {
+    @include setIcon('right_30');
+  }
+  &.left_30 {
+    @include setIcon('left_30');
+  }
+  &.print_30 {
+    @include setIcon('print_30');
+  }
+  &.write_30 {
+    @include setIcon('write_30');
+  }
+  &.screen_small_30 {
+    @include setIcon('screen_small_30');
+  }
+  &.screen_big_30 {
+    @include setIcon('screen_big_30');
+  }
+  &.wifi_30 {
+    @include setIcon('wifi_30');
+  }
+  &.wifi_reset_30 {
+    @include setIcon('wifi_reset_30');
+  }
+  &.wifi_disconnected_30 {
+    @include setIcon('wifi_disconnected_30');
+  }
+  &.avatar_30 {
+    @include setIcon('avatar_30');
+  }
+  &.rec_30 {
+    @include setIcon('rec_30');
+  }
+  &.search_30 {
+    @include setIcon('search_30');
+  }
+  &.close_30 {
+    @include setIcon('close_30');
+  }
+  &.arrow_s_down_30 {
+    @include setIcon('arrow_s_down_30');
+  }
+  &.arrow_s_up_30 {
+    @include setIcon('arrow_s_up_30');
+  }
+  &.function_down_30 {
+    @include setIcon('funcion_down_30');
+  }
+  &.function_up_30 {
+    @include setIcon('funcion_up_30');
+  }
+  &.book_30 {
+    @include setIcon('book_30');
+  }
+  &.add_30 {
+    @include setIcon('add_30');
+  }
+  &.warning_30 {
+    @include setIcon('warning_30');
+  }
+  &.tool_text_30 {
+    @include setIcon('tool_text_30');
+  }
+  &.tool_undo_30 {
+    @include setIcon('tool_undo_30');
+  }
+  &.tool_redo_30 {
+    @include setIcon('tool_redo_30');
+  }
+  &.tool_color_30 {
+    @include setIcon('tool_color_30');
+  }
+  &.tool_stroke_30 {
+    @include setIcon('tool_stroke_30');
+  }
+  &.tool_eraser_30 {
+    @include setIcon('tool_eraser_30');
+  }
+  &.tool_delete_30 {
+    @include setIcon('tool_delete_30');
+  }
+  &.download_30 {
+    @include setIcon('download_30');
+  }
+  &.close_30 {
+    @include setIcon('close_30');
+  }
+  &.clip_30 {
+    @include setIcon('clip_30');
+  }
+  &.save_30 {
+    @include setIcon('save_30');
+  }
+  &.send_30 {
+    @include setIcon('send_30');
+  }
+  &.monitor_send_30 {
+    @include setIcon('monitor_send_30');
+  }
+  &.delete2_30 {
+    @include setIcon('delete2_30');
+  }
+  &.flag_30 {
+    @include setIcon('flag_30');
+  }
+  &.flag_30 {
+    @include setIcon('flag_30');
+  }
+  &.book_40 {
+    @include setIcon('book_40');
+  }
+  &.bookmark_40 {
+    @include setIcon('bookmark_40');
+  }
+  &.clip_40 {
+    @include setIcon('clip_40');
+  }
+  &.clip2_40 {
+    @include setIcon('clip2_40');
+  }
+  &.graph_40 {
+    @include setIcon('graph_40');
+  }
+  &.setting_40 {
+    @include setIcon('setting_40');
+  }
+  &.class_40 {
+    @include setIcon('class_40');
+  }
+  &.calculator_40 {
+    @include setIcon('calculator_40');
+  }
+  &.journal_40 {
+    @include setIcon('journal_40');
+  }
+  &.picture_40 {
+    @include setIcon('picture_40');
+  }
+  &.video_40 {
+    @include setIcon('video_40');
+  }
+  &.search_x_40 {
+    @include setIcon('search_x_40');
+  }
+  &.write_40 {
+    @include setIcon('write_40');
+  }
+  &.write_40 {
+    @include setIcon('arrow_40');
+  }
+  &.arrow_40 {
+    @include setIcon('write_40');
+  }
+  &.book_open_40 {
+    @include setIcon('book_open_40');
+  }
+  &.search_40 {
+    @include setIcon('search_40');
+  }
+  &.mute_40 {
+    @include setIcon('mute_40');
+  }
+  &.mike_on_40 {
+    @include setIcon('mike_on_40');
+  }
+  &.mike_off_40 {
+    @include setIcon('mike_off_40');
+  }
+  &.sound_on_40 {
+    @include setIcon('sound_on_40');
+  }
+  &.sound_off_40 {
+    @include setIcon('sound_off_40');
+  }
+  &.plus_40 {
+    @include setIcon('plus_40');
+  }
+  &.learning_40 {
+    @include setIcon('learning_40');
+  }
+  &.wifi_disconnected_40 {
+    @include setIcon('wifi_disconnected_40');
+  }
+  &.photo_40 {
+    @include setIcon('photo_40');
+  }
+  &.bookmark_on_40 {
+    @include setIcon('bookmark_on');
+
+    &.active {
+      @include setIcon('bookmark_off');
+    }
+  }
+  &.bookmark_off_40 {
+    @include setIcon('bookmark_off');
+  }
+  &.check_60 {
+    @include setIcon('check_60');
+  }
+  &.check_button_60 {
+    @include setIcon('check_button_60');
+  }
+  &.plus_60 {
+    @include setIcon('plus_60');
+  }
+  &.minus_60 {
+    @include setIcon('minus_60');
+  }
+  &.subject_60 {
+    @include setIcon('subject_60');
+  }
+  &.calandar_80 {
+    @include setIcon('calandar_80');
+  }
+  &.cloud_80 {
+    @include setIcon('cloud_80');
+  }
+  &.subject_80 {
+    @include setIcon('subject_80');
+  }
+  &.wifi_disconnected_80 {
+    @include setIcon('wifi_disconnected_80');
+  }
+  &.close_circle_80 {
+    @include setIcon('close_circle_80');
+  }
+  &.link_80 {
+    @include setIcon('link_80');
+  }
+  &.bookmark_empty_80 {
+    @include setIcon('bookmark_empty_80');
+  }
+  &.book_80 {
+    @include setIcon('book_80');
+  }
+  &.upload_80 {
+    @include setIcon('upload_80');
+  }
+  &.print_100 {
+    @include setIcon('print_100');
+  }
+  &.book_100 {
+    @include setIcon('book_100');
+  }
+  &.search_100 {
+    @include setIcon('search_100');
+  }
+  &.variant4_100 {
+    @include setIcon('variant4_100');
+  }
+  &.graduation_100 {
+    @include setIcon('graduation_100');
+  }
+  &.dashboard1_100 {
+    @include setIcon('dashboard1_100');
+  }
+  &.bookmark_100 {
+    @include setIcon('bookmark_100');
+  }
+  &.monitor_send_100 {
+    @include setIcon('monitor_send_100');
+  }
+  &.monitor_view_100 {
+    @include setIcon('monitor_view_100');
+  }
+  &.search_file_100 {
+    @include setIcon('search_file_100');
+  }
+  &.whiteboard_100 {
+    @include setIcon('whiteboard_100');
+  }
+  &.nuri_100 {
+    @include setIcon('nuri_100');
+  }
+  &.search_doc {
+    @include setIcon('search_doc');
+  }
+
+  &.hamberger {
+    @include setIcon('hamberger');
+  }
+}
