@@ -1,0 +1,121 @@
+@import '../foundations/variables.scss';
+@import '../foundations/color.scss';
+@import '../foundations/mixin.scss';
+
+$footer-font-color : #ED0000;
+
+.date_picker_slot{
+  .date_selector{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    .start_date, 
+    .end_date{
+      width: 21rem;
+      border: 1px solid $point-color-blue;
+      border-radius: 100rem;
+      padding: 1.35rem 2rem;
+      display: flex;
+      
+    }
+    input{
+      max-width: 13.5rem;
+      font-size: 2rem;                  
+      cursor: pointer;      
+      &:focus{
+        outline: none;
+      }
+    }
+    i{
+      cursor: pointer;
+    }
+  }
+  .vc-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .vc-title{
+    font-size: 2.2rem;
+  }
+  .vc-popover-content{
+    margin-top: 0rem;
+    border-radius: 1rem !important;
+  }
+  .vc-container{
+    border: 1px solid $DB300 !important;
+    border-radius: 1rem !important;
+  }
+  .vc-weeks{
+    border-bottom: none !important;
+  }
+  .vc-week{
+    justify-items: center;
+  }
+  .vc-day {
+    width: 4rem;
+    height: 4rem;
+    min-height: auto;
+    background: transparent;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    &.is-not-in-month{
+      .vc-day-content{
+        color: #D5D5D5;
+      }
+    }
+    &:hover{
+      background-color: $line-basic;
+      color: $white;
+      border-radius: 50%;
+      .vc-highlight-content-solid,
+      .vc-highlight-bg-solid,
+      .vc-highlight-base-middle
+      {
+        background-color: $line-basic;
+      }
+    }
+    .vc-day-content{
+      @include font_body4;
+    }
+    // select
+    .vc-highlight-content-solid{
+      background-color: $primary;
+      color: $white;
+    }
+    .vc-highlight-bg-solid{
+      background-color: $primary;
+    }
+    // period
+    .vc-highlights{
+      border-radius: 50%;
+      .vc-highlight {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    .vc-highlight-base-middle{
+      background-color: $B100;
+    }
+    .vc-highlight-content-light{
+      color: $white;
+    }
+  }
+  .vc-popover-caret{
+    display: none;
+  }
+
+  .footer_text{
+    padding: 1rem 2rem 3rem;
+    p{
+      width: 36rem;
+      border-top: 1px solid $line-basic;
+      padding-top: 1.4rem;
+      span{
+        @include font_body4($font-weight-medium, $footer-font-color);
+        padding-left: 1rem;
+      }
+    }
+  }
+}

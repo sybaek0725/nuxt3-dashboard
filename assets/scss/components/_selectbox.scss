@@ -1,0 +1,82 @@
+//select-box
+.v-select {
+  .v-input__control {
+    .v-field__outline {
+      border: 1px solid $point;
+    }
+  }
+  &.v-select--active-menu {
+    .v-field__outline {
+      border: 0.2rem solid $point;
+    }
+  }
+  .v-field__input{
+    > input{
+      padding-bottom: 0.65rem;
+    }
+  }
+}
+.v-select--single {
+  .v-input__control {
+    height: 5.5rem !important;
+  }
+  .v-field__field {
+    align-items: center;
+  }
+  .v-field__overlay {
+    background: $white;
+  }
+  .v-field {
+    --v-field-input-padding-top: 0;
+    --v-field-input-padding-bottom: 0;
+  }
+
+  .v-select__selection-text {
+    @include font_body1;
+  }
+
+  .v-select__selection--comma {
+    background: #000 !important;
+  }
+
+  .mdi-menu-down::before {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: url('@/assets/images/common/ico_select_arrow.svg') no-repeat center/contain;
+  }
+}
+
+.v-select__content {
+  box-shadow: none !important;
+}
+
+.v-menu {
+  .v-overlay__content {
+    .v-list {
+      border-radius: 0rem !important;
+      position: relative !important;
+      box-shadow: none !important;
+      border: 1px solid $point !important;
+      border-radius: 2.5rem !important; 
+      &::-webkit-scrollbar {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.v-list-item {
+  width: inherit !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  &:hover {
+    background-color: #ecf3f6 !important;
+  }
+
+  &.v-list-item--active {
+    background-color: $bg-blue;
+  }
+}

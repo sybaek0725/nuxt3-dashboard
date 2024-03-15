@@ -1,0 +1,209 @@
+.contents_title {
+  display: flex;
+  align-items: center;
+  padding: 1.45rem 0 2.45rem;
+  margin-bottom: 1.5rem;
+  @include font_body2($font-weight-medium, $font-darken);
+
+  &.no_padding {
+    padding: 0;
+  }
+  &.en_pd{
+    margin: 1rem 0 1.5rem;
+    min-height: 5.5rem;
+  }
+  &.mb7{
+    margin-bottom: 0.7rem;
+  }
+
+  em {
+    display: flex;
+    align-items: center;
+    font-weight: $font-weight-bold;
+
+    &.no_divider {
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: inline-flex;
+      background: $line-basic;
+      width: 0.1rem;
+      height: 2rem;
+      margin: 0 1.5rem;
+    }
+
+    &.point_color {
+      color: $point-color-blue !important;
+      padding-left: 0.5rem;
+    }
+  }
+
+  &.title_border {
+    &.btm {
+      border-bottom: 1px solid $line-basic;
+    }
+    .title_txt {
+      @include font-header2;
+    }
+    .round_txt {
+      background: $DB900;
+      @include font-body4($font-color: $white);
+      padding: 0.65rem 2.85rem;
+      border-radius: 15rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &.bullet_title {
+    color: $font-basic;
+    gap: 1rem;
+    padding: 1rem 0;
+
+    em {
+      color: $font-darken;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background-color: var(--Color-BG-Color-Darken, #171717);
+      margin-top: 0.2rem;
+      @each $key, $value in $file-color-list {
+        &.bullet_title_#{$key} {
+          background-color: $value;
+          //color: $white;
+        }
+      }
+    }
+  }
+
+  &.no_line {
+    em {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .with_ico{
+    margin-right: 1rem;
+  }
+
+  // back 버튼 + page state 컴포넌트와 함께 사용
+  $num-bg-light-blue: #f1fafd;
+
+  &.side_align {
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+  } 
+  .btn_back {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    em {
+      width: 3rem;
+      height: 3rem;
+      background: url('@/assets/images/common/ico_back_w.svg') no-repeat center/contain;
+      filter: var(--color-black);
+    }
+    @include font-header3;
+  }
+  .num_step_box {
+    display: inline-flex;
+    align-items: center;
+    li {
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      &::before {
+        content:'';
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      span {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include font-body3($font-weight-bold);
+      }
+      &.past {
+        background: $num-bg-light-blue;
+        &:first-child {
+          border-radius: 50% 0 0 50%;
+        }
+      }
+      &.active {
+        background: $num-bg-light-blue;
+        border-radius: 0 50% 50% 0;
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+          color: $white;
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%;
+          background: $B500;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 0;
+        }
+      }
+      &.pass {
+        &::before {
+          background: url('@/assets/images/common/ico_correct.svg') no-repeat center;
+          background-size: contain;
+        }
+      }
+      &.fail {
+        &::before {
+          background: url('@/assets/images/common/ico_incorrect.svg') no-repeat center;
+          background-size: contain;
+        }
+      }
+      &.try {
+        &::before {
+          background: url('@/assets/images/common/ico_triangle2.svg') no-repeat center;
+          top: 38%;
+        }
+      }
+    }
+  }
+  + .between_txt {
+    @include font-body4($font-weight-bold, $font-color: $B500);
+    margin-bottom: 1rem
+  }
+
+  .sub_tit{
+    @include font_body4($font-weight-medium, $point-color-gray);
+  }
+  .point_tit{
+    @include font_header2;
+    color: $point-color-blue;
+  }
+}

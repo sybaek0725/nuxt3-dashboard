@@ -1,0 +1,25 @@
+{
+	"ts-js comment": {
+		"prefix": "tt",
+		"body": [
+			"${BLOCK_COMMENT_START}",
+			"@파일(Method): ${TM_FILENAME}",
+            "@작성자: ",
+			"@작성일: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}",
+			"@설명: ",
+			"@수정: ",
+			"${BLOCK_COMMENT_END}"
+		],
+		"description": "ts-js comment"
+	},
+
+    "todo comment": {
+		"prefix": "ttd",
+		"body": [
+            "${BLOCK_COMMENT_START}",
+            "${1|NOTE:,TODO:,CHECKLIST:,FIXME:|}",
+            "${BLOCK_COMMENT_END}"
+		],
+		"description": "todo comment"
+	}
+}

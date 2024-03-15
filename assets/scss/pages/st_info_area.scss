@@ -1,0 +1,117 @@
+@import '../foundations/mixin.scss';
+
+$spacing_10: 1rem;
+// 삭제 예정
+.st_info_area {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing_10;
+  border-radius: 6.6rem;
+  height: 7rem;
+  min-width: 21rem;
+  &.active {
+    background: #c2e1ee;
+    padding: $spacing_10;
+    border-radius: 6.6rem;
+  }
+  .st_pho_ico01,
+  .st_pho_ico02 {
+    position: absolute;
+    top: 2.2rem;
+    left: -2.5rem;
+    width: 5rem;
+    height: 4.5rem;
+  }
+  //badge
+  .st_pho_ico01 {
+    background: url('@/assets/images/common/st_pho_ico01s.svg') no-repeat center center/contain;
+  }
+  .st_pho_ico02 {
+    background: url('@/assets/images/common/st_pho_ico02s.svg') no-repeat center center/contain;
+  }
+  &.empty_list {
+    display: flex;
+    height: 7rem;
+    padding: var(--Spacing-spacing_10, 1rem);
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 1px dashed var(--Color-Line-Color-Line-Darken, #373737);
+    &:hover {
+      background: transparent;
+      box-shadow: none;
+    }
+    .txt_name {
+      font-size: $font-medium;
+    }
+  }
+  &.active {
+    background: $point1;
+  }
+  .st_pho {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    border: 1px solid $point;
+
+    img {
+      border-radius: 6.6rem;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .st_pho_ico01,
+    .st_pho_ico02 {
+      position: absolute;
+      top: -1rem;
+      left: -2rem;
+      width: 3.4rem;
+      height: 3.4rem;
+    }
+    .st_pho_ico01 {
+      background: url('@/assets/images/common/st_pho_ico01.svg');
+      background-size: contain;
+    }
+    .st_pho_ico02 {
+      background: url('@/assets/images/common/st_pho_ico02.svg');
+      background-size: contain;
+    }
+  }
+  .txt_num {
+    @include font_body3($font-weight-bold, $point);
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+  }
+  .txt_name {
+    font-size: $font-medium;
+    @include font_body3($font-weight-bold, $font-darken);
+    flex: 1;
+    text-align: left;
+  }
+  .ico_event_flag01 {
+    width: 7rem;
+    height: 6.1rem;
+    display: inline-flex;
+    background: url('@/assets/images/student/ico_event_flag01.svg') no-repeat center center/contain;
+  }
+
+  &.custom {
+    margin: 0 0 -3rem 6.5rem;
+    &_carousel {
+      height: fit-content;
+      padding: 0;
+      margin: 0 0 -0.4rem 6rem;
+      .txt_num {
+        margin: 0 1rem;
+        @include font_body5($font_weight_medium, $point-color-blue);
+      }
+      .txt_name {
+        @include font_body4($font_weight_bold);
+      }
+    }
+  }
+}

@@ -1,0 +1,983 @@
+$note-titlebox-color: #d2d9e8;
+$note-bannerbox-color: #636dc4;
+$note-calendar-ling: #86B9CE;
+$btn-box-bg: #1E325780;
+$table-wrong-bg: #FBEAE9;
+$table-wrong-font: #ED0000;
+$stdent-active-score-bg: #F5F6FA;
+
+.ma_note{
+  display: flex;
+  &.full_h{
+    height: 100%;
+  }
+  &.pb30{
+    padding-bottom: 3rem;
+  }
+  &.direction_col{
+    flex-direction: column;
+  }
+  
+  .section_datepicker {
+    margin: 0 2rem 3rem 0;
+    flex-shrink: 0;
+    &.rounding{
+      border: 1px solid $note-calendar-ling;
+      border-radius: 1rem;
+      background: $white;
+      .datepicker{
+        border-radius: 1rem;
+      }
+    }
+  }
+  .section_photo_homework {
+    padding: 0 0 3rem 3rem;
+    margin-left: 1rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-start;
+    flex-grow: 1;
+    &.no_line{
+      border: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  .title_box {
+    padding: 1.5rem 2rem;
+    background: $note-titlebox-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 100%;
+    @include font-header3;
+    margin-bottom: 3rem;
+
+    &.with_btn { // 버튼과 함께 쓰일 경우
+      position: relative;
+      .txt {
+        display: block;
+        width: calc(100% - 11rem);
+        font-weight: $font-weight-medium;
+        > span{
+          &:first-child{
+            &::after{
+              content: '';
+              display: inline-flex;
+              border: 1px solid $line-darken;
+              height: 1.8rem;
+              margin: 0 0.5rem 0 1.5rem;
+            }
+          }
+        }
+      }
+      .btn_toggle {
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .banner_box {
+    background: $note-bannerbox-color;
+    border-radius: 0.5rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.7rem 0;
+    @include font-header3($font-color: $white);
+    .ico_tit_phone {
+      width: 7.546rem;
+      height: 5.8rem;
+      background: url('@/assets/images/student/ico_tit_phone.svg') no-repeat;
+      background-size: contain;
+      position: absolute;
+      bottom: 0;
+      left: 12.1rem;
+    }
+    .date {
+      margin-right: 1rem;
+    }
+    .secondary {
+      color: var(--Primary_Yellow, #ffd748);
+      font-weight: var(--weight-bold);
+      margin-left: 1rem;
+      em {
+        position: relative;
+        font-weight: var(--weight-bold);
+        &::after {
+          content: '*';
+          position: absolute;
+          top: -1.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  .landing_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .no_data_area {
+    width: 100%;
+  }
+  .img_upload_wrap {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    padding: 0 11.5rem;
+    &.flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      .btn_upload {
+        width: 100%;
+        border-radius: 1.2rem;
+        .ico_outer {
+          margin: 0 auto;
+        }
+      }
+      .message_wrap {
+        display: flex;
+      }
+      
+    }
+    .upload_area {
+      width: 50%;
+    }
+    .message_wrap {
+      min-height: 32rem;
+      margin: 0;
+      padding: 5rem 9rem;
+      flex-direction: column;
+      gap: 3rem;
+      .ico {
+        width: 8rem;
+        &::before {
+          display: none;
+        }
+      }
+      p {
+        @include font-body1;
+        width: 100%;
+      }
+      em {
+        @include font-body4($font-color: $darkgray);
+        margin-top: 1rem;
+        display: block;
+      }
+    }
+    .btn_upload {
+      border: 2px dashed $black;
+      &.line {
+        border: 1px solid $black;
+      }
+    }
+  }
+  .viewer_box {
+    // height: calc(100% - 12rem);
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    .img_box {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      width: 100%;
+      padding: 3rem 27rem 0;
+      position: relative;
+      .stamp_img{
+        position: absolute;
+        bottom: 2rem;
+        right: 30rem;
+        width: 15rem;
+        height: 15rem;
+        z-index: 3;
+      }
+      img {
+        border-radius: 0.6rem;
+      }
+      &.no_pd_y{
+        padding: 3rem 0 0 0;
+      }
+      &.img_border{
+        img{
+          border: 1px solid $font-basic;
+        }
+      }
+    }
+    .pagination_wrap{
+      height: fit-content;
+      &.indicator{
+        margin-top: 3rem;
+        margin-bottom: 0;
+        padding: 0;
+        justify-content: flex-end
+      }
+    }
+    .bottom_btn_wrap {
+      padding: 3rem 0 0 0;
+      &.hide{
+        opacity: 0;
+      }
+      &.pt14{
+        padding-top: 1.4rem;
+      }
+    }
+    &.with_indi {
+      .img_box {
+        height: calc(100% - 14rem);
+      }
+    }
+    &.with_btn {
+      .img_box {
+        height: calc(100% - 19.6rem);
+      }
+    }
+    .stamp {
+      position: absolute;
+      width: 15rem;
+      height: 15rem;
+      bottom: 4rem;
+      right: 7rem;
+      background: url('@/assets/images/common/ico_stamp02.svg') no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .section_mission {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    &.column {
+      gap: 0;
+      height: auto;
+    }
+
+    .sub_tit {
+      @include font_body3($font-weight-bold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 5rem;
+      background: $black;
+      padding: 0 2rem;
+      border-top-right-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      .txt_st {
+        color: $white;
+      }
+      .txt_num {
+        color: $orange;
+      }
+    }
+
+    &.column {
+      flex-direction: column;
+      .sub_tit {
+        display: flex;
+        width: 26rem;
+        padding: 1.6rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;
+        background: $DB900;
+      }
+    }
+
+    .mission {
+      position: relative;
+      border: 1px solid $line-basic;
+      border-radius: 0.5rem;
+      background: $white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .list {
+        height: 100%;
+        overflow-y: auto;
+        padding: 2rem;
+        &.no_data{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+        }
+        .info{
+          &.full{
+            width: 100%;
+          }
+        }
+        &.all_submit{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+        }
+        .name{
+          .txt_num, .txt_name {
+            @include font_body3($font-weight-bold, $point-color-blue);
+            margin-left: 0.5rem;
+          }
+          .txt_name {
+            color: $font-darken;
+          }
+        }
+      }
+      .box_stamp{
+        padding: 1.2rem 0;
+        background: $btn-box-bg;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .v-btn{
+          box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+        }
+        .note_btn_disabled{
+          opacity: 1 !important;
+          border-color: $line-basic;
+          background: $bg-light;
+          color: $font-disabled;
+        }
+        &.position_btm{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+
+      &.rules {
+        display: inline-flex;
+        padding: 4rem;//5rem 7rem
+        align-items: flex-start;
+        border-radius: 0 1rem 1rem 1rem;
+        border: 1px solid $G800;
+        background: $white;
+
+        .custom-counter {
+          counter-reset: section;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;//3rem
+          list-style: none;
+
+          li {
+            @include font_body2;
+            display: flex;
+            align-items: flex-start;//center
+            padding-top: 1rem;
+            &::before {
+              display: flex;
+              width: 4rem;
+              height: 4rem;
+              margin-right: 1.5rem;
+              margin-top: -0.8rem;
+              color: #fff;
+              justify-content: center;
+              align-items: center;
+              flex-shrink: 0;
+              border-radius: 50%;
+              background: $DB300;
+              counter-increment: section;
+              content: counter(section);
+            }
+          }
+        }
+      }
+
+      &.submission {
+        width: 66%;
+        &.lg{
+          width: 75%;
+        }
+        .list {
+          ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem 2rem;
+            li {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              .box_img {
+                position: relative;
+                width: 22rem;
+                height: 22rem;
+                overflow: hidden;
+                margin-bottom: 1rem;
+                .v-checkbox {
+                  position: absolute;
+                  top: 0;
+                  left: 1rem;
+                }
+                .good_stamp{
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  width: 55%;
+                  height: auto;
+                  transform: translate(-50%, -50%);
+                }
+              }
+              .name {
+                width: 100%;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      &.unsubmission {
+        width: 33%;
+        &.sm{
+          width: 24%;
+        }
+        .list {
+          li {
+            display: flex;
+            padding: 0 0 1rem 0;
+            align-items: center;
+            justify-content: space-between;
+
+            .name {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+
+              .txt_num {
+                @include font_body3($font-weight-bold, $point);
+              }
+
+              .txt_name {
+                @include font_body3($font-weight-bold);
+              }
+            }
+          }
+        }
+      }
+
+      .table {
+        height: 72rem;
+        overflow-y: auto;
+        padding: 3rem 2rem 0;
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.2rem;
+          em {
+            @include font_body5;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #169bd4;
+          }
+        }
+
+        .stamp {
+          display: inline-block;
+          width: 6.4rem;
+          height: 6.4rem;
+          background: url('../images/teacher/table_stamp.svg') no-repeat center center/contain;
+        }
+      }
+      .empty {
+        height: 72rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        i.icon-book {
+          width: 10rem;
+          height: 10rem;
+          background: url('@/assets/images/common/ico_book_empty.svg') no-repeat 0 0 / contain;
+        }
+      }
+    }
+
+    .check {
+      width: 4rem;
+    }
+  }
+
+  .note_setting{
+    background: $white;
+    border: 1px solid $line-darken;
+    border-radius: 0.5rem;
+    padding: 3rem;
+    position: absolute;
+    width: 100%;
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      li{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          background-color: $bg-darken;
+        }
+        > span{
+          padding-right: 2rem;
+          @include font_body2;
+        }
+        .select_box_wrap{
+          width: 21.5rem;
+        }
+        .note_date_btn{
+          font-size: 2.2rem !important;
+          min-width: 5.5rem !important;
+          min-height: 5.5rem !important;
+          .v-btn__content {
+            margin-left: -0.3rem;
+          }
+          &.selected{
+            background: $primary;
+            color: $white !important;
+            border-color:  $primary;
+          }
+        }
+        .text_field_box{
+          width: 44.5rem;
+        }
+      }
+    }
+    .bottom_btn_wrap{
+      padding: 4rem 0 0;
+    }
+  }
+
+  .note_select{
+    width: 50rem;
+  }
+
+  .no_complete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    height: 100%;
+  }
+  .note_panel_list{
+    margin-top: 1.5rem;
+    padding-bottom: 3rem;
+    li{
+      margin-bottom: 1rem;
+      .v-expansion-panel{
+        border-radius: 0.5rem;
+        .v-expansion-panel__shadow{
+          box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.05) !important;
+        }
+        .expension_panel_title_wrap{
+          margin-right: 0 !important;
+          .v-expansion-panel-title{
+            display: grid;
+            grid-template-columns: 1fr 10fr 1fr;
+            padding: 2rem 3rem;
+            border: 1px solid $bg-light;
+          }
+            margin-right: 3rem;
+          .v-expansion-panel-title-head{
+            flex-direction: row;
+            height: auto;  
+            justify-content: flex-start;
+            p{
+              @include font_header3;
+              &.round_chip{
+                padding: 1rem 2rem;
+                background: $bg-blue;
+                border: 1px solid $point-color-blue;
+                border-radius: 10rem;
+                color: $point-color-blue;
+              }
+            }
+          }
+          .v-expansion-panel-title-body{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            width: 100%;
+            padding-right: 5.5rem;
+            &.pd10{
+              padding-right: 1.2rem;
+            }
+            span{
+              @include font_body3($font-weight-medium, $font-basic);
+            }
+            p{
+              @include font_header2;
+              padding-top: 0.5rem;
+            }
+            .student_info{
+              background: $bg-light;
+              border-radius: 0.5rem;
+              padding: 1.5rem 7.3rem 1.5rem 2rem;
+              display: flex;
+              align-items: center;
+              gap: 1.5rem;
+              p{
+                @include font_body3;
+                padding: 0;
+                &:first-child{
+                  margin-bottom: 1rem;
+                  span{
+                    color: $point-color-blue;
+                  }
+                }
+                &:last-child{
+                  span{
+                    color: $point-color-orange;
+                    &:first-child{
+                      &::after {
+                        content: '';
+                        display: inline-flex;
+                        background: $line-basic;
+                        width: 0.1rem;
+                        height: 2rem;
+                        margin: 0 0.3rem 0 1rem;
+                        vertical-align: bottom;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .v-expansion-panel-title__icon-wrap{
+            gap: 3rem;
+            span{
+              letter-spacing: -0.15rem;
+            }
+            .check_stamp{
+              width: 9rem;
+              height: 9rem;
+            }
+            .active_scroe{
+              padding: 1.6rem 2.4rem;
+              border-radius: 1.2rem;
+              background: $stdent-active-score-bg;
+              width: max-content;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              p{
+                width: 100%;
+                text-align: center;
+                @include font_body3;
+                &:last-child{
+                  padding-top: 0.8rem;
+                  font-weight: $font-weight-bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .note_table{
+    padding: 3rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    table {
+      table-layout: auto;
+      thead {
+        th {
+          height: 7rem;
+          border-right: 1px solid $white;
+          background: $bg-basic;
+          text-align: center;
+          @include font_body3($font-weight-bold);
+          .v-selection-control {
+            justify-content: center;
+          }
+        }
+      }
+      tbody {
+        td {
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          @include font_body3;
+          // border-right: 1px solid $bg-basic;
+          border-bottom: 1px solid $bg-basic;
+          background: $white;
+          &:first-child {
+            padding: 2rem 2.5rem;
+          }
+          &:nth-child(2) {
+            padding: 2.2rem 0;
+            font-weight: $font-weight-bold;
+            letter-spacing: -0.15rem;
+          }
+          &:nth-child(3),
+          &:nth-child(4) {
+            text-align: center;
+            padding: 2.3rem 0;
+          }
+          &:nth-child(5) {
+            padding: 1rem 3.5rem;
+          }
+        }
+      }
+    }
+    &.current_state{
+      padding: 0 1rem 3rem 0;
+      p{
+        text-align: right;
+        margin-bottom: 2.2rem;
+      }
+      thead {
+        th {
+          color: $white;
+          background: $font-light;
+        }
+      }
+      tbody {
+        td {
+          border-right: 1px solid $line-basic;
+          border-bottom: 1px solid $line-basic;
+          padding: 2.3rem 0 !important;
+          background: $bg-blue;
+          color: $point-color-blue;
+          &:first-child, 
+          &:nth-child(2),
+          &.empty {
+            background: $white;
+            color: $font-basic;
+          }
+          &:nth-child(2) {
+            font-weight: $font-weight-bold;
+            letter-spacing: 0;
+            color: $font-basic;
+          }
+          &.wrong{
+            background: $table-wrong-bg;
+            color: $table-wrong-font;
+          }
+        }
+      }
+    }
+  }
+
+  &.card_list_wrap {
+    flex-direction: column;
+    .sub_tit_wrap {
+      display: flex;
+      padding: 1.25rem 0;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.7rem;
+      @include font-header3
+    }
+  }
+  .card_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 4rem 7.75rem;
+    padding: 0 3rem;
+  }
+  .card_item {
+    position: relative;
+    .card_title {
+      text-align: center;
+      background: $B500;
+      border-radius: 1rem 1rem 0 0;
+      padding: 2.2rem 5rem;    
+      @include font-header3($font-color: $white);
+    }
+    .card_body {
+      padding: 3rem;
+      background: $white;
+      border-radius: 0 0 1rem 1rem;
+      border: 1px solid $G300;
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 7rem);
+      .type_bullet {
+        margin-bottom: 6.8rem;
+        li {
+          position: relative;
+          padding-left: 1rem;
+          @include font-body3; 
+          &::before {
+            content: '';
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: $G900;
+            position: absolute;
+            top: 1rem;
+            left: 0;
+          }
+          .bar {
+            min-width: 14rem;
+            display: inline-block;
+            position: relative;
+            &::after{
+              content: '';
+              //display: inline-block;
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 1px;
+              height: 2rem;
+              background: $G300;
+              margin: -0.1rem 1rem;
+            }
+          }
+          & + li {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+      .type_list {
+        li {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          padding: 1.5rem 0;
+          .ico {
+            width: 2rem;
+            height: 2rem;
+            margin-left: 1rem;
+          }
+          span {
+            font-weight: $font-weight-medium;
+            &.title {
+              @include font-body3($font-weight-bold);
+              min-width: 12rem;
+            }
+          }
+          & + li {
+            border-top: 1px solid $G200;
+          }
+        }
+      }
+      
+      .v-btn {
+        margin: 0 auto;
+        margin-top: auto;
+        em {
+          color: $Y900;
+        }
+      }
+    }
+    // 단원평가 및 이력이 없을 때
+    &.no_history {
+      .card_title {
+        background: $G300;
+        @include font-header3($font-color: $G700);
+      }
+      .card_body {
+        padding: 6.3rem 3rem;
+      }
+      .info {
+        width: 100%;
+      }
+    }
+    // 도장 찍힐 때
+    &.stamp {
+      &::after {
+        content: '';
+        width: 12rem;
+        height: 12rem;
+        background: url('@/assets/images/temp/img_stamp.png') no-repeat;
+        background-size: contain;
+        position: absolute;
+        bottom: 3rem;
+        right: 3rem;
+      }
+    }
+    // 과제 제출 후
+    &.previous {
+      .card_title {
+        background: $Y900;
+      }
+    }
+  }
+
+  // 내부콘텐츠 들어갈 시 스크롤 안생기게
+  .viewr_border_box { 
+    border: 1px solid #badbe9;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-basis: 100%;
+    overflow-y: auto;
+    img {
+      height: 100%;
+    }
+    // 결과 콘텐츠가 들어감
+    &.result {
+      align-items: center;
+      background: $B50;
+      .resultbox {
+        text-align: center;
+        img {
+          margin-bottom: 4rem;
+        }
+        p {
+          @include font-header2;
+        }
+        .bottom_btn_wrap {
+          padding: 0;
+          margin-top: 4rem;
+        }
+      }
+    }
+  }
+  .resize_box {
+    padding: 0 12.6rem;
+  }
+  
+  .top_bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

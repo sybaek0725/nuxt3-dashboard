@@ -1,0 +1,47 @@
+.font-header1 {
+  @include font_header1();
+}
+.font-header2 {
+  @include font_header2();
+}
+.font-header3 {
+  @include font_header3();
+}
+.font-body1 {
+  @include font_body1();
+}
+.font-body2 {
+  @include font_body2();
+}
+.font-body3 {
+  @include font_body3();
+}
+.font-body4 {
+  @include font_body4();
+}
+.font-body5 {
+  @include font_body5();
+}
+
+/**
+  font color variation function
+*/
+@each $key, $value in $font-color-list {
+  .font-color-#{$key} {
+    color: $value;
+  }
+}
+
+/**
+  font-weight
+ */
+.font-weight {
+  font-weight: normal;
+  &.font-weight-bold {
+    font-weight: bold;
+  }
+}
+
+.text_center {
+  text-align: center;
+}

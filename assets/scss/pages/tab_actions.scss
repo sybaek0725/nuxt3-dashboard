@@ -1,0 +1,90 @@
+.card_type {
+  .tab_head {
+    position: relative;
+
+    // &.tab_head_wide .v-btn {
+    //   padding: 0 10.5rem;
+    // }
+
+    // 탭 영역  border-btm
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0.1rem;
+      margin-top: -0.1rem;
+      z-index: 1 !important;
+      background: $black;
+    }
+    // .ab_right {
+    //   position: absolute;
+    //   top: 50%;
+    //   right: 0;
+    //   transform: translateY(-50%);
+    // }
+
+    button {
+      &:first-child {
+        border-top-left-radius: 1rem;
+      }
+      &:last-child {
+        border-top-right-radius: 1rem;
+      }
+      & + button {
+        border-left: 0 !important;
+      }
+      &.v-tab--selected {
+        background: $DB900;
+        color: $white;
+        .v-tab__slider {
+          height: 0 !important;
+        }
+      }
+    }
+  }
+  &.full {
+    .tab_head {
+      button {
+        flex: 1;
+      }
+    }
+  }
+
+  .tab_actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 6rem;
+    padding-left: 25rem;
+    position: absolute;
+    top: -6rem;
+    left: 0;
+    // gap: 1rem;
+
+    .left-divider {
+      position: relative;
+      padding-left: 1rem;
+      &::before {
+        display: inline-block;
+        content: '';
+        width: 1px;
+        margin-right: 1rem;
+        height: 2rem;
+        background: #aaa;
+        position: absolute;
+        top: -0.2rem;
+        left: 0;
+      }
+    }
+
+    span {
+      em {
+        font-weight: 700;
+      }
+    }
+  }
+}

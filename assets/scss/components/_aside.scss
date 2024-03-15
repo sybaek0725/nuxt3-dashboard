@@ -1,228 +1,150 @@
-@import '@/assets/scss/foundations/variables.scss';
-@import '@/assets/scss/foundations/mixin.scss';
-
-//font-size
-$font-xlarge: 2.2rem;
-$font-large: 2rem;
-$font-medium: 1.8rem;
-$font-small: 1.6rem;
-$font-xsmall: 1.4rem;
-
-$header1-size: 2.6rem;
-$header2-size: $font-xlarge;
-$header3-size: $font-large;
-
-$body1-size: $font-xlarge;
-$body2-size: $font-large;
-$body3-size: $font-medium;
-
-$teacher-rnb-width: 20.5rem;
-$student-rnb-width: 19.5rem;
 /* aside 공통 */
 .aside_wrap {
   z-index: 3000;
-  height: calc(100vh - 8rem);
-  max-height: 92rem;
+  // height: calc(100vh - $header-height);
+  max-height: unset;
   padding: 2rem;
   transition: all ease 0.2s 0s;
 
-  .aside_area {
-    height: 100%;
-    .aside_inner {
+  .aside_inner {
+    height: calc(100dvh - 12rem);
+
+    .tc_only,
+    .st_only {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 100%;
+    }
 
-      .tc_only,
-      .st_only {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
+    .state_box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: var(--RNB-box-R, 1.5rem);
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+
+      .state_label {
+        @include font_header3;
       }
+    }
 
-      .state_box {
+    .chat_bot {
+      position: relative;
+      width: 100%;
+      height: 11rem;
+      border-radius: 1.4rem;
+      margin-bottom: 1.5rem;
+      padding: 1.6rem;
+      overflow: hidden;
+
+      span {
+        color: $font-darken;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 2.2rem; /* 122.222% */
+      }
+    }
+
+    .nav_wrap {
+      summary {
+        list-style: none;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding: 1.5rem 0.5rem;
         align-items: center;
-        border-radius: var(--RNB-box-R, 1.5rem);
-        margin-bottom: 1rem;
+        gap: 0.8rem;
+        align-self: stretch;
+        border-bottom: 1px solid $line-darken;
+        @include font_header3;
+      }
 
-        .state_label {
-          // @include font_header3;
+      summary::-webkit-details-marker {
+        display: none;
+      }
 
-          font-size: $header3-size;
-          font-weight: $font-weight-bold;
-          line-height: 2.6rem;
-          color: $white;
-          letter-spacing: 0;
+      details[open] summary {
+        font-weight: 700;
 
-          padding-bottom: 1rem;
-        }
-
-        .v-switch--inset {
-          .v-switch__track {
-            opacity: 1;
-            height: 3.2rem;
-            width: 5.4rem;
-          }
-          .v-switch__thumb {
-            height: 2.4rem;
-            width: 2.4rem;
-          }
-          //true
-          .v-selection-control--dirty {
-            .v-switch__track {
-              height: 3.2rem;
-              width: 5.4rem;
-              opacity: 1;
-            }
-            .v-switch__thumb {
-              height: 2.4rem;
-              width: 2.4rem;
-            }
-          }
+        i {
+          transform: rotate(180deg);
         }
       }
 
-      .chat_bot {
-        position: relative;
-        width: 100%;
-        height: 11rem;
-        border-radius: 1.4rem;
-        margin-bottom: 1.5rem;
-        padding: 1.6rem;
-        overflow: hidden;
+      ul {
+        display: flex;
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        align-self: stretch;
 
-        span {
-          color: #000;
-          font-size: 1.8rem;
-          font-weight: 600;
-          line-height: 2.2rem; /* 122.222% */
-        }
-      }
+        border-bottom: 1px solid $line-darken;
+        background: $bg-light;
+        li {
+          cursor: pointer;
+          @include font_body3($font-basic);
 
-      .nav_wrap {
-        summary {
-          list-style: none;
-          display: flex;
-          padding: var(--RNB-margin, 1.5rem) 0rem var(--RNB-margin, 1.5rem)
-            var(--RNB-text-margin, 0.5rem);
-          align-items: center;
-          gap: var(--Elements-round-medium, 0.8rem);
-          align-self: stretch;
-          border-bottom: 1px solid var(--Color-Line-Color-Line-Darken, #373737);
-          // @include font_header3;
-
-          font-size: $header3-size;
-          font-weight: $font-weight-bold;
-          line-height: 2.6rem;
-          letter-spacing: 0;
-        }
-
-        summary::-webkit-details-marker {
-          display: none;
-        }
-
-        details[open] summary {
-          font-weight: 700;
-        }
-
-        ul {
-          display: flex;
-          padding: var(--RNB-padding-h, 2rem) var(--RNB-margin, 1.5rem);
-          flex-direction: column;
-          align-items: flex-start;
-          gap: var(--RNB-margin, 1.5rem);
-          align-self: stretch;
-
-          border-bottom: 1px solid var(--Color-Line-Color-Line-Darken, #373737);
-          background: var(--Color-BG-Color-Light, #f8f8f8);
-          li {
-            cursor: pointer;
-            // @include font_body3(#171717);
-            font-size: $body3-size;
-            font-weight: $font-weight-bold;
-            line-height: 2.8rem;
-            letter-spacing: 0;
-
-            &.active {
-              font-weight: 700;
-              text-decoration: underline;
-            }
+          &.active {
+            font-weight: 700;
+            text-decoration: underline;
           }
         }
       }
     }
-    .util_wrap {
-      border-radius: var(--RNB-box-R, 1.5rem);
-      background: var(--Color-BG-Color-Light, #f8f8f8);
-      padding: var(--RNB-text-margin, 0.5rem) var(--RNB-margin, 1.5rem) var(--RNB-padding-h, 2rem)
-        var(--RNB-margin, 1.5rem);
-      // @include font_body3(#171717);
-      font-size: $body3-size;
-      line-height: 2.8rem;
+  }
+  .util_wrap {
+    .util_btn {
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      width: 100%;
+      display: flex;
+      padding: 1rem 0.5rem;
 
-      .util_btn {
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-        position: relative;
-        width: 100%;
-        display: flex;
-        padding: var(--RNB-menu-margin-h, 1rem) var(--RNB-text-margin, 0.5rem)
-          var(--RNB-margin, 1rem) var(--RNB-text-margin, 0.5rem);
-
-        &:hover,
-        &.active {
-          border-radius: 0.6rem;
-          background-color: #6f7e9a;
-          color: $white;
-          &::after {
-            filter: var(--color-white);
-          }
-        }
-
+      &:hover,
+      &.active {
+        border-radius: 0.6rem;
+        background-color: #6f7e9a;
+        color: $white;
         &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 1.2rem;
-          width: 3rem;
-          height: 3rem;
-          margin-top: -1.5rem;
+          filter: var(--color-white);
         }
       }
 
-      .screen_control {
-        .label {
-          display: inline-block;
-          padding: var(--RNB-menu-margin-h, 1rem) var(--RNB-text-margin, 0.5rem)
-            var(--RNB-margin, 1.5rem) var(--RNB-text-margin, 0.5rem);
-        }
-        .controller {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          background: var(--Color-BG-Color-Basic, #e6e6e6);
-          @include font_body3(#171717);
-        }
-        .zoom {
-          text-align: center;
-          display: flex;
-          width: 3rem;
-          height: 3rem;
-          padding: 1.1rem 0.9rem;
-          justify-content: center;
-          align-items: center;
-
-          &.in {
-            background: url('@/assets/images/common/btn_under_arrow.svg') no-repeat center
-              center/contain;
-          }
-          &.out {
-            background: url('@/assets/images/common/btn_upper_arrow.svg') no-repeat center
-              center/contain;
-          }
-        }
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 1.2rem;
+      //   width: 3rem;
+      //   height: 3rem;
+      //   margin-top: -1.5rem;
+      // }
+    }
+    .screen_control {
+      .label {
+        display: inline-block;
+        padding: 1rem 0.5rem 1.5rem 0.5rem;
+      }
+      .controller {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $bg-basic;
+        @include font_body3($font-darken);
+      }
+      .zoom {
+        text-align: center;
+        display: flex;
+        width: 3rem;
+        height: 3rem;
+        justify-content: center;
+        align-items: center;
+        background: $white;
+        border: 1px solid $line-darken;
+        border-radius: 5px;
       }
     }
   }
@@ -230,7 +152,8 @@ $student-rnb-width: 19.5rem;
 
 .teacher {
   .aside_wrap {
-    min-width: $teacher-rnb-width;
+    width: 20.5rem;
+    min-width: 20.5rem;
     background: $white;
     .aside_inner {
       .state_box {
@@ -246,7 +169,7 @@ $student-rnb-width: 19.5rem;
           border: 2px solid #d9d9d9;
 
           .state_label {
-            color: #777;
+            color: $font-light;
           }
         }
 
@@ -288,31 +211,33 @@ $student-rnb-width: 19.5rem;
     }
 
     .util_wrap {
-      background: #f7f7f7;
+      border-radius: 1.5rem;
+      background: $bg-light;
+      padding: 0.5rem 1.5rem 2rem 1.5rem;
+      @include font_body3($font-darken);
     }
   }
 }
 //student aside
 .student {
   .aside_wrap {
-    min-width: $student-rnb-width;
-    border-radius: var(--Student-RNB-bg-rounding, 2.5rem) 0rem 0rem 0rem;
+    width: 19.5rem;
+    border-radius: 2.5rem 0rem 0rem 0rem;
     background: rgba(255, 255, 255, 0.65);
     margin-left: 1rem;
     .aside_inner {
       .state_box {
         border: 2px solid var(--Student-RNB-switch-on-line, rgba(30, 40, 87, 0.5));
-        background: var(--Student-RNB-switch-on-bg, #e4f0f0);
+        background: #e4f0f0;
         .state_label {
           color: $primary;
         }
 
         &.waiting {
-          // background: $white;
           border: 2px solid #d9d9d9;
 
           .state_label {
-            color: #777;
+            color: $font-light;
           }
         }
 
@@ -339,7 +264,7 @@ $student-rnb-width: 19.5rem;
     }
 
     .chat_bot {
-      background: #fff5c0;
+      background: $point-color-yellow;
       &::before {
         overflow: hidden;
         content: '';
@@ -350,9 +275,51 @@ $student-rnb-width: 19.5rem;
         height: 12rem;
         background: url('@/assets/images/common/chat_bot_bee.png') no-repeat center center/contain;
       }
+    }
+    .util_wrap {
+      .sound_status {
+        display: flex;
+        padding: 1.5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--RNB-text-margin, 0.5rem);
+        align-self: stretch;
+        border-radius: 1.5rem;
+        background: $white;
+        margin-bottom: 1.5rem;
 
-      .util_wrap {
-        background: #f7f7f7;
+        .ico_sound {
+          width: 4rem;
+          height: 4rem;
+        }
+
+        &.on {
+          .ico_sound {
+            background: url('@/assets/images/common/ico_sound_on.svg') no-repeat center
+              center/contain;
+          }
+        }
+        &.off {
+          color: #ccc;
+
+          .ico_sound {
+            background: url('@/assets/images/common/ico_sound_on_gray.svg') no-repeat center
+              center/contain;
+          }
+        }
+      }
+      .screen_control,
+      .sound_control {
+        text-align: center;
+        border-radius: 1.5rem;
+        background: $white;
+        padding: 1.6rem 1rem;
+        align-self: stretch;
+      }
+
+      .sound_control {
+        margin-bottom: 1.5rem;
       }
     }
   }

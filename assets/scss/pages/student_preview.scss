@@ -1,0 +1,14 @@
+.student_preview {
+  width: calc(25% - 1rem);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  &.layout {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}

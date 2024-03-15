@@ -1,0 +1,306 @@
+{
+    "$vuetify": {
+        "open": "open",
+        "close": "close",
+        "carousel": {
+            "prev": "prev",
+            "next": "next"
+        },
+        "datePicker": {
+            "title": "title"
+        },
+        "input": {
+            "prependAction": "prependAction",
+            "appendAction": "appendAction",
+            "clear": "clear"
+        },
+        "noDataText": "해당 데이터가 없습니다."
+    },
+    "common": {
+        "text": {
+            "teacher": "선생님",
+            "student": "학생",
+            "entrance": "입장",
+            "situation": "현황",
+            "elementary": "초등",
+            "grade": "학년",
+            "semester": "학기"
+        },
+        "popup": {
+            "open": "{name} 팝업 열기",
+            "close": "{name} 팝업 닫기"
+        }
+    },
+    "header": {
+        "menu": {
+            "index": "목차",
+            "class": "오늘의 수업",
+            "result": "학습 결과",
+            "administer": "교무 수첩",
+            "setting": "설정",
+            "self": "스스로 학습",
+            "bookmark": "북마크",
+            "student": {
+                "administer": "알림장"
+            }
+        },
+        "info": {
+            "back": "뒤로가기",
+            "logout": "로그아웃",
+            "class": " {grade}학년 {semester}학기",
+            "name": "{name} {type}",
+            "undefined": "",
+            "ELEMENTARY": "초등"
+        }
+    },
+    "aside": {
+        "info": {
+            "monitoring": {
+                "name": "모니터링",
+                "info": "현재의 학생 화면 스크린샷을 통해 학습 현황을 확인할 수 있습니다.",
+                "sound": "사운드",
+                "soundOn": "전체 음성 끄기",
+                "soundOff": "전체 음성 켜기"
+            },
+            "send": "화면 보내기",
+            "hide": "화면 가리기",
+            "show": "화면 켜기",
+            "ratio": "화면 비율"
+        }
+    },
+    "index": {
+        "aside": {
+            "list": {
+                "name": "차시 목차",
+                "info": "차시 목차"
+            },
+            "order": {
+                "name": "교과서 차례",
+                "info": "교과서 차례"
+            }
+        }
+    },
+    "progress": {
+        "aside": {
+            "name": "진도 학습",
+            "info": "차시 편집이 가능합니다.",
+            "student": {
+                "name": "진도 학습",
+                "info": "오늘의 수업 진도를 집중하여 학습합니다."
+            }
+        },
+        "textbook": {
+            "name": "교과서 보기",
+            "info": "차시에 해당하는 교과서를 확인할 수 있어요."
+        },
+        "external": {
+            "name": "외부 자료 연동",
+            "info": "선택한 차시에 누리집 연동, 콘텐츠, 화이트 보드 등 자유롭게 자료를 연동할 수 있습니다."
+        },
+        "preview": {
+            "name": "콘텐츠 미리보기"
+        }
+    },
+    "workbook": {
+        "aside": {
+            "name": "수학 익힘",
+            "info": "차시 목록입니다."
+        }
+    },
+    "reference": {
+        "aside": {
+            "name": "수업 자료실",
+            "info": "자료를 검색하여 학생 디바이스로 바로 보낼 수 있습니다."
+        },
+        "form": {
+            "name": "수업 자료실",
+            "info": "내 수업 자료를 새로 만들 수 있습니다."
+        }
+    },
+    "tool": {
+        "aside": {
+            "name": "수업 도구"
+        }
+    },
+    "external": {
+        "aside": {
+            "nuri": {
+                "name": "누리집 연결",
+                "info": "학생들에게 웹 페이지를 전송합니다."
+            },
+            "contents": {
+                "name": "콘텐츠 연동",
+                "info": "콘텐츠 연동"
+            },
+            "whboard": {
+                "name": "화이트 보드",
+                "info": "화이트 보드"
+            }
+        },
+        "nuri": {
+            "forward": {
+                "name": "웹 검색 활동 중입니다."
+            }
+        },
+        "contents": {
+            "forward": {
+                "name": "콘텐츠 전송 중입니다."
+            }
+        },
+        "whboard": {
+            "forward": {
+                "name": "화이트 보드 전송중 입니다."
+            }
+        }
+    },
+    "result": {
+        "aside": {
+            "analyze": {
+                "name": "학습분석"
+            },
+            "record": {
+                "name": "생활기록부"
+            }
+        }
+    },
+    "administer": {
+        "aside": {
+            "picture": {
+                "name": "사진 과제"
+            },
+            "recommend": {
+                "name": "AI 추천 자료"
+            },
+            "evaluation": {
+                "name": "맞춤 단원 평가"
+            },
+            "everyday": {
+                "name": "매일 5분 과제"
+            }
+        },
+        "text": {
+            "save": "저장",
+            "day": "요일에",
+            "description": "를 사진으로 찍어 올립니다."
+        },
+        "picture": {
+            "title": "사진과제",
+            "period": {
+                "everyWk": "매주",
+                "everySndWk": "2주마다",
+                "everyTrdWk": "3주마다",
+                "everyFthWk": "4주마다"
+            },
+            "day": {
+                "optional": "(추가 전제로)",
+                "mon": "월",
+                "tue": "화",
+                "wed": "수",
+                "thu": "목",
+                "fri": "금",
+                "sat": "토",
+                "sun": "일",
+                "monday": "월요일",
+                "tuesday": "화요일",
+                "wednesday": "수요일",
+                "thursday": "목요일",
+                "friday": "금요일"
+            },
+            "subject": {
+                "wrongAnswerBook": "오답노트",
+                "textbook": "수학 교과서",
+                "workbook": "수학 익힘책",
+                "notebook": "수학 노트",
+                "directInput": "(직접입력)"
+            },
+            "noData": "지정된 기간에 저장한 사진 과제가 없습니다.",
+            "order": {
+                "title": "사진과제 저장순서",
+                "contents": [
+                    "만들기 버튼 (+)을 클릭하세요.",
+                    "과제의 기간을 설정하세요.",
+                    "과제의 반복주기를 선택하세요.",
+                    "과제의 제출 요일을 선택하세요.",
+                    "과제 내용을 선택하거나 직접 입력해 보세요."
+                ]
+            }
+        },
+        "session": {
+            "title": "차시 별 과제"
+        }
+    },
+    "setting": {
+        "aside": {
+            "basic": {
+                "name": "기본 설정"
+            },
+            "alarm": {
+                "name": "수업 및 알림 설정",
+                "student": {
+                    "name": "알림 설정"
+                }
+            },
+            "menu": {
+                "name": "메뉴 설정"
+            },
+            "lang": {
+                "name": "언어 설정"
+            },
+            "etc": {
+                "name": "추가 설정"
+            }
+        },
+        "basic": {
+            "name": "{name}",
+            "subject": "{subject}",
+            "grade": "{grade}학년",
+            "classNum": "{classNum}반",
+            "schoolName": "{schoolName}"
+        },
+        "menu": {
+            "title": "메뉴 관리",
+            "info": "메뉴 노출여부를 관리할 수 있습니다.",
+            "subTitle": " 계정의 메뉴 관리"
+        },
+        "lang": {
+            "title": "언어 관리",
+            "info": "언어를 설정할 수 있습니다.",
+            "state": "현재 ‘{state}’로 설정되어 있습니다.",
+            "ko": "한국어",
+            "en": "영어"
+        },
+        "btn": {
+            "reset": "설정 초기화하기",
+            "set": "설정 저장하기"
+        }
+    },
+    "self": {
+        "aside": {
+            "tip": {
+                "name": "꿀팁 수학"
+            },
+            "note": {
+                "name": "AI 오답 노트"
+            },
+            "assess": {
+                "name": "AI 진단 평가"
+            }
+        }
+    },
+    "activity": {
+        "group": {
+            "name": "모둠 만들기",
+            "result": {
+                "view": {
+                    "name": "[N 모둠] 모둠 이름 활동 결과 크게 보기"
+                },
+                "form": {
+                    "name": "모둠 활동"
+                }
+            },
+            "status": {
+                "name": "모둠 활동 현황 보기"
+            }
+        }
+    }
+}

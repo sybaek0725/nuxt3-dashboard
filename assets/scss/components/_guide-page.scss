@@ -1,0 +1,34 @@
+.title-guide {
+  color: var(--Color-Font-Color-Darken, #171717);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 9.2rem; /* 115% */
+}
+
+.hr-guide {
+  margin: 5.5rem 0;
+}
+.section-guide {
+  margin-bottom: 5rem;
+  .sub-title-guide {
+    margin-bottom: 3rem;
+  }
+  .area-guide {
+    padding: 2rem;
+    .text {
+      margin-bottom: 2rem;
+    }
+    &.flex {
+      display: flex;
+      &.gap {
+        gap: 1rem;
+      }
+    }
+  }
+}
+
+.section-flex {
+  display: flex;
+}

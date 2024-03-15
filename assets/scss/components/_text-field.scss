@@ -1,0 +1,159 @@
+/**
+component name : text-field
+writer : 박재민
+변경일 : 240223
+**/
+
+.text_field_box {
+  .v-input__control {
+    .v-field__input {
+      height: 5.5rem;
+      // min-height: 5.5rem;
+      max-height: 5.5rem;
+    }
+  }
+
+  &.text_area {
+    .v-input__control {
+      .v-field__input {
+        height: 10rem;
+        // min-height: 10rem;
+        max-height: 10rem;
+      }
+    }
+  }
+  //기본속성 수정
+  .v-text-field {
+    input {
+      background: transparent;
+      &:hover {
+        border-radius: 0.5rem;
+        &::placeholder {
+          color: $B500;
+          opacity: 1;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .v-field {
+    background: $white;
+    &:hover {
+      background: var(--Input-bg-select-color, #ecf3f6);
+    }
+  }
+  .v-icon {
+    opacity: 1 !important;
+  }
+  //end: 기본속성 수정
+
+  // 포커스시 clear버튼
+  .mdi-close-circle::before {
+    content: '';
+    width: 3rem;
+    height: 3rem;
+    background: url('@/assets/images/common/ico/ico_delete_30.svg') no-repeat center center/contain;
+  }
+
+  // 활성화 시
+  .v-field--active {
+    .v-field__outline {
+      border: 1px solid var(--Input-line-focus-color, #1e3257); // 포커싱시 색상
+    }
+  }
+
+  // 에러일 때
+  .v-field--error {
+    .v-field__outline {
+      border: 1px solid $Y900;
+    }
+    .ico_warning {
+      display: block;
+    }
+  }
+  .ico_warning {
+    display: none;
+    background: url('@/assets/images/common/ico/ico_warning_30.svg') no-repeat center center/contain;
+  }
+
+  // disabled
+  .v-input--disabled {
+    background: $G50;
+    input {
+      border: 1px solid $G300;
+      border-right: 0;
+      &::placeholder {
+        color: $G400;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // searchbar(커서변경 추가)
+  .ico_search2 {
+    width: 3rem;
+    height: 3rem;
+    background: url('@/assets/images/common/ico/ico_search2_30.svg') no-repeat center center/contain;
+    cursor: pointer;
+  }
+
+  .search_box {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    &.active {
+      border: 1px solid #169bd4;
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+      .v-field__outline {
+        border: 0;
+      }
+    }
+    .search_list {
+      padding-top: 0;
+      background: $white;
+      position: sticky;
+      z-index: 1;
+      ul {
+        max-height: 26.3rem;
+        padding: 2rem;
+        padding-top: 0;
+        overflow-y: auto;
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        @include font_body3;
+        .ico {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    .title {
+      @include font_body3($font-weight-bold);
+      padding: 2rem 0;
+      margin: 0 2rem;
+      border-top: 1px solid $G300;
+    }
+    .list_item {
+      + .list_item {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  .select {
+    .v-icon {
+      width: 3rem !important;
+      height: 3rem !important;
+    }
+  }
+  .v-select {
+    .v-field__append-inner {
+      justify-content: flex-end;
+    }
+    .mdi-menu-down {
+      margin-right: 1rem;
+    }
+  }
+}

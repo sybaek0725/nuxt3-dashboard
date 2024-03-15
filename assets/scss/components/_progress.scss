@@ -1,0 +1,31 @@
+$progress-linear-color: $point-color-yellow;
+$progress-linear-bg: $white;
+
+.progress {
+  width: 100%;
+  .txt_tit {
+    margin: 0 0 2rem;
+  }
+
+  .v-progress-linear__background {
+    background: $progress-linear-bg !important;
+  }
+
+  .v-progress-linear__determinate {
+    border-radius: 2rem;
+    height: 9px;
+    margin: 1px;
+    background: $progress-linear-color !important;
+  }
+  .v-progress-linear {
+    border: 1px solid $line-darken;
+  }
+
+  @each $key, $value in $point-color-list {
+    &.progress-#{$key} {
+      .v-progress-linear__determinate {
+        background: $value !important;
+      }
+    }
+  }
+}

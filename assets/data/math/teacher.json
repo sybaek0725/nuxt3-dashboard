@@ -1,0 +1,353 @@
+[
+    {
+        "description": "목차",
+        "id": "index",
+        "child": "list",
+        "area": "header",
+        "name": "header.menu.index",
+        "proceeding": "on",
+        "useYn": true
+    },
+    {
+        "description": "목차-차시목차",
+        "id": "list",
+        "parent": "index",
+        "area": "aside1",
+        "name": "index.aside.list.name",
+        "info": "index.aside.list.info",
+        "component": "progress/List",
+        "titleWrap": "off",
+        "scroll": "no"
+    },
+    {
+        "description": "목차-교과서차례",
+        "id": "order",
+        "parent": "index",
+        "area": "aside1",
+        "name": "index.aside.order.name",
+        "info": "index.aside.order.info",
+        "component": "progress/Order",
+        "titleWrap": "off",
+        "scroll": "no"
+    },
+    {
+        "description": "오늘의수업",
+        "id": "class",
+        "child": "progress",
+        "area": "header",
+        "name": "header.menu.class",
+        "proceeding": "on",
+        "useYn": true
+    },
+    {
+        "description": "오늘의수업-진도학습",
+        "id": "progress",
+        "parent": "class",
+        "area": "aside1",
+        "name": "progress.aside.name",
+        "info": "progress.aside.info",
+        "component": "progress/Index",
+        "titleWrap": "on"
+    },
+    {
+        "description": "오늘의수업-수학익힘",
+        "id": "workbook",
+        "parent": "class",
+        "area": "aside1",
+        "name": "workbook.aside.name",
+        "info": "workbook.aside.info",
+        "component": "progress/Workbook",
+        "titleWrap": "on"
+    },
+    {
+        "description": "오늘의수업-수학익힘-콘텐츠뷰잉",
+        "id": "workbook.contents.view",
+        "component": "progress/contents/View",
+        "titleWrap": "on"
+    },
+    {
+        "description": "오늘의수업-수업자료실",
+        "id": "reference",
+        "parent": "class",
+        "area": "aside1",
+        "name": "reference.aside.name",
+        "info": "reference.aside.info",
+        "component": "reference/Index",
+        "titleWrap": "on"
+    },
+    {
+        "description": "오늘의수업-수업자료실-자료검색",
+        "id": "contents",
+        "parent": "reference",
+        "area": "aside2",
+        "name": "external.aside.contents.name",
+        "info": "external.aside.contents.info",
+        "component": "external/Index",
+        "subComponent": "external/contents/Index",
+        "contentsComponent": "external/contents/Search",
+        "titleWrap": "on"
+    },
+    {
+        "description": "오늘의수업-수업자료실-누리집연결",
+        "id": "nuri",
+        "parent": "reference",
+        "area": "aside2",
+        "name": "external.aside.nuri.name",
+        "info": "external.aside.nuri.info",
+        "component": "external/Index",
+        "subComponent": "external/nuri/Index",
+        "titleWrap": "on"
+    },
+    {
+        "description": "오늘의수업-수업자료실-화이트보드",
+        "id": "whboard",
+        "parent": "reference",
+        "area": "aside2",
+        "name": "external.aside.whboard.name",
+        "info": "external.aside.whboard.info",
+        "component": "external/Index",
+        "subComponent": "external/whboard/Index",
+        "titleWrap": "on"
+    },
+    {
+        "description": "오늘의수업-수업도구",
+        "id": "tool",
+        "parent": "class",
+        "area": "aside1",
+        "name": "tool.aside.name",
+        "info": "tool.aside.info",
+        "externalUrl": "https://toolkit.i-scream.co.kr/",
+        "titleWrap": "off"
+    },
+    {
+        "description": "학습결과",
+        "id": "result",
+        "child": "analyze",
+        "area": "header",
+        "name": "header.menu.result",
+        "useYn": true
+    },
+    {
+        "description": "학습결과-학습분석",
+        "id": "analyze",
+        "parent": "result",
+        "area": "aside1",
+        "name": "result.aside.analyze.name",
+        "component": "frame/Index",
+        "iframeUrl": "http://teacher-dashboard-21051162-91cd0df18f29.kr.lb.naverncp.com/dashboard",
+        "titleWrap": "off"
+    },
+    {
+        "description": "학습결과-생활기록부",
+        "id": "record",
+        "parent": "result",
+        "area": "aside1",
+        "name": "result.aside.record.name",
+        "component": "frame/Index",
+        "iframeUrl": "http://teacher-dashboard-21051162-91cd0df18f29.kr.lb.naverncp.com/dashboard",
+        "titleWrap": "off"
+    },
+    {
+        "description": "교무수첩",
+        "id": "administer",
+        "child": "picture",
+        "area": "header",
+        "name": "header.menu.administer",
+        "useYn": true
+    },
+    {
+        "description": "교무수첩-과제관리-사진과제",
+        "id": "picture",
+        "parent": "administer",
+        "area": "aside1",
+        "name": "administer.aside.picture.name",
+        "component": "administer/picture/Index",
+        "titleWrap": "off"
+    },
+    {
+        "description": "교무수첩-과제관리-AI추천자료",
+        "id": "recommend",
+        "parent": "administer",
+        "area": "aside1",
+        "name": "administer.aside.recommend.name",
+        "component": "administer/recommend/Index",
+        "titleWrap": "off"
+    },
+    {
+        "description": "교무수첩-과제관리-맞춤단원평가",
+        "id": "evaluation",
+        "parent": "administer",
+        "area": "aside1",
+        "name": "administer.aside.evaluation.name",
+        "component": "administer/evaluation/Index",
+        "titleWrap": "off"
+    },
+    {
+        "description": "설정",
+        "id": "setting",
+        "child": "basic",
+        "area": "header",
+        "name": "header.menu.setting",
+        "useYn": false
+    },
+    {
+        "description": "설정-기본설정",
+        "id": "basic",
+        "parent": "setting",
+        "area": "aside1",
+        "name": "setting.aside.basic.name",
+        "component": "setting/Basic",
+        "titleWrap": "off",
+        "class": "no_padding_y setting"
+    },
+    {
+        "description": "설정-수업및알림설정",
+        "id": "alarm",
+        "parent": "setting",
+        "area": "aside1",
+        "name": "setting.aside.alarm.name",
+        "component": "setting/Alarm",
+        "titleWrap": "off",
+        "class": "no_padding_y setting"
+    },
+    {
+        "description": "설정-메뉴설정",
+        "id": "menu",
+        "parent": "setting",
+        "area": "aside1",
+        "name": "setting.aside.menu.name",
+        "component": "setting/Menu",
+        "titleWrap": "off",
+        "class": "no_padding_y setting"
+    },
+    {
+        "description": "설정-언어설정",
+        "id": "lang",
+        "parent": "setting",
+        "area": "aside1",
+        "name": "setting.aside.lang.name",
+        "component": "setting/Lang",
+        "titleWrap": "off",
+        "class": "no_padding_y setting"
+    },
+    {
+        "description": "북마크",
+        "id": "bookmark",
+        "parent": "bookmark",
+        "area": "header1",
+        "name": "header.menu.bookmark",
+        "component": "bookmark/Index",
+        "titleWrap": "off",
+        "areaclass": "bookmark_on_40",
+        "class": "no_padding_y",
+        "proceeding": "on",
+        "useYn": true
+    },
+    {
+        "description": "모니터링",
+        "id": "monitoring",
+        "area": "aside3",
+        "name": "aside.info.monitoring.name",
+        "info": "aside.info.monitoring.info",
+        "component": "monitoring/Index",
+        "titleWrap": "off",
+        "class": "no_padding_y"
+    },
+
+    {
+        "description": "진도학습-교과서보기",
+        "id": "progress.textbook",
+        "name": "progress.textbook.name",
+        "info": "progress.textbook.info",
+        "component": "progress/Textbook",
+        "titleWrap": "on"
+    },
+    {
+        "description": "진도학습-콘텐츠편집",
+        "id": "progress.contents.edit",
+        "component": "progress/contents/Edit",
+        "titleWrap": "on",
+        "class": "column"
+    },
+    {
+        "description": "진도학습-콘텐츠편집-외부자료연동",
+        "id": "progress.contents.edit.external",
+        "name": "progress.external.name",
+        "info": "progress.external.info",
+        "component": "external/Tab",
+        "titleWrap": "on"
+    },
+    {
+        "description": "진도학습-콘텐츠편집-콘텐츠미리보기",
+        "id": "progress.contents.preview",
+        "component": "progress/contents/Preview",
+        "titleWrap": "on"
+    },
+    {
+        "description": "진도학습-콘텐츠뷰잉",
+        "id": "progress.contents.view",
+        "component": "progress/contents/View",
+        "titleWrap": "on"
+    },
+    {
+        "description": "모듬활동",
+        "id": "activity.group",
+        "name": "activity.group.name",
+        "component": "activity/group/Index",
+        "titleWrap": "on"
+    },
+    {
+        "description": "모둠활동현황",
+        "id": "activity.group.status",
+        "name": "activity.group.status.name",
+        "component": "activity/group/Status",
+        "titleWrap": "on"
+    },
+    {
+        "description": "모둠활동현황-크게보기",
+        "id": "activity.group.result.view",
+        "name": "activity.group.result.view.name",
+        "component": "activity/group/result/View",
+        "titleWrap": "on"
+    },
+    {
+        "description": "수업자료실-목록",
+        "id": "reference.list",
+        "parent": "reference",
+        "name": "reference.aside.name",
+        "info": "reference.aside.info",
+        "component": "reference/Index",
+        "titleWrap": "on"
+    },
+    {
+        "description": "수업자료실-등록/수정",
+        "id": "reference.form",
+        "parent": "reference",
+        "name": "reference.form.name",
+        "info": "reference.form.info",
+        "component": "reference/Form",
+        "contentsComponent": "external/contents/Search",
+        "titleWrap": "on"
+    },
+    {
+        "description": "자료검색-전송",
+        "id": "contents.forward",
+        "name": "external.contents.forward.name",
+        "component": "external/contents/Loading",
+        "titleWrap": "on"
+    },
+    {
+        "description": "화이트보드-전송",
+        "id": "whboard.forward",
+        "name": "external.whboard.forward.name",
+        "component": "external/whboard/Loading",
+        "titleWrap": "on"
+    },
+    {
+        "description": "누리집연동-전송",
+        "id": "nuri.forward",
+        "name": "external.nuri.forward.name",
+        "component": "external/nuri/Loading",
+        "titleWrap": "on"
+    }
+]

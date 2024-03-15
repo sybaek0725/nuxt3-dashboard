@@ -1,0 +1,19 @@
+.indicator {
+  display: flex;
+  align-items: center;
+  height: 8rem;
+  padding: 0 3rem;
+  width: 100%;
+  .txt_wrap {
+    @include font_header2(#999);
+
+    margin: 0 1.5rem;
+    em {
+      color: $black;
+      font-weight: var(--weight-bold);
+    }
+    span {
+      font-weight: var(--weight-bold);
+    }
+  }
+}

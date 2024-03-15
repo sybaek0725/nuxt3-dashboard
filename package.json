@@ -4,27 +4,39 @@
     "type": "module",
     "scripts": {
         "build": "nuxt build",
-        "dev": "nuxt dev",
+        "local": "nuxt dev --host --port 3003 --dotenv .env.local",
+        "dev": "nuxt dev --host --port 3003 --dotenv .env.dev",
         "generate": "nuxt generate",
         "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
-    },
-    "dependencies": {
-        "@nuxt/devtools": "^1.0.8",
-        "@nuxtjs/i18n": "^8.0.0-rc.4",
-        "@pinia/nuxt": "^0.5.1",
-        "pinia": "^2.1.7",
-        "sass": "^1.69.5"
+        "postinstall": "nuxt prepare",
+        "lint": "eslint --ignore-path .gitignore **/*{vue,json,ts,js} --fix"
     },
     "devDependencies": {
+        "@nuxt/devtools": "latest",
         "@typescript-eslint/parser": "^6.10.0",
         "eslint": "^8.53.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-nuxt": "^4.0.0",
         "eslint-plugin-prettier": "^5.0.1",
+        "html2canvas": "^1.4.1",
         "nuxt": "^3.8.1",
+        "nuxt3-localforage": "^0.1.1",
         "vue": "^3.3.8",
         "vue-router": "^4.2.5",
         "vuetify-nuxt-module": "^0.6.6"
+    },
+    "dependencies": {
+        "@nuxtjs/i18n": "^8.0.0-rc.4",
+        "@pinia/nuxt": "^0.5.1",
+        "pinia": "^2.1.7",
+        "sass": "^1.69.5",
+        "socket.io-client": "^4.7.2",
+        "v-calendar": "^3.1.2",
+        "video.js": "^8.9.0",
+        "vue-pdf-embed": "^1.2.1",
+        "vue3-roulette": "^0.3.3",
+        "vuedraggable": "^4.1.0",
+        "vite": "^5.1.3",
+        "ip": "^2.0.1"
     }
 }

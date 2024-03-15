@@ -1,0 +1,21 @@
+/**
+component name : searchbar_wrap
+writer : 박재민
+변경일 : 240229
+*/
+
+.searchbar_wrap { //페이지 상단 검색바
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 3rem;
+  > .text_field_box {
+    width: 73.5rem;
+  }
+
+  .btn_toggle { // 토글버튼이 있을 때
+    position: absolute;
+    right: 0;
+  }
+}

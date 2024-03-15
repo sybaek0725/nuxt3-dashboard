@@ -1,15 +1,28 @@
-@import 'variables.scss';
-
 @mixin setIcon($icon_name) {
   background: url('@/assets/images/common/ico/ico_#{$icon_name}.svg') no-repeat center
     center/contain;
 }
+$icon-directory-common: 'common';
+$icon-directory-common-ico: 'common/ico/';
+$icon-directory-student: 'student/';
+$icon-directory-teacher: 'teacher/';
 
 $icon-size: 0.4rem;
 $color-state-hover: var(--color-icon-hover);
 $color-state-disabled: var(--color-icon-disabled);
-$color-state-point1: var(--color-point1);
-$color-state-point2: var(--color-point2);
+$color-state-point-yellow: var(--color-point-yellow);
+$color-state-point-orange: var(--color-point-orange);
+$color-state-point-green: var(--point-color-green);
+$color-state-blue: var(--color-point-blue);
+$color-state-white: var(--color-white);
+$color-state-point-gray: var(--point-color-gray);
+$color-state-point-primary: var(--point-color-primary);
+$color-state-point-black: var(--point-color-black);
+
+@mixin setIcon($icon-directory: $icon-directory-common-ico, $icon_name) {
+  background: url('@/assets/images/#{$icon-directory}/ico_#{$icon_name}.svg') no-repeat center
+    center/contain;
+}
 
 .ico {
   display: inline-block;
@@ -17,17 +30,33 @@ $color-state-point2: var(--color-point2);
   height: 3rem;
 
   /**
-  * size 20X20
+  * size 10X10
   */
-  &.size_sm {
+  &.ico_size_xs {
+    width: $icon-size * 2.5;
+    height: $icon-size * 2.5;
+  }
+
+  /**
+  * size 18X18
+  */
+  &.ico_size_sm {
     width: $icon-size * 5;
     height: $icon-size * 5;
   }
 
   /**
+  * size 20X20
+  */
+  &.ico_size_4 {
+    width: $icon-size * 4.5;
+    height: $icon-size * 4.5;
+  }
+
+  /**
   * size 24X24
   */
-  &.size_md {
+  &.ico_size_6 {
     width: $icon-size * 6;
     height: $icon-size * 6;
   }
@@ -35,22 +64,31 @@ $color-state-point2: var(--color-point2);
   /**
   * size 30 * 30
   */
-  &.size_lg {
+  &.ico_size_lg {
     width: $icon-size * 7.5;
     height: $icon-size * 7.5;
   }
+
   /**
   * size 40 * 40
   */
-  &.size_10 {
+  &.ico_size_10 {
     width: $icon-size * 10;
     height: $icon-size * 10;
   }
 
   /**
+  * size 50 * 50
+  */
+  &.ico_size_12 {
+    width: $icon-size * 12.5;
+    height: $icon-size * 12.5;
+  }
+
+  /**
   * size 60X60
   */
-  &.size_15 {
+  &.ico_size_15 {
     width: $icon-size * 15;
     height: $icon-size * 15;
   }
@@ -58,7 +96,7 @@ $color-state-point2: var(--color-point2);
   /**
   * size 80X80
   */
-  &.size_20 {
+  &.ico_size_20 {
     width: $icon-size * 20;
     height: $icon-size * 20;
   }
@@ -66,19 +104,45 @@ $color-state-point2: var(--color-point2);
   /**
   * size 100X100
   */
-  &.size_25 {
+  &.ico_size_25 {
     width: $icon-size * 25;
     height: $icon-size * 25;
+  }
+
+  /**
+  * size 120X120
+  */
+  &.ico_size_30 {
+    width: $icon-size * 30;
+    height: $icon-size * 30;
   }
 
   /**
   * filter
   **/
   &.ico_color_yellow {
-    filter: $color-state-point1;
+    filter: $color-state-point-yellow;
   }
   &.ico_color_orange {
-    filter: $color-state-point2;
+    filter: $color-state-point-orange;
+  }
+  &.ico_color_white {
+    filter: $color-state-white;
+  }
+  &.ico_color_blue {
+    filter: $color-state-blue;
+  }
+  &.ico_color_gray {
+    filter: $color-state-point-gray;
+  }
+  &.ico_color_primary {
+    filter: $color-state-point-gray;
+  }
+  &.ico_color_black {
+    filter: $color-state-point-black;
+  }
+  &.ico_color_green {
+    filter: $color-state-point-green;
   }
 
   /**
@@ -89,7 +153,7 @@ $color-state-point2: var(--color-point2);
       filter: $color-state-hover;
     }
 
-    &:disabled {
+    &.disabled {
       filter: $color-state-disabled;
     }
   }
@@ -98,477 +162,954 @@ $color-state-point2: var(--color-point2);
   * icon name
   **/
   &.arrow_20 {
-    @include setIcon('arrow_20');
+    @include setIcon($icon_name: 'arrow_20');
   }
 
   &.bullet_20 {
-    @include setIcon('bullet_20');
+    @include setIcon($icon_name: 'bullet_20');
   }
 
   &.close_20 {
-    @include setIcon('close_20');
+    @include setIcon($icon_name: 'close_20');
   }
 
   &.info_20 {
-    @include setIcon('info_20');
+    @include setIcon($icon_name: 'info_20');
   }
 
   &.tool_text_24 {
-    @include setIcon('tool_text_24');
+    @include setIcon($icon_name: 'tool_text_24');
   }
 
   &.undo_24 {
-    @include setIcon('undo_24');
+    @include setIcon($icon_name: 'undo_24');
   }
 
   &.redo_24 {
-    @include setIcon('redo_24');
+    @include setIcon($icon_name: 'redo_24');
   }
 
   &.color_24 {
-    @include setIcon('color_24');
+    @include setIcon($icon_name: 'color_24');
   }
 
   &.stroke_24 {
-    @include setIcon('stroke_24');
+    @include setIcon($icon_name: 'stroke_24');
   }
 
   &.eraser_24 {
-    @include setIcon('eraser_24');
+    @include setIcon($icon_name: 'eraser_24');
   }
 
   &.delete_24 {
-    @include setIcon('delete_24');
+    @include setIcon($icon_name: 'delete_24');
   }
 
   &.close_24 {
-    @include setIcon('close_24');
+    @include setIcon($icon_name: 'close_24');
   }
 
   &.minus_24 {
-    @include setIcon('minus_24');
+    @include setIcon($icon_name: 'minus_24');
   }
 
   &.plus_24 {
-    @include setIcon('plus_24');
+    @include setIcon($icon_name: 'plus_24');
   }
 
   &.close2_24 {
-    @include setIcon('close2_24');
+    @include setIcon($icon_name: 'close2_24');
   }
 
   &.double_left_24 {
-    @include setIcon('double_left_24');
+    @include setIcon($icon_name: 'double_left_24');
   }
 
   &.left_24 {
-    @include setIcon('left_24');
+    @include setIcon($icon_name: 'left_24');
   }
 
   &.double_right_24 {
-    @include setIcon('double_right_24');
+    @include setIcon($icon_name: 'double_right_24');
   }
 
   &.right_24 {
-    @include setIcon('right_24');
+    @include setIcon($icon_name: 'right_24');
   }
 
   &.search_24 {
-    @include setIcon('search_24');
+    @include setIcon($icon_name: 'search_24');
   }
 
   &.write_24 {
-    @include setIcon('write_24');
+    @include setIcon($icon_name: 'write_24');
   }
 
   &.language_24 {
-    @include setIcon('language_24');
+    @include setIcon($icon_name: 'language_24');
   }
 
   &.upload_24 {
-    @include setIcon('upload_24');
+    @include setIcon($icon_name: 'upload_24');
   }
 
   &.check_24 {
-    @include setIcon('check_24');
+    @include setIcon($icon_name: 'check_24');
   }
 
   &.book_24 {
-    @include setIcon('book_24');
+    @include setIcon($icon_name: 'book_24');
   }
 
   &.video_24 {
-    @include setIcon('video_24');
+    @include setIcon($icon_name: 'video_24');
   }
   &.delete_30 {
-    @include setIcon('delete_30');
+    @include setIcon($icon_name: 'delete_30');
   }
   &.plus_30 {
-    @include setIcon('plus_30');
+    @include setIcon($icon_name: 'plus_30');
   }
   &.check3_30 {
-    @include setIcon('check3_30');
+    @include setIcon($icon_name: 'check3_30');
   }
   &.check2_30 {
-    @include setIcon('check2_30');
+    @include setIcon($icon_name: 'check2_30');
   }
   &.check4_30 {
-    @include setIcon('check4_30');
+    @include setIcon($icon_name: 'check4_30');
   }
   &.fullscreen_30 {
-    @include setIcon('fullscreen_30');
+    @include setIcon($icon_name: 'fullscreen_30');
   }
   &.link_30 {
-    @include setIcon('link_30');
+    @include setIcon($icon_name: 'link_30');
   }
   &.search2_30 {
-    @include setIcon('search2_30');
+    @include setIcon($icon_name: 'search2_30');
   }
   &.book2_30 {
-    @include setIcon('book2_30');
+    @include setIcon($icon_name: 'book2_30');
   }
   &.document_30 {
-    @include setIcon('document_30');
+    @include setIcon($icon_name: 'document_30');
   }
   &.graph_30 {
-    @include setIcon('graph_30');
+    @include setIcon($icon_name: 'graph_30');
   }
   &.calandar_30 {
-    @include setIcon('calandar_30');
+    @include setIcon($icon_name: 'calandar_30');
   }
   &.gauge_30 {
-    @include setIcon('gauge_30');
+    @include setIcon($icon_name: 'gauge_30');
   }
-  &.language_30 {
-    @include setIcon('language_30');
-  }
+  // &.language_30 {
+  //   @include setIcon($icon_name: 'language_30');
+  // }
   &.link2_30 {
-    @include setIcon('link2_30');
+    @include setIcon($icon_name: 'link2_30');
   }
   &.write2_30 {
-    @include setIcon('write2_30');
+    @include setIcon($icon_name: 'write2_30');
   }
   &.hide_30 {
-    @include setIcon('hide_30');
+    @include setIcon($icon_name: 'hide_30');
   }
   &.signout_30 {
-    @include setIcon('signout_30');
+    @include setIcon($icon_name: 'signout_30');
   }
   &.volume_30 {
-    @include setIcon('volume_30');
+    @include setIcon($icon_name: 'volume_30');
   }
   &.mute_30 {
-    @include setIcon('mute_30');
+    @include setIcon($icon_name: 'mute_30');
   }
   &.sound_30 {
-    @include setIcon('sound_30');
+    @include setIcon($icon_name: 'sound_30');
   }
   &.sound2_30 {
-    @include setIcon('sound2_30');
+    @include setIcon($icon_name: 'sound2_30');
+  }
+  &.sound_gray_30 {
+    @include setIcon($icon_name: 'sound_gray_30');
   }
   &.mic_30 {
-    @include setIcon('mic_30');
+    @include setIcon($icon_name: 'mic_30');
   }
   &.mic_off_30 {
-    @include setIcon('mic_off_30');
+    @include setIcon($icon_name: 'mic_off_30');
+  }
+  &.mic_gray_30 {
+    @include setIcon($icon_name: 'mic_gray_30');
+  }
+  &.mic_off_orange_30 {
+    @include setIcon($icon_name: 'mic_off_orange_30');
   }
   &.sound_off_30 {
-    @include setIcon('sound_off_30');
+    @include setIcon($icon_name: 'sound_off_30');
+  }
+  &.sound_off_orange_30 {
+    @include setIcon($icon_name: 'sound_off_orange_30');
   }
   &.check_30 {
-    @include setIcon('check_30');
+    @include setIcon($icon_name: 'check_30');
+  }
+  &.check_40 {
+    @include setIcon($icon_name: 'check_40');
+  }
+  &.check_40_active {
+    @include setIcon($icon_name: 'check_40_active');
+  }
+  &.check_40_green {
+    @include setIcon($icon_name: 'check_40_green');
   }
   &.arrow_up_30 {
-    @include setIcon('arrow_up_30');
+    @include setIcon($icon_name: 'arrow_up_30');
   }
   &.arrow_down_30 {
-    @include setIcon('arrow_down_30');
+    @include setIcon($icon_name: 'arrow_down_30');
   }
   &.arrow_up2_30 {
-    @include setIcon('arrow_up2_30');
+    @include setIcon($icon_name: 'arrow_up2_30');
   }
   &.arrow_down2_30 {
-    @include setIcon('arrow_down2_30');
+    @include setIcon($icon_name: 'arrow_down2_30');
   }
   &.right_30 {
-    @include setIcon('right_30');
+    @include setIcon($icon_name: 'right_30');
   }
   &.left_30 {
-    @include setIcon('left_30');
+    @include setIcon($icon_name: 'left_30');
   }
   &.print_30 {
-    @include setIcon('print_30');
+    @include setIcon($icon_name: 'print_30');
   }
   &.write_30 {
-    @include setIcon('write_30');
+    @include setIcon($icon_name: 'write_30');
   }
   &.screen_small_30 {
-    @include setIcon('screen_small_30');
+    @include setIcon($icon_name: 'screen_small_30');
   }
   &.screen_big_30 {
-    @include setIcon('screen_big_30');
+    @include setIcon($icon_name: 'screen_big_30');
   }
   &.wifi_30 {
-    @include setIcon('wifi_30');
+    @include setIcon($icon_name: 'wifi_30');
   }
   &.wifi_reset_30 {
-    @include setIcon('wifi_reset_30');
+    @include setIcon($icon_name: 'wifi_reset_30');
   }
   &.wifi_disconnected_30 {
-    @include setIcon('wifi_disconnected_30');
+    @include setIcon($icon_name: 'wifi_disconnected_30');
   }
   &.avatar_30 {
-    @include setIcon('avatar_30');
+    @include setIcon($icon_name: 'avatar_30');
+  }
+  &.avatar_30_face {
+    @include setIcon($icon_name: 'avatar_30_face');
   }
   &.rec_30 {
-    @include setIcon('rec_30');
+    @include setIcon($icon_name: 'rec_30');
   }
   &.search_30 {
-    @include setIcon('search_30');
+    @include setIcon($icon_name: 'search_30');
   }
   &.close_30 {
-    @include setIcon('close_30');
+    @include setIcon($icon_name: 'close_30');
   }
   &.arrow_s_down_30 {
-    @include setIcon('arrow_s_down_30');
+    @include setIcon($icon_name: 'arrow_s_down_30');
   }
   &.arrow_s_up_30 {
-    @include setIcon('arrow_s_up_30');
+    @include setIcon($icon_name: 'arrow_s_up_30');
   }
   &.function_down_30 {
-    @include setIcon('funcion_down_30');
+    @include setIcon($icon_name: 'funcion_down_30');
   }
   &.function_up_30 {
-    @include setIcon('funcion_up_30');
+    @include setIcon($icon_name: 'funcion_up_30');
   }
   &.book_30 {
-    @include setIcon('book_30');
+    @include setIcon($icon_name: 'book_30');
   }
   &.add_30 {
-    @include setIcon('add_30');
+    @include setIcon($icon_name: 'add_30');
   }
   &.warning_30 {
-    @include setIcon('warning_30');
+    @include setIcon($icon_name: 'warning_30');
   }
   &.tool_text_30 {
-    @include setIcon('tool_text_30');
+    @include setIcon($icon_name: 'tool_text_30');
   }
   &.tool_undo_30 {
-    @include setIcon('tool_undo_30');
+    @include setIcon($icon_name: 'tool_undo_30');
   }
   &.tool_redo_30 {
-    @include setIcon('tool_redo_30');
+    @include setIcon($icon_name: 'tool_redo_30');
   }
   &.tool_color_30 {
-    @include setIcon('tool_color_30');
+    @include setIcon($icon_name: 'tool_color_30');
   }
   &.tool_stroke_30 {
-    @include setIcon('tool_stroke_30');
+    @include setIcon($icon_name: 'tool_stroke_30');
   }
   &.tool_eraser_30 {
-    @include setIcon('tool_eraser_30');
+    @include setIcon($icon_name: 'tool_eraser_30');
   }
   &.tool_delete_30 {
-    @include setIcon('tool_delete_30');
+    @include setIcon($icon_name: 'tool_delete_30');
   }
   &.download_30 {
-    @include setIcon('download_30');
+    @include setIcon($icon_name: 'download_30');
   }
   &.close_30 {
-    @include setIcon('close_30');
+    @include setIcon($icon_name: 'close_30');
   }
   &.clip_30 {
-    @include setIcon('clip_30');
+    @include setIcon($icon_name: 'clip_30');
   }
   &.save_30 {
-    @include setIcon('save_30');
+    @include setIcon($icon_name: 'save_30');
   }
   &.send_30 {
-    @include setIcon('send_30');
+    @include setIcon($icon_name: 'send_30');
+  }
+  &.send_fill_30 {
+    @include setIcon($icon_name: 'send_fill_30');
   }
   &.monitor_send_30 {
-    @include setIcon('monitor_send_30');
+    @include setIcon($icon_name: 'monitor_send_30');
+  }
+  &.monitor_send_white_30 {
+    @include setIcon($icon_name: 'monitor_send_white_30');
   }
   &.delete2_30 {
-    @include setIcon('delete2_30');
+    @include setIcon($icon_name: 'delete2_30');
   }
   &.flag_30 {
-    @include setIcon('flag_30');
-  }
-  &.flag_30 {
-    @include setIcon('flag_30');
+    @include setIcon($icon_name: 'flag_30');
   }
   &.book_40 {
-    @include setIcon('book_40');
+    @include setIcon($icon_name: 'book_40');
   }
   &.bookmark_40 {
-    @include setIcon('bookmark_40');
+    @include setIcon($icon_name: 'bookmark_40');
   }
   &.clip_40 {
-    @include setIcon('clip_40');
+    @include setIcon($icon_name: 'clip_40');
   }
   &.clip2_40 {
-    @include setIcon('clip2_40');
+    @include setIcon($icon_name: 'clip2_40');
   }
   &.graph_40 {
-    @include setIcon('graph_40');
+    @include setIcon($icon_name: 'graph_40');
+  }
+  &.setting_24 {
+    @include setIcon($icon_name: 'setting_24');
   }
   &.setting_40 {
-    @include setIcon('setting_40');
+    @include setIcon($icon_name: 'setting_40');
   }
   &.class_40 {
-    @include setIcon('class_40');
+    @include setIcon($icon_name: 'class_40');
   }
   &.calculator_40 {
-    @include setIcon('calculator_40');
+    @include setIcon($icon_name: 'calculator_40');
   }
   &.journal_40 {
-    @include setIcon('journal_40');
+    @include setIcon($icon_name: 'journal_40');
   }
   &.picture_40 {
-    @include setIcon('picture_40');
+    @include setIcon($icon_name: 'picture_40');
   }
   &.video_40 {
-    @include setIcon('video_40');
+    @include setIcon($icon_name: 'video_40');
   }
   &.search_x_40 {
-    @include setIcon('search_x_40');
+    @include setIcon($icon_name: 'search_x_40');
   }
   &.write_40 {
-    @include setIcon('write_40');
-  }
-  &.write_40 {
-    @include setIcon('arrow_40');
-  }
-  &.arrow_40 {
-    @include setIcon('write_40');
-  }
-  &.book_open_40 {
-    @include setIcon('book_open_40');
-  }
-  &.search_40 {
-    @include setIcon('search_40');
-  }
-  &.mute_40 {
-    @include setIcon('mute_40');
-  }
-  &.mike_on_40 {
-    @include setIcon('mike_on_40');
-  }
-  &.mike_off_40 {
-    @include setIcon('mike_off_40');
-  }
-  &.sound_on_40 {
-    @include setIcon('sound_on_40');
-  }
-  &.sound_off_40 {
-    @include setIcon('sound_off_40');
-  }
-  &.plus_40 {
-    @include setIcon('plus_40');
+    @include setIcon($icon_name: 'write_40');
   }
   &.learning_40 {
-    @include setIcon('learning_40');
+    @include setIcon($icon_name: 'learning_40');
+  }
+  &.arrow_40 {
+    @include setIcon($icon_name: 'arrow_40');
+  }
+  &.book_open_40 {
+    @include setIcon($icon_name: 'book_open_40');
+  }
+  &.search_40 {
+    @include setIcon($icon_name: 'search_40');
+  }
+  &.mute_40 {
+    @include setIcon($icon_name: 'mute_40');
+  }
+  &.mike_on_40 {
+    @include setIcon($icon_name: 'mike_on_40');
+  }
+  // &.mike_off_40 {
+  //   @include setIcon($icon_name: 'mike_off_40');
+  // }
+  &.sound_on_40 {
+    @include setIcon($icon_name: 'sound_on_40');
+  }
+  // &.sound_off_40 {
+  //   @include setIcon($icon_name: 'sound_off_40');
+  // }
+  &.plus_40 {
+    @include setIcon($icon_name: 'plus_40');
+  }
+  &.learning_40 {
+    @include setIcon($icon_name: 'learning_40');
   }
   &.wifi_disconnected_40 {
-    @include setIcon('wifi_disconnected_40');
+    @include setIcon($icon_name: 'wifi_disconnected_40');
   }
   &.photo_40 {
-    @include setIcon('photo_40');
+    @include setIcon($icon_name: 'photo_40');
   }
   &.bookmark_on_40 {
-    @include setIcon('bookmark_on');
+    @include setIcon($icon_name: 'bookmark_on');
 
     &.active {
-      @include setIcon('bookmark_off');
+      @include setIcon($icon_name: 'bookmark_off');
     }
   }
   &.bookmark_off_40 {
-    @include setIcon('bookmark_off');
+    @include setIcon($icon_name: 'bookmark_off');
   }
   &.check_60 {
-    @include setIcon('check_60');
+    @include setIcon($icon_name: 'check_60');
   }
   &.check_button_60 {
-    @include setIcon('check_button_60');
+    @include setIcon($icon_name: 'check_button_60');
   }
   &.plus_60 {
-    @include setIcon('plus_60');
+    @include setIcon($icon_name: 'plus_60');
   }
   &.minus_60 {
-    @include setIcon('minus_60');
+    @include setIcon($icon_name: 'minus_60');
   }
   &.subject_60 {
-    @include setIcon('subject_60');
+    @include setIcon($icon_name: 'subject_60');
   }
-  &.calandar_80 {
-    @include setIcon('calandar_80');
-  }
+  // &.calandar_80 {
+  //   @include setIcon($icon_name: 'calandar_80');
+  // }
   &.cloud_80 {
-    @include setIcon('cloud_80');
+    @include setIcon($icon_name: 'cloud_80');
   }
   &.subject_80 {
-    @include setIcon('subject_80');
+    @include setIcon($icon_name: 'subject_80');
   }
   &.wifi_disconnected_80 {
-    @include setIcon('wifi_disconnected_80');
+    @include setIcon($icon_name: 'wifi_disconnected_80');
+  }
+  &.close_circle_30 {
+    @include setIcon($icon_name: 'close_circle_30');
+  }
+  &.close_circle_black_30 {
+    @include setIcon($icon_name: 'close_circle_black_30');
   }
   &.close_circle_80 {
-    @include setIcon('close_circle_80');
+    @include setIcon($icon_name: 'close_circle_80');
   }
   &.link_80 {
-    @include setIcon('link_80');
+    @include setIcon($icon_name: 'link_80');
   }
   &.bookmark_empty_80 {
-    @include setIcon('bookmark_empty_80');
+    @include setIcon($icon_name: 'bookmark_empty_80');
   }
   &.book_80 {
-    @include setIcon('book_80');
+    @include setIcon($icon_name: 'book_80');
   }
   &.upload_80 {
-    @include setIcon('upload_80');
+    @include setIcon($icon_name: 'upload_80');
   }
   &.print_100 {
-    @include setIcon('print_100');
+    @include setIcon($icon_name: 'print_100');
   }
   &.book_100 {
-    @include setIcon('book_100');
+    @include setIcon($icon_name: 'book_100');
   }
   &.search_100 {
-    @include setIcon('search_100');
+    @include setIcon($icon_name: 'search_100');
+  }
+  &.search_ill_100 {
+    @include setIcon($icon_name: 'search_ill_100');
+  }
+  &.search_no_result_100 {
+    @include setIcon($icon_name: 'search_no_result_100');
   }
   &.variant4_100 {
-    @include setIcon('variant4_100');
+    @include setIcon($icon_name: 'variant4_100');
   }
   &.graduation_100 {
-    @include setIcon('graduation_100');
+    @include setIcon($icon_name: 'graduation_100');
   }
   &.dashboard1_100 {
-    @include setIcon('dashboard1_100');
+    @include setIcon($icon_name: 'dashboard1_100');
   }
   &.bookmark_100 {
-    @include setIcon('bookmark_100');
+    @include setIcon($icon_name: 'bookmark_100');
   }
   &.monitor_send_100 {
-    @include setIcon('monitor_send_100');
+    @include setIcon($icon_name: 'monitor_send_100');
   }
   &.monitor_view_100 {
-    @include setIcon('monitor_view_100');
+    @include setIcon($icon_name: 'monitor_view_100');
   }
   &.search_file_100 {
-    @include setIcon('search_file_100');
+    @include setIcon($icon_name: 'search_file_100');
   }
   &.whiteboard_100 {
-    @include setIcon('whiteboard_100');
+    @include setIcon($icon_name: 'whiteboard_100');
   }
   &.nuri_100 {
-    @include setIcon('nuri_100');
+    @include setIcon($icon_name: 'nuri_100');
   }
-  &.search_doc {
-    @include setIcon('search_doc');
+  &.monitor_view_white_100 {
+    @include setIcon($icon_name: 'monitor_view_white_100');
+  }
+  &.book_b {
+    @include setIcon($icon_directory: $icon-directory-common, $icon_name: 'book_b');
+  }
+  &.del_bk {
+    @include setIcon($icon-directory: $icon-directory-common, $icon_name: 'del_bk');
+  }
+  &.info_blue {
+    @include setIcon($icon_name: 'info_blue');
+  }
+  &.edit {
+    @include setIcon($icon_name: 'edit');
+  }
+  &.communication_40 {
+    @include setIcon($icon_name: 'communication_40');
+  }
+  &.data_pdf {
+    @include setIcon($icon_name: 'data_pdf');
+  }
+  &.data_img {
+    @include setIcon($icon_name: 'data_img');
+  }
+  &.data_web {
+    @include setIcon($icon_name: 'data_web');
+  }
+  &.data_xlsx {
+    @include setIcon($icon_name: 'data_xlsx');
+  }
+  &.data_ppt {
+    @include setIcon($icon_name: 'data_ppt');
+  }
+  &.data_docs {
+    @include setIcon($icon_name: 'data_docs');
+  }
+  &.data_hwp {
+    @include setIcon($icon_name: 'data_hwp');
+  }
+  // &.type_pdf_50 {
+  //   @include setIcon($icon_name: 'type_pdf_50');
+  // }
+  &.attached {
+    @include setIcon($icon_name: 'attached');
+  }
+  &.document2_30 {
+    @include setIcon($icon_name: 'document2_30');
+  }
+  &.aside_btn {
+    @include setIcon($icon_name: 'aside_btn');
+  }
+  &.shape_3d_30 {
+    @include setIcon($icon_name: 'shape_3d_30');
+  }
+  &.aibook_30 {
+    @include setIcon($icon_name: 'aibook_30');
+  }
+  &.arrow_40 {
+    @include setIcon($icon_name: 'arrow_40');
+  }
+  &.arrow_left_60 {
+    @include setIcon($icon_name: 'arrow_left_60');
+  }
+  &.arrow_right_60 {
+    @include setIcon($icon_name: 'arrow_right_60');
+  }
+  &.circle_arrow_left_30 {
+    @include setIcon($icon_name: 'circle_arrow_left_30');
+  }
+  &.circle_arrow_right_30 {
+    @include setIcon($icon_name: 'circle_arrow_right_30');
+  }
+  &.double_arrow_left_30 {
+    @include setIcon($icon_name: 'double_arrow_left_30');
+  }
+  &.double_arrow_right_30 {
+    @include setIcon($icon_name: 'double_arrow_right_30');
+  }
+  &.attachment_80 {
+    @include setIcon($icon_name: 'attachment_80');
+  }
+  &.back_30 {
+    @include setIcon($icon_name: 'back_30');
+  }
+  &.book_open_30 {
+    @include setIcon($icon_name: 'book_open_30');
+  }
+  &.book_open_40 {
+    @include setIcon($icon_name: 'book_open_40');
+  }
+  &.book2_80 {
+    @include setIcon($icon_name: 'book2_80');
+  }
+  &.bookmark_off_100 {
+    @include setIcon($icon_name: 'bookmark_off_100');
+  }
+  &.browser_max_40 {
+    @include setIcon($icon_name: 'browser_max_40');
+  }
+  &.calculator_40 {
+    @include setIcon($icon_name: 'calculator_40');
+  }
+  &.calendar_30 {
+    @include setIcon($icon_name: 'calendar_30');
+  }
+  &.calendar_x_100 {
+    @include setIcon($icon_name: 'calendar_x_100');
+  }
+  &.chart_30 {
+    @include setIcon($icon_name: 'chart_30');
+  }
+  &.class_40 {
+    @include setIcon($icon_name: 'class_40');
+  }
+  &.close_40 {
+    @include setIcon($icon_name: 'close_40');
+  }
+  &.close_circle_40 {
+    @include setIcon($icon_name: 'close_circle_40');
+  }
+  &.close_circle2_30 {
+    @include setIcon($icon_name: 'close_circle2_30');
+  }
+  &.dashboard_x_100 {
+    @include setIcon($icon_name: 'dashboard_x_100');
+  }
+  &.dashboard2_100 {
+    @include setIcon($icon_name: 'dashboard2_100');
+  }
+  &.emoticon_1_40 {
+    @include setIcon($icon_name: 'emoticon_1_40');
+  }
+  &.emoticon_2_40 {
+    @include setIcon($icon_name: 'emoticon_2_40');
+  }
+  &.emoticon_3_40 {
+    @include setIcon($icon_name: 'emoticon_3_40');
+  }
+  &.emoticon_4_40 {
+    @include setIcon($icon_name: 'emoticon_4_40');
+  }
+  &.emoticon_5_40 {
+    @include setIcon($icon_name: 'emoticon_5_40');
+  }
+  &.emoticon_blank_40 {
+    @include setIcon($icon_name: 'emoticon_blank_40');
+  }
+  &.emoticon_plus_40 {
+    @include setIcon($icon_name: 'emoticon_plus_40');
+  }
+  &.graduation2_80 {
+    @include setIcon($icon_name: 'graduation2_80');
+  }
+  &.hint_30 {
+    @include setIcon($icon_name: 'hint_30');
+  }
+  &.homework_100 {
+    @include setIcon($icon_name: 'homework_100');
+  }
+  &.journal_40 {
+    @include setIcon($icon_name: 'journal_40');
+  }
+  &.left_circle_40 {
+    @include setIcon($icon_name: 'left_circle_40');
+  }
+  &.letter_40 {
+    @include setIcon($icon_name: 'letter_40');
+  }
+  &.memo_40 {
+    @include setIcon($icon_name: 'memo_40');
+  }
+  &.menu_30 {
+    @include setIcon($icon_name: 'menu_30');
+  }
+  &.message_30 {
+    @include setIcon($icon_name: 'message_30');
+  }
+  &.mic2_30 {
+    @include setIcon($icon_name: 'mic2_30');
+  }
+  &.more_darken_30 {
+    @include setIcon($icon_name: 'more_darken_30');
+  }
+  &.more_darken2_30 {
+    @include setIcon($icon_name: 'more_darken2_30');
+  }
+  &.more_white_30 {
+    @include setIcon($icon_name: 'more_white_30');
+  }
+  &.mute_40 {
+    @include setIcon($icon_name: 'mute_40');
+  }
+  &.pdf_40 {
+    @include setIcon($icon_name: 'pdf_40');
+  }
+  &.people_x_100 {
+    @include setIcon($icon_name: 'people_x_100');
+  }
+  &.photo_40 {
+    @include setIcon($icon_name: 'photo_40');
+  }
+  &.picture_80 {
+    @include setIcon($icon_name: 'picture_80');
+  }
+  &.picture_100 {
+    @include setIcon($icon_name: 'picture_100');
+  }
+  &.plus_40 {
+    @include setIcon($icon_name: 'plus_40');
+  }
+  &.print_40 {
+    @include setIcon($icon_name: 'print_40');
+  }
+  &.recommend_x_100 {
+    @include setIcon($icon_name: 'recommend_x_100');
+  }
+  &.record_100 {
+    @include setIcon($icon_name: 'record_100');
+  }
+  &.refresh_30 {
+    @include setIcon($icon_name: 'refresh_30');
+  }
+  &.return_30 {
+    @include setIcon($icon_name: 'return_30');
+  }
+  &.right_circle_40 {
+    @include setIcon($icon_name: 'right_circle_40');
+  }
+  &.search_doc_100 {
+    @include setIcon($icon_name: 'search_doc_100');
+  }
+  &.search_x_40 {
+    @include setIcon($icon_name: 'search_x_40');
+  }
+  &.section_x_100 {
+    @include setIcon($icon_name: 'section_x_100');
+  }
+  &.section_x2_100 {
+    @include setIcon($icon_name: 'section_x2_100');
+  }
+  &.send2_30 {
+    @include setIcon($icon_name: 'send2_30');
+  }
+  &.setting_40 {
+    @include setIcon($icon_name: 'setting_40');
+  }
+  &.share_30 {
+    @include setIcon($icon_name: 'share_30');
+  }
+  &.sound_off_orange_40 {
+    @include setIcon($icon_name: 'sound_off_orange_40');
+  }
+  &.sound_on_40 {
+    @include setIcon($icon_name: 'sound_on_40');
+  }
+  &.special_30 {
+    @include setIcon($icon_name: 'special_30');
+  }
+  &.study_finish_100 {
+    @include setIcon($icon_name: 'study_finish_100');
+  }
+  &.study_x_100 {
+    @include setIcon($icon_name: 'study_x_100');
+  }
+  &.tap_write_30 {
+    @include setIcon($icon_name: 'tap_write_30');
+  }
+  &.test_100 {
+    @include setIcon($icon_name: 'test_100');
+  }
+  &.upload2_80 {
+    @include setIcon($icon_name: 'upload2_80');
+  }
+  &.view_30 {
+    @include setIcon($icon_name: 'view_30');
+  }
+  &.volume_off_40 {
+    @include setIcon($icon_name: 'volume_off_40');
+  }
+  &.volume_on_40 {
+    @include setIcon($icon_name: 'volume_on_40');
+  }
+  &.wait_40 {
+    @include setIcon($icon_name: 'wait_40');
+  }
+  &.wifi_disconnected_40 {
+    @include setIcon($icon_name: 'wifi_disconnected_40');
+  }
+  &.link2_60 {
+    @include setIcon($icon_name: 'link2_60');
+  }
+  &.left_24 {
+    @include setIcon($icon_name: 'left_24');
+  }
+  &.calander_80 {
+    @include setIcon($icon_name: 'calander_80');
+  }
+  &.add_circle_55 {
+    @include setIcon($icon_name: 'add_circle_55');
+  }
+  &.search_120 {
+    @include setIcon($icon_name: 'search_120');
+  }
+  &.board_120 {
+    @include setIcon($icon_name: 'board_120');
+  }
+  &.link_120 {
+    @include setIcon($icon_name: 'link_120');
+  }
+  &.picture_x_100 {
+    @include setIcon($icon_name: 'picture_x_100');
   }
 
-  &.hamberger {
-    @include setIcon('hamberger');
+  &.materials_40 {
+    @include setIcon($icon_name: 'materials_40');
+  }
+  &.math_40 {
+    @include setIcon($icon_name: 'math_40');
+  }
+  &.message_40 {
+    @include setIcon($icon_name: 'message_40');
+  }
+  &.tool_delete_40 {
+    @include setIcon($icon_name: 'tool_delete_40');
+  }
+
+  &.record_40 {
+    @include setIcon($icon_name: 'record_40');
+  }
+  &.record2_40 {
+    @include setIcon($icon_name: 'record2_40');
+  }
+  &.subtitles_24 {
+    @include setIcon($icon_name: 'subtitles_24');
+  }
+  &.memo2_24 {
+    @include setIcon($icon_name: 'memo2_24');
+  }
+  &.speed_24 {
+    @include setIcon($icon_name: 'speed_24');
+  }
+  &.expand_24 {
+    @include setIcon($icon_name: 'expand_24');
+  }
+  &.record_45 {
+    @include setIcon($icon_name: 'record_45');
+  }
+  &.mike_off_2_40 {
+    @include setIcon($icon_name: 'mike_off_2_40');
+  }
+  &.reference_100 {
+    @include setIcon($icon_name: 'reference_100');
+  }
+  &.nodata_100 {
+    @include setIcon($icon_name: 'nodata_100');
+  }
+  &.doc_han {
+    @include setIcon($icon_name: 'doc_han');
+  }
+  &.doc_exel {
+    @include setIcon($icon_name: 'doc_exel');
+  }
+  &.doc_img {
+    @include setIcon($icon_name: 'doc_img');
+  }
+  &.doc_link {
+    @include setIcon($icon_name: 'doc_link');
+  }
+  &.doc_pdf {
+    @include setIcon($icon_name: 'doc_pdf');
+  }
+  &.doc_ppt {
+    @include setIcon($icon_name: 'doc_ppt');
+  }
+  &.doc_word {
+    @include setIcon($icon_name: 'doc_word');
+  }
+  &.fist {
+    @include setIcon($icon_name: 'fist');
+  }
+  &.calandar_20 {
+    @include setIcon($icon_name: 'calandar_20');
+  }
+  &.data_20 {
+    @include setIcon($icon_name: 'data_20');
+  }
+  &.correct_20 {
+    @include setIcon($icon_name: 'correct_20');
+  }
+  &.wrong_20 {
+    @include setIcon($icon_name: 'wrong_20');
+  }
+  &.ai_data_60 {
+    @include setIcon($icon_name: 'ai_data_60');
+  }
+  &.file_drop {
+    @include setIcon($icon_name: 'file_drop');
+  }
+  &.speech_bubble{
+    @include setIcon($icon_name: 'speech_bubble');
+  }
+  &.speech_bubble_bk{
+    @include setIcon($icon_name: 'speech_bubble_bk');
+  }
+  &.waitting_40{
+    @include setIcon($icon_name: 'waitting_40');
+  }
+
+  // ico 아우터(width, height 지정)
+  .ico_outer {
+    //background: var(--icon-bg-color-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    &.size_sm {
+      width: 3.6rem;
+      height: 3.6rem;
+      background: $white;
+      border: 1px solid $line-darken;
+    }
+    //100px
+    &.size_25 {
+      width: 10rem;
+      height: 10rem;
+    }
+    //120px
+    &.size_30 {
+      width: 12rem;
+      height: 12rem;
+    }
+    &.bg_gray {
+      background: var(--icon-bg-color-gray);
+    }
+    &.bg_blue {
+      background: var(--icon-bg-color-blue);
+    }
+    &.bg_red {
+      background: var(--icon-bg-color-red);
+    }
   }
 }

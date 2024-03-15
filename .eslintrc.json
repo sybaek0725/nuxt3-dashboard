@@ -1,0 +1,32 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "ignorePatterns": ["node_modules/*", "dist/*", "public/*", "lib/*", "!.prettierrc.json"],
+    "extends": ["plugin:nuxt/recommended", "plugin:vue/vue3-recommended", "plugin:prettier/recommended"],
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+    },
+    "plugins": ["vue", "prettier"],
+    "rules": {
+        "vue/multi-word-component-names": "off",
+        "vue/attributes-order": 2,
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "semi": true,
+                "tabWidth": 4,
+                "trailingComma": "none",
+                "printWidth": 140,
+                "bracketSpacing": true,
+                "arrowParens": "avoid",
+                "endOfLine": "auto"
+            }
+        ]
+    }
+}

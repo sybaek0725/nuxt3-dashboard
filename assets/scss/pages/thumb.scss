@@ -1,0 +1,99 @@
+@import '../foundations/mixin.scss';
+
+.thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  .img_area {
+    border-radius: 0.6rem;
+    border: 1px solid var(--gray_Line_555, #555);
+    opacity: 0.94;
+    width: 23rem;
+    height: 22.9rem;
+    flex-shrink: 0;
+    position: relative;
+    .v-checkbox {
+      position: absolute;
+      top: 0;
+      left: 0.8rem;
+    }
+    img {
+      object-fit: fit;
+      border-radius: 0.6rem;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.thumb_con_wrap {
+  display: flex;
+  > div {
+    position: relative;
+    flex: 1;
+    & + div {
+      margin-left: 6rem;
+      &::after {
+        content: '';
+        position: absolute;
+        display: inline-flex;
+        width: 0.1rem;
+        top: 2rem;
+        left: -3rem;
+        bottom: 0;
+        border-left: 1px solid var(--border-gray);
+      }
+    }
+  }
+  .tit_wrap {
+    display: flex;
+    align-items: center;
+    @include font_body2;
+    height: 6rem;
+    span {
+      margin-right: 3rem;
+    }
+  }
+  .thumb_list_wrap {
+    max-height: 60rem;
+    overflow-y: auto;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      li {
+        a {
+          display: flex;
+          flex-direction: column;
+        }
+        width: calc(33.3% - 1rem);
+        margin: 0 1.5rem 1.5rem 0;
+        &:nth-child(3n) {
+          margin: 0 0rem 1.5rem 0;
+        }
+        .txt_tit {
+          @include font_body5;
+          color: #000;
+          text-align: center;
+          font-style: normal;
+          margin-top: 1.2rem;
+          line-height: 2.6rem;
+        }
+        .img_wrap {
+          border: 1px solid var(--border-gray);
+          border-radius: 0.8rem;
+          line-height: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

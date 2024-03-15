@@ -1,0 +1,110 @@
+/**
+component name : banner
+writer : 조영동
+변경일 : 240213
+*/
+
+$banner-radius: 0.5rem;
+
+.banner {
+  display: flex;
+  //padding: 5.4rem 7.9rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+
+  border: 1px solid $line-basic;
+  border-radius: $banner-radius;
+  background: $bg-light;
+
+  // 컬러 관련
+  &.banner-sky {
+    background-color: $B50;
+  }
+  &.banner-gray {
+    background-color: $G600;
+  }
+
+  &.banner-basic {
+    background-color: $bg-basic;
+  }
+
+  @each $key, $value in $point-color-list {
+    &.banner-#{$key} {
+      background-color: $value;
+    }
+  }
+
+  @each $key, $value in $bg-color-list {
+    &.banner-#{$key} {
+      background-color: $value;
+    }
+  }
+
+  @each $key, $value in $file-color-list {
+    &.banner-#{$key} {
+      background-color: $value;
+      border: none;
+      color: $white;
+    }
+  }
+
+  // 형태 및 사이즈 관련
+  &.banner-rectangle {
+    width: 36rem;
+    height: 23.8rem;
+
+    &.banner-rectangle-xs {
+      width: 24rem;
+      height: 13.5rem;
+    }
+    &.banner-rectangle-sm {
+      width: 26.4rem;
+      height: 14.8rem;
+    }
+    &.banner-rectangle-lg {
+      width: 48.5rem;
+      height: 27rem;
+    }
+    &.banner-rectangle-xl {
+      width: 60.8rem;
+      height: 34.2rem;
+    }
+  }
+
+  &.banner-square {
+    width: 45rem;
+    height: 45rem;
+
+    &.banner-square-sm {
+      width: 37rem;
+      height: 37rem;
+    }
+
+    &.banner-square-xs {
+      width: 36rem;
+      height: 23.8rem;
+    }
+    &.banner-square-lg {
+      width: 60rem;
+      height: 60rem;
+    }
+  }
+
+  &.banner_empty {
+    border: 1px solid $line-darken;
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    //object-fit: cover;
+  }
+
+  p,
+  span {
+    width: 100%;
+  }
+}

@@ -1,44 +1,161 @@
-@import '../foundations/variables.scss';
-@import '../foundations/mixin.scss';
-
-.btn_under_dialog {
-  display: flex;
-  position: absolute;
-  bottom: -22.9rem;
-  justify-content: center;
-  width: 100%;
-  align-items: center;
-
+ @each $key, $value in $point-color-list {
   .v-btn {
-    width: 32.4rem;
+    &.#{$key} {
+      background-color: $value;
+      color: $point-color-white !important;
+      @if ($key == 'white'){
+        color: $point-color-black !important;
+      }
+    }
+    &.outlined {
+      border: 1px solid $point-color-black;
+      color: $point-color-black !important;
+    }
+    &.outlined_#{$key} {
+      border: 1px solid $value;
+      color: $point-color-black !important;
+    }
   }
 }
 
-.blue-btn {
-  display: flex;
-  padding: 1rem 1.6rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.4rem !important;
-  background: var(--Input_Line_51B3E9, #51b3e9);
-  color: #fff;
+$v-btn-default-height: 3.6rem;
+
+.v-btn {
+  text-transform: none !important;
+  padding: 0 4rem;
+
+  .v-btn__content {
+    letter-spacing: -0.05em;
+  }
+
+  &.btn_2row {
+    // 2줄 버튼
+    height: auto !important;
+    .v-btn__content {
+      flex-direction: column;
+      padding: 0.8rem 0;
+      min-width: 10rem;
+    }
+    em {
+      display: block;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      @include font-body5;
+    }
+    &.black {
+      em {
+        color: $white;
+      }
+    }
+  }
+
+  /**
+   * size는 xs 부터 lg까지 처리
+   * 높이 값은 제한 없이 padding으로 조절
+   */
+
+  &.v-btn--size-large {
+    min-height: 5.6rem !important;
+    min-width: 16rem !important;
+    height: auto !important;
+    padding: 0 4rem;
+    @include font_body3($font-weight-medium, $white);
+  }
+
+  &.v-btn--size-default {
+    min-height: 4.2rem !important;
+    min-width: 14rem !important;
+    padding: 0 2rem !important;
+    @include font_body3($font-weight-medium, $white);
+  }
+
+  &.v-btn--size-small {
+    min-height: 3.6rem !important;
+    min-width: 11rem !important;
+    height: auto !important;
+    padding: 0 1.5rem !important;
+    @include font_body4($font-weight-medium, $white);
+  }
+
+  &.v-btn--size-x-small {
+    min-height: 3.2rem !important;
+    min-width: 8rem !important;
+    height: auto !important;
+    padding: 0 1.5rem !important;
+    @include font_body5($font-weight-medium, $white);
+  }
+
+  &.v-btn--density-default{
+    height: $v-btn-default-height;
+  }
+
+  /**
+   * radius
+   */
+  &.v-btn--rounded {
+    border-radius: 5rem !important;
+  }
+  
+  /**
+   * disabled
+   * 컬러별로 정의가 아닌 opacity로 처리
+   */
+  &.v-btn--disabled {
+    opacity: 0.2 !important;
+    background: $bg-darken !important;
+  }
+
+  /**
+    * 내용 : icon_only 버튼의 small에서 좌우 표시를 위한 클래스
+   */
+
+  &.icon_only {
+    position: relative;
+    min-width: 5rem !important;
+    padding: 0rem !important;
+    font-size: 4rem !important;
+    height: 5rem !important;
+
+    &.icon_only-transparent {
+      background-color: transparent;
+    }
+    &.icon_only-sm {
+      min-height: 3rem !important;
+      min-width: 3rem !important;
+    }
+
+    &.pre {
+      background: url('@/assets/images/common/ico_page_arrow.svg') center center no-repeat;
+    }
+    &.next {
+      transform: rotate(180deg);
+      background: url('@/assets/images/common/ico_page_arrow.svg') center center no-repeat;
+    }
+
+    &.icon_only_circle {
+      border-radius: 50%;
+      background: $DB900;
+    }
+  }
+
+  /**
+    * 내용 : 버튼의 반쪽 모습의 ui를 위해 사용
+   */
+  &.half{
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    &.reversal{
+      border-top-right-radius: 2rem !important;
+      border-bottom-right-radius: 2rem !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
 }
-.light-btn {
-  color: var(--Black_999, #999);
-  display: flex;
-  height: 5rem;
-  padding: 0px 2rem;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 5rem;
-  background: var(--gray_BG_f7, #f7f7f7);
-}
-.disabled-btn {
-  border-radius: 15rem;
-  background: var(--gray_BG_d8d8d8, #d8d8d8);
-  @include font_body2(#999);
-}
+
+/**
+ * 내용 : btn-week 숙제 관리 화면에서 버튼 레이아웃 정렬하기 위해서 사용
+ */
 .btn-week {
   position: relative;
   height: 6rem;
@@ -57,7 +174,7 @@
     border: 1px solid var(--Point_169BD4, #169bd4);
     background: var(--white-fff, #fff);
     margin: 0 5px !important;
-    &--disabled {
+    &.v-btn--disabled {
       border: 0 solid #ffffff;
       background: #ffffff;
       opacity: 0.6 !important;
@@ -73,229 +190,6 @@
       background: #1e3257;
       border-color: #1e3257;
       color: #ffffff;
-    }
-  }
-}
-
-.v-btn {
-  text-transform: none !important;
-  padding: 0 4rem;
-
-  .v-btn__content {
-    letter-spacing: -0.05em;
-  }
-  //ico
-  .ico {
-    display: inline-flex;
-    align-items: center;
-    &::before {
-      content: '';
-      display: inline-flex;
-      width: 3rem;
-      height: 3rem;
-      margin-right: 0.5rem;
-    }
-    &.check_bk {
-      background: url('@/assets/images/common/ico_check_b.svg') no-repeat;
-      background-size: contain;
-    }
-    &.check_wh {
-      background: url('@/assets/images/common/ico_check_w.svg') no-repeat;
-      background-size: contain;
-    }
-    &.share {
-      background: url('@/assets/images/common/ico_share.svg') no-repeat;
-      background-size: contain;
-    }
-    &.show {
-      background: url('@/assets/images/common/ico_show.svg') no-repeat;
-      background-size: contain;
-    }
-    &.hide {
-      background: url('@/assets/images/common/ico_hide.svg') no-repeat;
-      background-size: contain;
-    }
-    &.hide1 {
-      background: url('@/assets/images/common/ico_hide1.svg') no-repeat;
-      background-size: contain;
-    }
-  }
-  //size
-  &--size-x-small {
-    //height: 3.2rem !important;
-    font-size: $font-xsmall !important;
-    min-width: 7rem !important;
-    padding: 0 2rem !important;
-  }
-
-  &--size-small {
-    //height: 3.6rem !important;
-    font-size: $font-small !important;
-    min-width: 7rem !important;
-    padding: 0 2rem !important;
-    &.icon_only {
-      position: relative;
-      min-width: 5rem !important;
-      padding: 0rem !important;
-      font-size: 4rem !important;
-      height: 5rem !important;
-
-      &.pre {
-        background: url('@/assets/images/common/ico_page_arrow.svg') center center no-repeat;
-      }
-      &.next {
-        transform: rotate(180deg);
-        background: url('@/assets/images/common/ico_page_arrow.svg') center center no-repeat;
-      }
-    }
-  }
-
-  &--size-default {
-    //height: 4.4rem !important;
-    min-width: 14.5rem !important;
-    font-size: $font-medium !important;
-    padding: 0 5rem;
-  }
-
-  &--size-large {
-    height: 6rem !important;
-    min-width: 17rem !important;
-    font-size: $font-medium !important;
-    padding: 0 5rem;
-  }
-
-  &--size-x-large {
-    min-width: 14.5rem !important;
-    font-size: $font-medium !important;
-    padding: 0.6rem 5rem !important;
-    span,
-    em {
-      font-size: $font-medium !important;
-      display: block;
-    }
-  }
-
-  //radius
-  &--rounded {
-    border-radius: 5rem !important;
-  }
-
-  &.v-btn--disabled {
-    opacity: 0.6 !important;
-  }
-
-  //color
-  &.primary {
-    background-color: $primary !important;
-    color: $white !important;
-    &.v-btn--disabled {
-      background-color: $primary;
-    }
-  }
-  &.point1 {
-    background-color: $point1;
-    color: $white !important;
-    &.v-btn--disabled {
-      background-color: $point1;
-    }
-  }
-  &.point {
-    background-color: $point;
-    color: $white !important;
-    &.v-btn--disabled {
-      background-color: $point;
-    }
-  }
-  &.green {
-    background-color: $green;
-    color: $white !important      ;
-    &.v-btn--disabled {
-      background-color: $green;
-    }
-  }
-  &.gray {
-    background-color: $gray;
-    color: $white !important;
-    &.v-btn--disabled {
-      background-color: $gray;
-    }
-  }
-  &.lightgray {
-    background-color: $lightgray;
-    color: $white !important;
-    &.v-btn--disabled {
-      background-color: $lightgray;
-    }
-  }
-  &.orange {
-    background-color: $orange;
-    color: $white !important;
-    &.v-btn--disabled {
-      background-color: $orange;
-    }
-  }
-  &.black {
-    background-color: $black;
-    color: $white !important;
-    &.v-btn--disabled {
-      background-color: $black;
-    }
-
-    &.with_arrow {
-      padding-right: 10.8rem;
-      position: relative;
-    }
-  }
-  &.outlined {
-    border: 1px solid $primary;
-    color: $primary !important;
-    &.v-btn--disabled {
-      background-color: #fff;
-      .v-btn__overlay {
-        display: none;
-      }
-    }
-  }
-  &.outlined_bk {
-    border: 1px solid $black;
-    color: $black !important;
-    &.v-btn--disabled {
-      background-color: #fff;
-      .v-btn__overlay {
-        display: none;
-      }
-    }
-  }
-  &.outlined_point {
-    border: 1px solid $point;
-    color: $black !important;
-    letter-spacing: 0.5rem;
-    &.v-btn--disabled {
-      background-color: #fff;
-      .v-btn__overlay {
-        display: none;
-      }
-    }
-  }
-  &.outlined_orange {
-    border: 1px solid $orange;
-    color: $orange !important;
-    letter-spacing: 0.5rem;
-    &.v-btn--disabled {
-      background-color: #fff;
-      .v-btn__overlay {
-        display: none;
-      }
-    }
-  }
-  &.outlined_gy {
-    border: 1px solid $outline_gray;
-    color: $black !important;
-    &.v-btn--disabled {
-      background-color: #fff;
-      .v-btn__overlay {
-        display: none;
-      }
     }
   }
 }

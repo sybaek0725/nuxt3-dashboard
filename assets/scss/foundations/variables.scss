@@ -46,26 +46,12 @@ $B700: #3b86c2;
 $B800: #3675ae;
 $B900: #28568c;
 
-// 기존 사용
-$secondary: #ffd748;
-$darkgray: #555;
-$gray: #666;
-$lightgray: #999;
-$point: #169bd4;
-$point1: #65b6d8;
-$orange: #ff6600;
-$green: #81b01b;
-$outline_gray: #aaa;
-$point_red: #f04c42;
-$black: #000;
-$white: #fff;
-
 //font-size
-$font-xlarge: 3.2rem;
-$font-large: 3rem;
-$font-medium: 2.5rem;
-$font-small: 2.3rem;
-$font-xsmall: 2.2rem;
+$font-xlarge: 2.2rem;
+$font-large: 2rem;
+$font-medium: 1.8rem;
+$font-small: 1.6rem;
+$font-xsmall: 1.4rem;
 
 /* Font weight */
 $font-weight-bold: 700;
@@ -77,30 +63,26 @@ $font-weight-regular: 400;
 $spacing-root: 0.5rem;
 
 $header-height: 8rem;
-$navigator-height: 7rem;
 $aside-width: 20.5rem;
+$navigator-height: 7rem;
+/**
+  * $container-area-height: 페이지 전체 세로 높이
+ */
+$container-height: calc(100dvh - 8rem);
 
-.text-black {
-  color: $black !important;
-}
-.text-gray {
-  color: $gray !important;
-}
-.text-orange {
-  color: $orange !important;
-}
-.text-success {
-  color: $point !important;
-}
-.text-point {
-  color: $point !important;
-}
-.text-point1 {
-  color: $point1 !important;
-}
-.text-point_red {
-  color: $point_red !important;
-}
+// 기존 사용
+$secondary: #ffd748;
+$darkgray: #555;
+$gray: #666;
+$lightgray: #999;
+$point: $B500;
+$point1: $B50;
+$orange: #ff6600;
+$green: #81b01b;
+$outline_gray: #aaa;
+$point_red: #f04c42;
+$black: #000;
+$white: #fff;
 
 :root {
   /* filter color*/
@@ -114,9 +96,19 @@ $aside-width: 20.5rem;
     hue-rotate(1deg) brightness(103%) contrast(105%);
   --color-point: brightness(0) saturate(100%) invert(52%) sepia(68%) saturate(643%)
     hue-rotate(152deg) brightness(87%) contrast(89%);
-  --color-secondary: brightness(0) saturate(100%) invert(90%) sepia(53%) saturate(856%)
-    hue-rotate(320deg) brightness(106%) contrast(100%);
+  --color-point-yellow: brightness(0) saturate(100%) invert(76%) sepia(66%) saturate(3413%)
+    hue-rotate(6deg) brightness(108%) contrast(106%);
+  --color-point-orange: brightness(0) saturate(100%) invert(52%) sepia(87%) saturate(3363%)
+    hue-rotate(360deg) brightness(101%) contrast(107%);
+  --color-point-blue: brightness(0) saturate(100%) invert(64%) sepia(10%) saturate(3170%)
+    hue-rotate(170deg) brightness(93%) contrast(93%);
+  --color-secondary: brightness(0) saturate(100%) invert(71%) sepia(77%) saturate(2371%)
+    hue-rotate(359deg) brightness(103%) contrast(104%);
 
+  --color-icon-hover: brightness(0) saturate(100%) invert(30%) sepia(5%) saturate(14%)
+    hue-rotate(105deg) brightness(99%) contrast(85%);
+  --color-icon-disabled: brightness(0) saturate(100%) invert(74%) sepia(38%) saturate(6%)
+    hue-rotate(40deg) brightness(112%) contrast(100%);
   /* border radius */
   --border-radius-medium: 0.6rem;
 
@@ -195,11 +187,11 @@ $aside-width: 20.5rem;
   --icon-point2: #{$Y900};
   --icon-point3: #{$B500};
 
+  --icon-bg-color-gray: #{$G50};
+  --icon-bg-color-blue: #{$B500};
+  --icon-bg-color-red: #{$point_red};
+  
   --icon-bg-color: #{$G300};
   --icon-bg-color1: #{$G100};
   --icon-bg-color2: #{$white};
-
-  /** layout **/
-  --header-height: #{$header-height};
-  --navigator-height: #{$navigator-height};
 }

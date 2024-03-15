@@ -1,0 +1,41 @@
+.slider {
+  .v-slider {
+    .v-slider-thumb__surface {
+      background: $point-color-yellow;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+    .v-slider-track__fill {
+      background: $point-color-yellow;
+      height: 1rem !important;
+      margin: 1px !important;
+    }
+    .v-slider-track,
+    .v-slider-track__background {
+      height: 1.4rem !important;
+      border-radius: 1rem !important;
+      background: transparent !important;
+      border: 1px solid $line-darken;
+    }
+  }
+
+  @each $key, $value in $point-color-list {
+    &.slider-#{$key} {
+      .v-slider {
+        .v-slider-thumb__surface {
+          background-color: $value;
+        }
+        .v-slider-track__fill {
+          background: $value;
+        }
+
+        @if ($key == 'white') {
+          .v-slider-track,
+          .v-slider-track__background {
+            border: 1px solid $line-white !important;
+          }
+        }
+      }
+    }
+  }
+}

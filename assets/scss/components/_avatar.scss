@@ -1,0 +1,101 @@
+/**
+component name : avatar
+writer : 조영동
+변경일 : 240213
+*/
+
+$avatar-spacing: 1rem;
+$avatar-box-selected-width: 19rem;
+$avatar-button-min-width: 16rem;
+
+.avatar {
+  position: relative;
+  // atom avatar
+  .avatar-item {
+    width: 5.303rem;
+    height: 5.303rem;
+
+    position: relative;
+    border-radius: 5rem;
+    border: 1px solid $point;
+
+    &.avatar-item-sm {
+      width: 3rem;
+      height: 3rem;
+    }
+    &.avatar-item-lg {
+      width: 13rem;
+      height: 13rem;
+      border-radius: 13rem;
+    }
+    &.avatar-item-xl {
+      width: 16rem;
+      height: 16rem;
+      border-radius: 16rem;
+    }
+  }
+
+  // text 정보 영역
+  .avatar-info {
+    display: flex;
+    gap: 0.5rem;
+
+    &.avatar-info-column {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    &.invisible-info {
+      display: flex;
+      width: 12.6rem;
+      height: 2.6rem;
+      align-items: center;
+      gap: var(--Spacing-spacing_5, 0.5rem);
+      border-radius: 1.5rem;
+      background: var(--Color-BG-Color-Basic, #e6e6e6);
+    }
+
+    .info_number {
+      @include font-body3($font-weight-bold, $point-color-blue);
+    }
+    .info_name {
+      @include font-body3($font-weight-bold, $font-darken);
+    }
+  }
+
+  // atom molecules + state
+  &.avatar-box {
+    display: flex;
+    align-items: center;
+    gap: $avatar-spacing;
+
+    // padding
+    &.avatar-box-padding {
+      padding: $avatar-spacing;
+    }
+  }
+
+  // 상태값
+  &.avatar-selected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.5rem;
+    background: $B50;
+  }
+  &.avatar-empty {
+    min-width: $avatar-box-selected-width;
+    height: 7rem;
+    background: transparent;
+    border: 1px dashed black;
+    border-radius: 3.5rem;
+    justify-content: center;
+  }
+
+  .avatar_with_icon {
+    position: absolute;
+    top: -1rem;
+    left: -1.4rem;
+    z-index: 10;
+  }
+}

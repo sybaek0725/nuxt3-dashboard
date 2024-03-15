@@ -1,0 +1,42 @@
+/**
+component name : alerts
+writer : 문소정
+변경일 : 240207
+*/
+
+$alerts-rounding: 1rem;
+$alerts-border: $bg-darken;
+$alerts-bg: $white;
+$alerts-font-color: $font-darken;
+
+.alerts {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: $alerts-rounding;
+  border: 1px solid $alerts-border;
+  background: $alerts-bg;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  min-width: 25rem;
+  gap: 2rem;
+  @include font_body3($font-weight-medium, $alerts-font-color);
+
+  &.size_lg {
+    width: 52.5rem;
+    padding: 4rem 0;
+  }
+}
+
+.alert_position {
+  position: absolute;
+  bottom: 13rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  transition: transform 0.5s ease;
+
+  &.hidden {
+    transform: translateY(300%) translateX(-50%);
+    display: none;
+  }
+}

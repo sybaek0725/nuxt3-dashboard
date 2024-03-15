@@ -1,0 +1,13 @@
+<svg width="115" height="105" viewBox="0 0 115 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 427320508">
+<path id="Rectangle 39590953" d="M102.5 64.6094V8.60937C102.5 5.29567 99.8137 2.60938 96.5 2.60938H8.5C5.18629 2.60938 2.5 5.29567 2.5 8.60937V86.6094C2.5 89.9231 5.18629 92.6094 8.5 92.6094H74.5" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<line id="Line 5" x1="2" y1="21" x2="103" y2="21" stroke="white" stroke-width="4"/>
+<circle id="Ellipse 1311" cx="13" cy="12.1094" r="2.5" fill="white"/>
+<circle id="Ellipse 1312" cx="20" cy="12.1094" r="2.5" fill="white"/>
+<circle id="Ellipse 1313" cx="27" cy="12.1094" r="2.5" fill="white"/>
+<line id="Line 6" x1="38.5" y1="2" x2="38.5" y2="20" stroke="white" stroke-width="4"/>
+<path id="Rectangle 39590954" d="M65.5 82H14.5C13.3954 82 12.5 81.1046 12.5 80V34C12.5 32.8954 13.3954 32 14.5 32H90.5C91.6046 32 92.5 32.8954 92.5 34V58" stroke="#7FDDCC" stroke-width="4" stroke-linecap="round"/>
+<line id="Line 7" x1="14.5" y1="42" x2="90.5" y2="42" stroke="#7FDDCC" stroke-width="4"/>
+<path id="Path" fill-rule="evenodd" clip-rule="evenodd" d="M89.1356 70.3478L110.577 91.7889C113.141 94.3536 113.141 98.5118 110.577 101.076C108.012 103.641 103.854 103.641 101.289 101.076L79.848 79.6356C78.471 78.2586 77.5777 76.4721 77.3023 74.5443L76.5181 69.0546C76.438 68.4937 76.6266 67.9279 77.0272 67.5272C77.4278 67.1266 77.9937 66.938 78.5546 67.0181L84.0443 67.8023C85.9721 68.0777 87.7586 68.9708 89.1356 70.3478Z" stroke="#FFD600" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

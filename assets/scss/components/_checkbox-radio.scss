@@ -1,0 +1,116 @@
+/**
+component name : checkbox-radio
+writer : 문소정
+변경일 : 240213
+*/
+
+$resizing-input-wrap: 3rem;
+
+// 공통
+.v-checkbox,
+.v-radio {
+  &.default {
+    .v-selection-control__wrapper {
+      width: $resizing-input-wrap;
+      height: $resizing-input-wrap;
+    }
+    // icon-wrap
+    .v-icon {
+      width: 3rem;
+      height: 3rem;
+      opacity: 1;
+    }
+
+    // checkbox, radio icon
+    .mdi-checkbox-blank-outline,
+    .mdi-checkbox-marked,
+    .mdi-radiobox-blank,
+    .mdi-radiobox-marked {
+      &::before {
+        content: '';
+        display: block;
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    // label
+    .v-label {
+      padding-left: 1rem;
+      @include font_body3($font-weight-medium, $font-darken);
+      opacity: 1;
+    }
+  }
+}
+
+// checkbox
+.v-checkbox {
+  &.default {
+    .v-input__details {
+      display: none;
+    }
+    // icon-wrap
+    .v-icon {
+      border-radius: 0.5rem;
+      border: 1px solid $line-basic;
+      background: $white;
+    }
+
+    // default state
+    .mdi-checkbox-blank-outline {
+      &::before {
+        background: url('@/assets/images/common/ico/ico_check5_30.svg') no-repeat center;
+      }
+    }
+    // selected state
+    .mdi-checkbox-marked {
+      background: $primary;
+      &::before {
+        background: url('@/assets/images/common/ico_check_w.svg') no-repeat center / contain;
+      }
+    }
+    // disabled state
+    .v-selection-control--disabled {
+      opacity: 1;
+      .v-icon {
+        background: $bg-light;
+      }
+      .mdi-checkbox-blank-outline {
+        &::before {
+          background: url('@/assets/images/common/ico/ico_check6_30.svg') no-repeat center / contain;
+        }
+      }
+    }
+  }
+}
+
+// radio
+.v-radio {
+  &.default {
+    // default state
+    .mdi-radiobox-blank {
+      &::before {
+        background: url('@/assets/images/common/ico_radio_check_off.svg') no-repeat center / 98%;
+      }
+    }
+    // selected state
+    .mdi-radiobox-marked {
+      &::before {
+        background: url('@/assets/images/common/ico_radio_check_on.svg') no-repeat center / 98%;
+      }
+    }
+    // disabled state
+    .v-selection-control--disabled {
+      .mdi-radiobox-blank {
+        &::before {
+          // background: url('@/assets/images/common/ico_radio_check_disabled.svg') no-repeat center /
+          // 98%;
+        }
+      }
+    }
+    // radio label
+    .v-label {
+      height: inherit;
+    }
+  }
+}

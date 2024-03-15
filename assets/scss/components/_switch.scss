@@ -1,0 +1,41 @@
+.size-sm{
+	// --v-input-control-height:2.4rem;
+
+	&.v-switch--inset {
+		// .v-selection-control__wrapper {
+		// 	scale: 1;
+		// }
+		.v-selection-control__wrapper{
+			scale:unset;
+			height:unset;
+		}
+		.v-selection-control{
+			min-height:2.4rem;
+		}
+	
+		.v-switch__track {
+			// background-color: #ccc;
+			// border: 1px solid #ccc;
+			// opacity: 1;
+			min-width:5.2rem;
+			height:3.2rem;
+		}
+		.v-switch__thumb {
+			// background-color: $white !important;
+			width:2.4rem;
+			height:2.4rem;
+		}
+		.v-selection-control__input{
+			transform: translateX(-1.0rem);
+			width: 2.4rem;
+			height: 2.4rem;
+		}
+		//true
+		.v-selection-control--dirty {
+			.v-selection-control__input{
+				transform: translateX(1.0rem);
+			}
+		}
+
+	}
+}

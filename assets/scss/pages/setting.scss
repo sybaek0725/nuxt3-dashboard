@@ -1,0 +1,374 @@
+$setting-box-title-teacher-bg: #c7cfe3;
+$setting-box-title-student-bg: #c2e1ee;
+$setting-box-contents-teacher-bg: #e6ebf8;
+$setting-box-contents-student-bg: #e7f0f3;
+$setting-student-noti-color: #ed0000;
+$setting-select-hover-color: #ecf3f6;
+
+/** 
+설정 c-setting-001 ~
+240222
+*/
+
+.setting {
+  .settiing_container {
+    padding: 2rem;
+    min-height: 68rem;
+
+    .settiing_column {
+      flex: 1;
+      border-right: 1px solid $line-basic;
+      padding-right: 4rem;
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+        padding-left: 4rem;
+      }
+      &.no_line {
+        border: none;
+      }
+    }
+
+    .setting_avatar_wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin: 2.5rem 0 4rem;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: fit-content;
+      span {
+        background: $white;
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+        box-shadow: 0.5rem 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+        padding: 1.4rem 1.5rem 1.5rem 1.5rem;
+        border: 1px solid $line-basic;
+        position: absolute;
+        right: 0;
+        bottom: 5rem;
+      }
+      p {
+        @include font_header2;
+      }
+    }
+    // table
+    table {
+      display: flex;
+      width: 75.75rem;
+      thead {
+        width: 30%;
+        background: $bg-light;
+        th {
+          height: 6rem !important;
+          @include font_body3;
+          font-weight: $font-weight-bold !important;
+          color: $font-darken !important;
+          padding: 1.8rem 0 1.8rem 2.5rem !important;
+          border-left: 1px solid $bg-basic !important;
+          border-bottom: 1px solid $bg-basic !important;
+          &:first-child {
+            border-top: 1px solid $bg-basic !important;
+            border-radius: 0.6rem 0 0 0;
+          }
+          &:last-child {
+            border-radius: 0 0 0 0.6rem;
+          }
+        }
+      }
+      tbody {
+        width: 72%;
+        td {
+          height: 6rem !important;
+          @include font_body3;
+          padding: 1.8rem 0 1.8rem 2.5rem !important;
+          border-right: 1px solid $bg-basic !important;
+          border-bottom: 1px solid $bg-basic !important;
+          &:first-child {
+            border-top: 1px solid $bg-basic !important;
+            border-radius: 0 0.6rem 0 0;
+          }
+          &:last-child {
+            border-radius: 0 0 0.6rem 0;
+          }
+          &.update_btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+          }
+        }
+      }
+      tr {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    // }
+    .noti {
+      background: $point-color-blue;
+      border-radius: 2rem;
+      min-width: 30rem;
+      height: 4.2rem;
+      padding: 1rem 1.5rem;
+      margin-left: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      i {
+        background: url('@/assets/images/common/ico/ico_info_w_20.svg') no-repeat center / contain;
+      }
+      span {
+        @include font_body4;
+        color: $font-white !important;
+      }
+    }
+    // slider
+    .set_sound {
+      .slider {
+        width: 46rem;
+        margin-left: 3rem;
+        margin-top: 3rem;
+        span {
+          @include font_body3($font-weight-bold, $font-darken);
+          &:first-child {
+            padding-right: 3rem;
+          }
+        }
+        i {
+          margin-right: 1rem;
+        }
+      }
+    }
+    .set_display {
+      margin-top: 4rem;
+      > div {
+        display: flex;
+        align-items: center;
+        margin-top: 3rem;
+        .screen_control {
+          width: 13.5rem;
+          margin-right: 3rem;
+          .controller {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: $bg-basic;
+            @include font_body3(#171717);
+          }
+          .zoom {
+            text-align: center;
+            display: flex;
+            width: 3rem;
+            height: 3rem;
+            padding: 1.1rem 0.9rem;
+            justify-content: center;
+            align-items: center;
+
+            &.in {
+              background: url('@/assets/images/common/btn_under_arrow.svg') no-repeat center
+                center/contain;
+            }
+            &.out {
+              background: url('@/assets/images/common/btn_upper_arrow.svg') no-repeat center
+                center/contain;
+            }
+          }
+        }
+        span {
+          @include font_body3($font-weight-medium, $font-basic);
+        }
+      }
+    }
+
+    .box {
+      position: relative;
+      min-height: 22.5rem;
+
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 0.5rem 0.5rem 0 0;
+        padding: 1.2rem;
+        @include font_header3;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 8.5rem;
+          width: 9rem;
+          height: 8rem;
+          background: url('');
+        }
+      }
+
+      .contents {
+        padding: 2rem 3rem 3rem 3rem;
+      }
+
+      &.student_box {
+        .title {
+          background: $setting-box-title-student-bg;
+        }
+        background: $setting-box-contents-student-bg;
+      }
+      &.teacher_box {
+        .title {
+          background: $setting-box-title-teacher-bg;
+        }
+        background: $setting-box-contents-teacher-bg;
+      }
+
+      .flag_position {
+        position: absolute;
+        top: -1rem;
+        left: 1rem;
+      }
+
+      .label {
+        width: 26rem;
+        padding-left: 3rem;
+        @include font-body3($font-weight-bold);
+      }
+
+      .setting_list {
+        .list_item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 2rem;
+
+          &.depth {
+            flex-direction: column;
+            align-items: baseline;
+
+            .sublist {
+              margin-top: 1rem;
+              .sublist_item {
+                span {
+                  @include font_body3;
+                  left: 3rem;
+                  width: 19rem;
+                }
+                list-style: circle;
+                padding-left: 6rem;
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+
+                &::before {
+                  content: '';
+                  display: inline-block;
+                  width: 0.5rem;
+                  height: 0.5rem;
+                  margin: 0 0.5rem 0.5rem 0;
+                  border-radius: 50%;
+                  background-color: $bg-darken;
+                }
+              }
+            }
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .v-input--density-default {
+            --v-input-control-height: 0;
+          }
+          .v-input__details {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .setting_student_list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 3rem;
+      gap: 2rem;
+      border-right: 1px solid $line-basic;
+
+      &.no_border {
+        border: none;
+      }
+    }
+
+    .setting_student_list_item {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .select_area {
+      width: 25rem;
+    }
+
+    // 학생 설정
+    .setting_student_wrap {
+      padding: 0.5rem 3rem 4rem;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid $bg-basic;
+      &.no_btm_line {
+        border: none;
+      }
+      li {
+        margin-bottom: 1rem;
+        .v-row {
+          align-items: center;
+          height: 6rem;
+          .label {
+            @include font_body3($font-weight-bold);
+            em {
+              @include font_body5($font-weight-medium, $setting-student-noti-color);
+            }
+          }
+          .v-col {
+            padding: 0;
+            &.v-col-1 {
+              flex: 0 0 9%;
+              max-width: 8%;
+            }
+            &.v-col-2 {
+              flex: 0 0 18%;
+              max-width: 18%;
+            }
+            &.v-col-3 {
+              flex: 0 0 23%;
+              max-width: 23%;
+            }
+          }
+          .mr50 {
+            margin-right: 5rem;
+          }
+        }
+      }
+      .set_select {
+        display: flex;
+        align-items: center;
+        > div {
+          width: 25rem;
+          margin-right: 2rem;
+        }
+        em {
+          @include font_body3($font-weight-medium, $point-color-blue);
+          padding-left: 1rem;
+        }
+        .ico_size_12 {
+          width: 5.5rem;
+          height: 5.5rem;
+        }
+      }
+    }
+  }
+}

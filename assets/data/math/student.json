@@ -1,0 +1,265 @@
+[
+    {
+        "description": "목차",
+        "id": "index",
+        "child": "list",
+        "area": "header",
+        "name": "header.menu.index",
+        "proceeding": "on",
+        "useYn": true
+    },
+    {
+        "description": "목차-차시목차",
+        "id": "list",
+        "parent": "index",
+        "area": "aside1",
+        "name": "index.aside.list.name",
+        "info": "index.aside.list.info",
+        "component": "progress/List",
+        "titleWrap": "off",
+        "scroll": "no"
+    },
+    {
+        "description": "목차-교과서차례",
+        "id": "order",
+        "parent": "index",
+        "area": "aside1",
+        "name": "index.aside.order.name",
+        "info": "index.aside.order.info",
+        "component": "progress/Order",
+        "titleWrap": "off",
+        "scroll": "no"
+    },
+    {
+        "description": "오늘의수업",
+        "id": "class",
+        "child": "progress",
+        "area": "header",
+        "name": "header.menu.class",
+        "proceeding": "on",
+        "useYn": true
+    },
+    {
+        "description": "오늘의수업-진도학습",
+        "id": "progress",
+        "parent": "class",
+        "area": "aside1",
+        "name": "progress.aside.student.name",
+        "info": "progress.aside.student.info",
+        "component": "progress/Index",
+        "titleWrap": "on"
+    },
+    {
+        "description": "오늘의수업-수학익힘",
+        "id": "workbook",
+        "parent": "class",
+        "area": "aside1",
+        "name": "workbook.aside.name",
+        "info": "workbook.aside.info",
+        "component": "progress/Workbook",
+        "titleWrap": "on"
+    },
+    {
+        "description": "스스로학습",
+        "id": "self",
+        "child": "tip",
+        "area": "header",
+        "name": "header.menu.self",
+        "useYn": true
+    },
+    {
+        "description": "스스로학습-꿀팁수학",
+        "id": "tip",
+        "parent": "self",
+        "area": "aside1",
+        "name": "self.aside.tip.name",
+        "component": "frame/Index",
+        "iframeUrl": "http://test.com",
+        "titleWrap": "off"
+    },
+    {
+        "description": "스스로학습-AI오답노트",
+        "id": "note",
+        "parent": "self",
+        "area": "aside1",
+        "name": "self.aside.note.name",
+        "component": "frame/Index",
+        "iframeUrl": "http://test.com",
+        "titleWrap": "off"
+    },
+    {
+        "description": "스스로학습-AI진단평가",
+        "id": "assess",
+        "parent": "self",
+        "area": "aside1",
+        "name": "self.aside.assess.name",
+        "component": "frame/Index",
+        "iframeUrl": "http://test.com",
+        "titleWrap": "off"
+    },
+    {
+        "description": "학습결과",
+        "id": "result",
+        "child": "analyze",
+        "area": "header",
+        "name": "header.menu.result",
+        "useYn": true
+    },
+    {
+        "description": "학습결과-학습분석",
+        "id": "analyze",
+        "parent": "result",
+        "area": "aside1",
+        "name": "result.aside.analyze.name",
+        "component": "frame/Index",
+        "iframeUrl": "http://student-dashboard-20725176-351b15889559.kr.lb.naverncp.com",
+        "titleWrap": "off"
+    },
+    {
+        "description": "학습결과-생활기록부",
+        "id": "record",
+        "parent": "result",
+        "area": "aside1",
+        "name": "result.aside.record.name",
+        "component": "frame/Index",
+        "iframeUrl": "http://student-dashboard-20725176-351b15889559.kr.lb.naverncp.com/home/math",
+        "titleWrap": "off"
+    },
+    {
+        "description": "알림장",
+        "id": "administer",
+        "child": "picture",
+        "area": "header",
+        "name": "header.menu.student.administer",
+        "useYn": true
+    },
+    {
+        "description": "알림장-오늘의과제-사진과제",
+        "id": "picture",
+        "parent": "administer",
+        "area": "aside1",
+        "name": "administer.aside.picture.name",
+        "component": "administer/picture/Index",
+        "titleWrap": "off"
+    },
+    {
+        "description": "알림장-오늘의과제-AI추천자료",
+        "id": "recommend",
+        "parent": "administer",
+        "area": "aside1",
+        "name": "administer.aside.recommend.name",
+        "component": "administer/recommend/Index",
+        "titleWrap": "off"
+    },
+    {
+        "description": "알림장-오늘의과제-맞춤단원평가",
+        "id": "evaluation",
+        "parent": "administer",
+        "area": "aside1",
+        "name": "administer.aside.evaluation.name",
+        "component": "administer/evaluation/Index",
+        "titleWrap": "off"
+    },
+    {
+        "description": "설정",
+        "id": "setting",
+        "child": "basic",
+        "area": "header",
+        "name": "header.menu.setting",
+        "useYn": false
+    },
+    {
+        "description": "설정-기본설정",
+        "id": "basic",
+        "parent": "setting",
+        "area": "aside1",
+        "name": "setting.aside.basic.name",
+        "component": "setting/Basic",
+        "titleWrap": "off",
+        "class": "no_padding_y setting"
+    },
+    {
+        "description": "설정-추가설정",
+        "id": "menu",
+        "parent": "setting",
+        "area": "aside1",
+        "name": "setting.aside.etc.name",
+        "component": "setting/Etc",
+        "titleWrap": "off",
+        "class": "no_padding_y setting"
+    },
+    {
+        "description": "설정-언어설정",
+        "id": "lang",
+        "parent": "setting",
+        "area": "aside1",
+        "name": "setting.aside.lang.name",
+        "component": "setting/Lang",
+        "titleWrap": "off",
+        "class": "no_padding_y setting"
+    },
+    {
+        "description": "북마크",
+        "id": "bookmark",
+        "parent": "bookmark",
+        "area": "header1",
+        "name": "header.menu.bookmark",
+        "component": "bookmark/Index",
+        "titleWrap": "off",
+        "areaclass": "bookmark_on_40",
+        "class": "no_padding_y",
+        "proceeding": "on",
+        "useYn": true
+    },
+
+    {
+        "description": "진도학습-교과서보기",
+        "id": "progress.textbook",
+        "name": "progress.textbook.name",
+        "info": "progress.textbook.info",
+        "component": "progress/Textbook",
+        "titleWrap": "on"
+    },
+    {
+        "description": "진도학습-콘텐츠뷰잉",
+        "id": "progress.contents.view",
+        "component": "progress/contents/View",
+        "titleWrap": "on"
+    },
+    {
+        "description": "모듬활동",
+        "id": "activity.group.result.form",
+        "name": "activity.group.result.form.name",
+        "component": "activity/group/result/Form",
+        "titleWrap": "on"
+    },
+    {
+        "description": "콘텐츠연동-전송",
+        "id": "contents.forward",
+        "name": "external.contents.forward.name",
+        "component": "external/contents/Loading",
+        "titleWrap": "on"
+    },
+    {
+        "description": "화이트보드-전송",
+        "id": "whboard",
+        "name": "external.whboard.forward.name",
+        "component": "external/Index",
+        "subComponent": "external/whboard/Index",
+        "titleWrap": "on"
+    },
+    {
+        "description": "누리집연동-전송",
+        "id": "nuri.forward",
+        "name": "external.nuri.forward.name",
+        "component": "external/nuri/Loading",
+        "titleWrap": "on"
+    },
+    {
+        "description": "화면공유",
+        "id": "display.share",
+        "name": "display.share.name",
+        "component": "display/Share",
+        "titleWrap": "off"
+    }
+]

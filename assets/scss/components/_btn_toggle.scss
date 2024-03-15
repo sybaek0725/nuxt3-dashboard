@@ -1,0 +1,57 @@
+/**
+component name : btn_toggle
+writer : 박재민
+변경일 : 240229
+*/
+
+$toggle-btn-bg-blue: #B6BECF;
+
+.btn_toggle { //토글시키는 버튼(버튼 폭은 따로 설정할것)
+  > .v-btn{
+    &.plus{
+      width: 9rem;
+      height: 4.5rem !important;
+    }
+    &.isActive{
+      border-color: $line-basic;
+      background-color: $line-basic;
+    }
+    &.isToggle{
+      border-color: $toggle-btn-bg-blue;
+      background-color: $toggle-btn-bg-blue;
+    }
+    &.setting{
+      width: 6rem;
+      height: 3.5rem !important;
+    }
+  }
+
+}
+.hidden_menu_pup { //토글시 나오는 메뉴
+  position: absolute;
+  z-index: 1;
+  right: 1.3rem;
+  max-width: 17.6rem;
+  border: 1px solid $line-darken;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.10);;
+  overflow: hidden;
+  .ico {
+    margin-right: 1rem;
+  }
+  .v-btn {
+    padding: 1.5rem 2rem !important;
+    border-radius: 0;
+    box-shadow: none;
+    justify-content: flex-start;
+    height: 5.5rem !important;
+    & + .v-btn {
+      border-top: 1px solid $G200;
+    }
+    &:hover {
+      background: $B50;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+$head-bg: #788eaf;
+.select-area {
+  padding-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+
+  .box {
+    flex: 1;
+    border: 1px solid $line-darken;
+    border-radius: 0.6rem;
+    background: $white;
+    overflow: hidden;
+    .head {
+      padding: 1.4rem 0;
+      text-align: center;
+      background: $head-bg;
+      @include font_body3($font-weight-bold, $white);
+    }
+
+    .contents {
+      margin: 1rem 1.5rem 1.5rem 1.4rem;
+      overflow-y: auto;
+      height: 17.1rem;
+      @include font_body3;
+
+      &.no-contents {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

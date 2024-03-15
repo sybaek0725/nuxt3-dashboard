@@ -1,0 +1,353 @@
+$chapter-color-list: (
+  'green': #009967,
+  'blue': #4765B0,
+  'purple': #BB458F,
+  'orange': #F89F45,
+  'olive': #87BD4E,
+  'saphire': #866AC2
+);
+
+.chapter{
+  padding: 3rem;
+  height:100%;
+  .chapter_wrap{
+    display: flex;
+    flex-direction: row;
+    // align-items: flex-start;
+    position: relative;
+    max-width: 165.5rem;
+    background: $white; 
+    border: 1px solid $DB300; 
+    border-radius: 0.5rem;
+    height:100%;
+    
+    .unit{
+      display: flex;
+      flex-direction: column;
+      width: 50rem;
+      // height: 85rem;
+      padding: 0 2rem;
+      border-right: 1px solid $DB300;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      &_sm{
+        width: 34rem;
+      }
+      &_md{
+        width: 55.5rem;
+      }
+      &_lg{
+        width: 65.5rem;
+      }
+      &_xlg{
+        width: 76rem;
+      }
+
+      &:last-child{
+        border: none;
+      }
+  
+      .subject{
+        @include font_header2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.1rem 0.5rem;
+        width: 100%;
+        height: 7rem;
+        border-bottom: 1px solid $line-darken;
+        margin-bottom: 2rem;
+      }
+
+      // stroke
+      .side_line{
+        em{
+          &::after{
+            content: '';
+            display: inline-flex;
+            align-items: stretch;
+            width: 1px;
+            height: 2rem;
+            background: $line-basic;
+            margin: 0 1rem;
+            vertical-align: middle;
+          }
+        }
+      }
+  
+      .list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 6rem;
+        padding: 1.7rem 2rem;
+        border-bottom: 1px solid $bg-basic;
+        cursor: pointer;
+        transition: background-color 0.5s ease-out;
+        p{
+          color: $font-basic;
+          width: 100%;
+        }
+        a{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        i{
+          opacity: 0;
+          transition: opacity 0.5s ease-out;
+          &.ico_video{
+            opacity: 1;
+            background: url('@/assets/images/common/ico/ico_video_24.svg') no-repeat center / contain;
+            transition: opacity 0.5s ease-out;
+          }
+        }
+
+        &:hover{
+          background: $bg-light;
+          p, em, span{
+            color: $point-color-blue;
+          }
+          i{
+            background: url('@/assets/images/common/ico/ico_right_24.svg') no-repeat center;
+            opacity: 0.6;
+          }
+        }
+        
+        &.selected{
+          background: $bg-blue;
+          border-bottom: 1px solid $bg-blue;
+          p, 
+          em, 
+          span{
+            @include font_body3($font-weight-bold, $font-darken);
+          }
+          i{
+            opacity: 1;
+            background: url('@/assets/images/common/ico/ico_right_24.svg') no-repeat center;
+          }
+          // 차시
+          &_bg_yellow{
+            background: $Y50;
+            border-bottom: 1px solid $Y50;
+            p, em, span{
+              font-weight: $font-weight-bold !important;
+              color: $font-darken !important;
+            }
+            i{
+              opacity: 1;
+              background: url('@/assets/images/common/ico/ico_book_24.svg') no-repeat center / contain;
+            }
+          }
+          // 영어 활동명
+          &_bg_blue{
+            background: $DB100;
+            border-bottom: 1px solid $DB100;
+            p{
+              color: $font-darken  !important;
+              font-weight: $font-weight-bold !important;
+            }
+            i {
+              opacity: 1;
+              background: url('@/assets/images/common/ico/ico_check_24.svg') no-repeat center !important;
+            }
+          }
+        }
+        
+        &.font_md{
+          p{
+            @include font_body3($font-weight-medium, $font-basic);
+            span{
+              @include font_body4($font-weight-medium, $font-basic);
+            }
+          }
+          &:hover{
+            p, span, em{
+              color: $font-darken;
+            }
+          }
+        }
+        &.ico_book{
+          &:hover{
+            i{
+              background: url('@/assets/images/common/ico/ico_book_24.svg') no-repeat center / contain;
+              opacity: 0.6;
+            }
+          }
+        }
+        &.ico_check{
+          &:hover{
+            i{
+              background: url('@/assets/images/common/ico/ico_check_24.svg') no-repeat center;
+            }
+          }
+        }
+      }
+
+      // 활동 내용
+      .activity_conts{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 4rem;
+        a{
+          width: 100%;
+          transition: all 0.5s ease-out;
+          padding: 1.8rem 2rem;
+          border-bottom: 1px solid $bg-basic;
+          display: flex;
+          justify-content: space-between;
+          color: $font-basic;
+          span{
+            @include font_body4($font-weight-medium, $font-basic);
+            flex: 1;
+            padding: 0 0.5rem;
+            line-height: 2.2rem;
+          }
+          i{
+            vertical-align: text-top;
+          }
+          &:hover{
+            background: $bg-basic;
+            cursor: pointer ;
+            i{
+              opacity: 1;
+              background: url('@/assets/images/common/ico/ico_check_24.svg') no-repeat center;
+              
+            }
+          }
+        }
+        .chips{
+          width: 6.4rem;
+        }
+      }
+    }
+  }
+
+  .ma_lesson{
+    max-width: 165.5rem;
+    max-height: 86rem;
+    background: $white; 
+    border: 1px solid $DB300; 
+    border-radius: 0.5rem;
+    padding: 7.3rem 6.8rem 7.3rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    row-gap: 5rem;
+    ul{
+      width: 50rem;
+      min-height: 30.8rem;
+      display: flex;
+      flex-direction: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      .lists{
+        width: 44.3rem;
+        display: flex;
+        flex-direction: column;
+        .font_dohyeon {
+          @include font_dohyeon;
+        }
+        p{
+          width: 100%;
+          margin-bottom: 3rem;
+        }
+        @each $key, $value in $chapter-color-list {
+          .btm_#{$key} {
+            border-bottom: 1px solid #{$value};
+          }
+        }
+        li{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          p{
+            padding: 0;
+            margin-bottom: 1.2rem;
+            &::before{
+              content: '';
+              display: block;
+              width: 0.8rem;
+              height: 0.8rem;
+              border-radius: 50%;
+              margin: 0.2rem 0.5rem 0 0;
+            }
+            @each $key, $value in $chapter-color-list {
+              &.bullet_title_#{$key}{
+                &::before{
+                  background-color: #{$value};
+                }
+              }
+            }
+          }
+          em{
+            @include font_body3($font-weight-bold);
+            &:last-child{
+              width: 2.5rem;
+            }
+            &::after{
+              display: none;
+            }
+          }
+          span{
+            @include font_body5($font-weight-medium, $font-light);
+          }
+        }
+      }
+    }
+  }
+
+  .en_lesson{
+    margin: 0 auto;
+    padding: 3rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 14.5rem);
+    .en_carousel_wrap{
+      width: 100%;
+      height: 100%;
+      .v-window {
+        height: 100% !important;
+      }
+      .btn_prev,
+      .btn_next {
+        width: 4rem;
+        height: 10rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .btn_prev {
+        left: 0;
+        background: url('@/assets/images/common/btn_arrow_l.svg') no-repeat center / contain;
+      }
+      .btn_next {
+        right: 0;
+        background: url('@/assets/images/common/btn_arrow_r.svg') no-repeat center / contain;
+      }
+      .carousel_img_wrap {
+        width: 100%;
+        height: 100%;
+        padding: 0 5rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+      }
+    }
+    .close_btn{
+      cursor: pointer;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
+  }
+}
+

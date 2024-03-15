@@ -1,0 +1,13 @@
+<svg width="121" height="120" viewBox="0 0 121 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" width="120" height="120" rx="60" fill="#EEEEEE"/>
+<path d="M30.5 50H90.5" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M78.4997 90.0001C78.594 89.3872 78.6435 88.7683 78.6478 88.1482C78.6478 80.989 72.8441 75.1853 65.6849 75.1853C65.0649 75.191 64.446 75.2405 63.833 75.3334" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M63.833 71.6666V81.6666C63.833 86.269 67.564 89.9999 72.1663 89.9999H82.1663C86.7687 89.9999 90.4997 86.269 90.4997 81.6666V71.6666C90.4997 67.0642 86.7687 63.3333 82.1663 63.3333H72.1663C67.564 63.3333 63.833 67.0642 63.833 71.6666Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M57.1671 39.9834L57.1504 40.0001L57.1671 40.0167L57.1837 40.0001L57.1671 39.9834Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48.8331 39.9834L48.8164 40.0001L48.8331 40.0167L48.8497 40.0001L48.8331 39.9834Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M40.5001 39.9834L40.4834 40.0001L40.5001 40.0167L40.5167 40.0001L40.5001 39.9834Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M57.1671 39.9834L57.1504 40.0001L57.1671 40.0167L57.1837 40.0001L57.1671 39.9834Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48.8331 39.9834L48.8164 40.0001L48.8331 40.0167L48.8497 40.0001L48.8331 39.9834Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M40.5001 39.9834L40.4834 40.0001L40.5001 40.0167L40.5167 40.0001L40.5001 39.9834Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M53.8333 90H40.5C34.9772 90 30.5 85.5228 30.5 80V40C30.5 34.4772 34.9772 30 40.5 30H80.5C86.0228 30 90.5 34.4772 90.5 40V53.3333" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

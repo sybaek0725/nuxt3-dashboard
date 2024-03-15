@@ -1,138 +1,211 @@
-@import 'variables.scss';
-
-// 컨텐츠 영역 패딩
-$contents-area-padding: calc($spacing-root * 6) calc($spacing-root * 6);
-$contents-bg-teacher: #f5f6fa;
+$contents-area-padding: calc($spacing-root * 4) calc($spacing-root * 6) calc($spacing-root * 6)
+  calc($spacing-root * 6);
+$container-area-height: $container-height;
+$contents-bg-teacher: $bg-default;
 
 .wrap {
-    position: relative;
+  position: relative;
 
-    //teacher,student common
-    .container {
-        display: flex;
+  //teacher,student common
+  .container {
+    display: flex;
+    height: $container-area-height;
+
+    //테마 정의 부분 contents_wrap || teacher_area || student_area || setting_wrap ||
+    .contents_wrap {
+      border-radius: 0rem var(--Student-contents-R, 1rem) 0rem 0rem;
+      // height: calc(100dvh - 8rem);
+      position: relative;
+      flex: 1;
+      font-size: var(--font-medium);
+      display: flex;
+      flex-direction: column;
+      background: $bg-default;
+      min-width: 0;
+
+      // 학생 메뉴에서 사용하는 layout
+      &.student_area {
+        border-top-right-radius: 1rem;
         overflow: hidden;
+        background: $white;
+      }
 
-        .contents_wrap {
-            height: calc(100vh - 8rem);
-            position: relative;
-            flex: 1;
-            font-size: $font-medium;
-            display: flex;
-            flex-direction: column;
-            background: #f5f6fa;
-
-            .section_scroll {
-                overflow-y: auto;
-                flex: 1;
-
-                &::-webkit-scrollbar {
-                    border-radius: 5rem;
-                    width: 2rem;
-                }
-
-                /* 스크롤바 막대 꾸미기 */
-                &::-webkit-scrollbar-thumb {
-                    background-color: $primary;
-                    background-clip: padding-box;
-                    border: 0.7rem solid #f5f6fa;
-                    width: 0.1rem;
-                    border-radius: 5rem 5rem 0 0;
-                }
-                /* 스크롤바 트랙 꾸미기 */
-                &::-webkit-scrollbar-track {
-                    background-clip: padding-box;
-                    border: 0.7rem solid transparent;
-                    background-color: #f8f8f8;
-                    border-radius: 5rem;
-                    width: 0.5rem;
-                }
-
-                .contents_area {
-                    padding: $contents-area-padding;
-                    position: relative;
-                }
-
-                // todo : check 필요
-                //& + .col {
-                //  border-left: 1px solid var(--border-gray);
-                //}
-            }
-
-            &.setting_wrap {
-                flex-direction: row;
-            }
+      // 설정 메뉴에서 사용하는 layout
+      &.setting_wrap {
+        .contents_area {
+          width: auto !important;
         }
+
+        .profile_wrap {
+          margin-top: 2rem;
+          position: relative;
+
+          .profile_main {
+            display: flex;
+          }
+
+          .section_content {
+            margin-bottom: 5rem;
+          }
+        }
+      }
+
+      .section_scroll {
+        overflow-x: hidden;
+        overflow-y: auto;
+        flex: 1;
+
+        // contents_title 상단과 header 간격 동일화 위해 수정
+        // | 수정 전 | margin-top: 3rem;
+        margin-top: 2rem;
+      }
+    }
+
+    .contents_area {
+      padding: $contents-area-padding;
+      position: relative;
+      height: 99%;
+
+      &.no_padding_y {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      &.iframe_area {
+        padding: 0;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      // 세로로 두줄인 Layout
+      &.column {
+        display: flex;
+        padding: 0 0 0 3rem;
+        margin-right: 1rem;
+        .column_item {
+          flex: 1;
+          overflow-y: auto;
+          padding-right: 1.4rem;
+
+          &.with_fixed_menu {
+            padding-bottom: 12rem;
+          }
+
+          & + .column_item {
+            padding-right: 0rem;
+            margin-right: 0rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid #aaa;
+          }
+
+          .fixed_btn_wrap {
+            width: calc(50% - 1.5rem);
+            bottom: 0;
+            padding: 2.2rem 0;
+            background: rgba(30, 50, 87, 0.5);
+          }
+        }
+      }
+
+      //필기영역
+      .note_area {
+        width: 100%;
+        height: 100%;
+        background: $bg-basic;
+      }
+
+      .fixed_btn_wrap {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% - 20.5rem);
+        padding: 3rem 0;
+        gap: 1rem;
+        background: rgba(30, 50, 87, 0.5);
+      }
+    }
+  }
+  &.student {
+    //스킨컬러 적용 부분
+    background: #cfe6e6;
+    .container {
+      .contents_wrap {
+        border-radius: 0rem var(--Student-contents-R, 1rem) 0rem 0rem;
+        position: relative;
+        flex: 1;
+        font-size: var(--font-medium);
+        display: flex;
+        flex-direction: column;
+        background: #fff;
 
         // 학생 메뉴에서 사용하는 layout
         &.student_area {
-            background: $white;
+          border-top-left-radius: 1rem;
+          border-top-right-radius: 1rem;
+          overflow: hidden;
+          background: $white;
         }
 
         // 설정 메뉴에서 사용하는 layout
         &.setting_wrap {
-            .contents_area {
-                width: auto !important;
+          .contents_area {
+            width: auto !important;
+          }
+
+          .profile_wrap {
+            margin-top: 2rem;
+            position: relative;
+
+            .profile_main {
+              display: flex;
             }
 
-            .profile_wrap {
-                margin-top: 2rem;
-                position: relative;
-
-                .profile_main {
-                    display: flex;
-                }
-
-                .section_content {
-                    margin-bottom: 5rem;
-                }
+            .section_content {
+              margin-bottom: 5rem;
             }
+          }
         }
-    }
-    &.student {
-        //스킨컬러 적용 부분
-        background: #cfe6e6;
-        .container {
-            .contents_wrap {
-                position: relative;
-                flex: 1;
-                font-size: $font-medium;
-                display: flex;
-                flex-direction: column;
-                background: #fff;
-
-                // 학생 메뉴에서 사용하는 layout
-                &.student_area {
-                    border-top-left-radius: 1rem;
-                    border-top-right-radius: 1rem;
-                    background: $white;
-                }
-
-                // 설정 메뉴에서 사용하는 layout
-                &.setting_wrap {
-                    .contents_area {
-                        width: auto !important;
-                    }
-
-                    .profile_wrap {
-                        margin-top: 2rem;
-                        position: relative;
-
-                        .profile_main {
-                            display: flex;
-                        }
-
-                        .section_content {
-                            margin-bottom: 5rem;
-                        }
-                    }
-                }
-                .section_scroll {
-                    /* 스크롤바 막대 꾸미기 */
-                    &::-webkit-scrollbar-thumb {
-                        border: 0.7rem solid transparent;
-                    }
-                }
-            }
+        .section_scroll {
+          /* 스크롤바 막대 꾸미기 */
+          &::-webkit-scrollbar-thumb {
+            border: 0.7rem solid transparent;
+          }
         }
+      }
     }
+  }
+
+  .margin-top-0 {
+    margin-top: 0 !important;
+  }
+}
+
+// scroll_bar
+::-webkit-scrollbar {
+  border-radius: 5rem;
+  width: 2rem;
+  height: 2rem; // 가로스크롤ver 추가
+}
+
+/* 스크롤바 막대 꾸미기 */
+::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  background-clip: padding-box;
+  border: 0.7rem solid transparent;
+  width: 0.1rem;
+  border-radius: 5rem;
+}
+/* 스크롤바 트랙 꾸미기 */
+::-webkit-scrollbar-track {
+  background-clip: padding-box;
+  border: 0.7rem solid transparent;
+  background-color: #f8f8f8;
+  border-radius: 5rem;
+  width: 0.5rem;
 }

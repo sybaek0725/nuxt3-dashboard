@@ -1,5 +1,3 @@
-@import 'variables.scss';
-
 // sementic color
 $primary: $DB900;
 $secondary-success: $Y500;
@@ -9,22 +7,26 @@ $secondary-error: $Y900;
 //font-color
 $font-white: $white;
 $font-light: $G400;
-$font-basic: $G400;
+$font-basic: $G700;
 $font-darken: $G900;
 $font-blue: $B900;
 $font-orange: $Y900;
 $font-black: #000;
+$font-disabled: $G200;
 
 //bg-color
 $bg-light: $G50;
-$bg-basic: $G50;
-$bg-darken: $G50;
+$bg-basic: $G200;
+$bg-darken: $G900;
 $bg-blue: $B50;
-$bg-white: $white;
+$bg-default: #f5f6fa;
 
 //line-color
 $line-basic: $G300;
-$line-darken: $G800;
+$line-darken: $G900;
+$line-Blue: $B500;
+$line-black: $black;
+$line-white: $white;
 
 //point-color
 $point-color-gray: $G500;
@@ -36,13 +38,80 @@ $point-color-yellow: $Y600;
 $point-color-white: $white;
 $point-color-black: $G900;
 
+$point-color-list: (
+  'primary': $primary,
+  'black': $point-color-black,
+  'bk': $point-color-black,
+  'gray': $G600,
+  'lightgray': $point-color-gray,
+  'white': $point-color-white,
+  'darkblue': $point-color-blue,
+  'blue': $point-color-blue,
+  'orange': $point-color-orange,
+  'green': $point-color-green,
+  'red': $point-color-red,
+  'yellow': $point-color-yellow
+) !default;
+
+$font-color-list: (
+  'light': $font-light,
+  'basic': $font-basic,
+  'darken': $font-darken,
+  'disabled': $font-disabled,
+  'primary': $primary,
+  'black': $point-color-black,
+  'bk': $point-color-black,
+  'gray': $G600,
+  'lightgray': $point-color-gray,
+  'white': $point-color-white,
+  'darkblue': $point-color-blue,
+  'blue': $point-color-blue,
+  'orange': $point-color-orange,
+  'green': $point-color-green,
+  'red': $point-color-red,
+  'yellow': $point-color-yellow
+) !default;
+
+$bg-color-list: (
+  'bg-light': $bg-light,
+  'bg-basic': $bg-basic,
+  'bg-darken': $bg-darken,
+  'bg-blue': $bg-blue
+) !default;
+
+$file-color-list: (
+  'ppt': #c03f1f,
+  'img': #53c1a0,
+  'web': #f26100,
+  'xlsx': #0f7d43,
+  'pdf': #cc2d22,
+  'docs': #1458bc,
+  'hwp': #38a9ff
+) !default;
+
 //Shemes-color ( 수업정보 )
-$shchme-color-learner1: #42c5b1;
-$shchme-color-learner2: #8dbb2c;
-$shchme-color-learner3: $Y500;
-$shchme-color-learner4: $Y800;
-$shchme-color-learner5: #fd6e7f;
-$shchme-color-learner6: #d5d5d5;
+$shchme-color-list: (
+  'learner1': #42c5b1,
+  'learner2': #8dbb2c,
+  'learner3': $Y500,
+  'learner4': $Y800,
+  'learner5': #fd6e7f,
+  'learner6': #d5d5d5
+) !default;
+
+// bg colors
+@each $key, $value in $point-color-list {
+  .bg-color-#{$key} {
+    background-color: $value;
+  }
+}
+
+//font colors
+@each $key, $value in $font-color-list {
+  .font-color-#{$key} {
+    color: $value;
+  }
+}
 
 //icon-color
 $icon-default-color: $G900;

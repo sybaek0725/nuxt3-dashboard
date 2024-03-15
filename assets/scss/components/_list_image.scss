@@ -1,0 +1,221 @@
+/**
+component name : list image
+writer : 조영동
+변경일 : 240214
+*/
+
+$list-img-dimm-background: rgba(30, 50, 87, 0.5);
+$list-img-title-margin: 1.5rem;
+$list-img-line-color-basic: $G300;
+
+.list-img {
+  display: flex;
+
+  &.active {
+    background: $white;
+    border: none;
+    border-radius: 1rem;
+    border-bottom: none;
+
+    .list-img-border-bottom {
+      border: none;
+    }
+  }
+
+  &.no_info {
+    padding: 2rem 3rem;
+    background: $DB50;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  // direction
+  &.list-img-direction-column {
+    flex-direction: column;
+  }
+
+  .list-disabled {
+    filter: grayscale(1);
+
+    p {
+    }
+  }
+  // layout
+  .list-img-head {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .list-img-head-btn-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    &.list-img-head-padding {
+      padding: 1rem 0;
+    }
+  }
+  .list-img-body {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    &.list-img-body-opacity > div:first-child {
+      background-color: $list-img-dimm-background;
+    }
+    &.list-img-body-center > div:first-child {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem;
+    }
+
+    // info 영역
+    &.list-img-body-info {
+      padding: 0.6rem 3.6rem 0 0;
+
+      // 가로정렬일 때
+      &.list-img-body-info-horizontal {
+        display: flex;
+        padding: 0.6rem 3.6rem 0 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $list-img-title-margin;
+        flex: 1 0 0;
+        align-self: stretch;
+
+        .list-img-body-info-horizontal-title {
+          width: 40rem;
+        }
+        .list-img-body-info-horizontal-area {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+      &.list-img-body-info-horizontal-close {
+        padding-top: 0.8rem;
+        padding: 0;
+        justify-content: flex-end;
+        .list-img-body-info-horizontal-close-area {
+          display: flex;
+          width: 3rem;
+          height: 3rem;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10rem;
+          border: 1.5px solid $list-img-dimm-background;
+        }
+      }
+    }
+
+    .file_thumb {
+      padding: 0 1rem 0.5rem 0;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      top: 0;
+      left: 0;
+      width: 24rem;
+      height: 13.5rem;
+    }
+
+    &:hover {
+      .list-img-overlay {
+        display: flex;
+      }
+    }
+  }
+
+  .list-img-footer {
+    position: relative;
+    width: 100%;
+    &.list-img-footer-center {
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  // overlay
+  .list-img-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+
+    .list-img-overlay-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.list-img-overlay-center-gap {
+        gap: 1rem;
+      }
+    }
+  }
+
+  // border
+  &.list-img-border-bottom {
+    border-bottom: 1px solid $list-img-line-color-basic;
+  }
+
+  // gap
+  .list-img-gap,
+  &.list-img-gap {
+    gap: 2rem;
+    &.list-img-gap-sm {
+      gap: 1rem;
+    }
+    &.list-img-gap-xs {
+      gap: 0.5rem;
+    }
+  }
+
+  // width
+  &.list-img-w-100 {
+    width: 100%;
+  }
+
+  // organism
+  &.list-img-area {
+    gap: 3rem;
+
+    .list-img-area-head {
+      display: flex;
+    }
+    .list-img-area-body {
+      gap: 1.6rem;
+    }
+  }
+
+  .empty_box {
+    display: flex;
+    padding: 2rem 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px dashed $line-darken;
+    background: $white;
+    @include font_body3($font-weight-medium, $font-darken, 1.2);
+  }
+
+  &.no_contents {
+    padding: 2rem;
+    align-items: center;
+    border: 1px dashed $line-basic;
+    border-radius: 0.5rem;
+  }
+}
+
+.list-head {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}

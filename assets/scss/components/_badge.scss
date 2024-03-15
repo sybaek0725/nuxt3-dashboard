@@ -1,0 +1,96 @@
+$badges-text-color: #fff;
+$badges-bg-basic: $B500;
+
+/**
+component name : badge
+writer : 조영동
+변경일 : 240215
+*/
+
+.badges {
+  @each $key, $value in $point-color-list {
+    // bg colors
+    &.badges-#{$key} {
+      .v-badge {
+        .v-badge__wrapper {
+          .v-badge__badge {
+            background-color: $value;
+            color: if($key == 'white', $point-color-black, $point-color-white) !important;
+          }
+        }
+      }
+    }
+  }
+
+  // border colors
+  @each $key, $value in $point-color-list {
+    &.v-badge-bordered-#{$key} {
+      .v-badge__wrapper {
+        .v-badge__badge::after {
+          border-radius: inherit;
+          border-style: solid;
+          border-width: 2px;
+          bottom: 0;
+          content: '';
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          transform: scale(1.05);
+          color: $value !important;
+          border-color: $value !important;
+        }
+      }
+    }
+  }
+
+  // size
+
+  &.badges-sm {
+    .v-badge {
+      .v-badge__wrapper {
+        .v-badge__badge {
+          min-width: 2rem;
+          min-height: 2rem;
+          display: flex;
+          padding: 0.1rem 0.55rem;
+
+          bottom: calc(100% - 12px) !important;
+          left: calc(100% - 9px) !important;
+        }
+      }
+    }
+  }
+
+  .v-badge {
+    display: block;
+
+    .v-badge__wrapper {
+      .v-badge__badge {
+        bottom: calc(100% - 13px) !important;
+        left: calc(100% - 17px) !important;
+
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+
+        display: flex;
+        padding: 0.1rem 0.55rem;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        border-radius: 1.4rem;
+        background: $badges-bg-basic;
+
+        @include font_body5($font-weight-bold, $font-white);
+        font-family: 'Noto Sans KR', sans-serif;
+
+        .v-theme--light {
+          &.bg-error {
+            background-color: $secondary-error !important;
+          }
+        }
+      }
+    }
+  }
+}

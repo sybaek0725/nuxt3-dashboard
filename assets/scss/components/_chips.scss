@@ -1,0 +1,51 @@
+/**
+component name : chips
+writer : 문소정
+변경일 : 240207
+*/
+
+$chips-bg-gray: $point-color-gray;
+$chips-font-color: $font-white;
+$chips-border-radius: 0.4rem;
+
+.chips {
+  // default size : medium
+  background: $chips-bg-gray;
+  min-width: 6.4rem;
+  min-height: 3.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: $chips-border-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include font_body4($font-weight-bold, $chips-font-color);
+
+  // color variation function
+  @each $key, $value in $point-color-list {
+    &.chips_#{$key} {
+      background-color: $value;
+      @if ($key == 'white') {
+        color: $point-color-black !important;
+      } @else {
+        color: $point-color-white !important;
+      }
+    }
+  }
+
+  // small size
+  &.chips_sm {
+    @include font_body5($font-weight-medium, $chips-font-color);
+    min-width: 4.8rem;
+    min-height: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  // large size
+  &.chips_lg {
+    min-width: 8.9rem;
+    min-height: 4.2rem;
+    padding: 1rem 1.5rem;
+    @include font_body4($font-weight-bold, $chips-font-color);
+  }
+}
