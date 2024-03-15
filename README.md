@@ -48,4 +48,3 @@ npm run dev
 -   GitLens — Git supercharged
 -   Prettier
 -   Vue Language Features(Volar)
-# nuxt3-dashboard
